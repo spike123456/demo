@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Trang chủ</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Trang chủ</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<!-- header start -->
-	<div style="width: 100%;background-color: #5e9900;padding-left: 10%;padding-right: 10%;">
+	<div id="header-desktop" style="width: 100%;background-color: #5e9900;padding-left: 10%;padding-right: 10%;">
 		<div class="container-fluid" style="padding:0px;">
 			<div class="row" style="margin:0px;">
 				<div class="col-md-3 col-sm-3" style="padding: 25px 0px;text-align: center;">
 					<a href="">
 						<img src="https://cdn.timviecnhanh.com/asset/home/img/logo.png" alt="logo" title="Web ban hang online uy tin" class="img-responsive" style="max-width: 80%;">
 					</a>
-					
 				</div>
 				<div class="col-md-7 col-sm-7" style="padding: 0px 10px;display: flex;align-items: center;">
 					<div style="margin-top: 20px;width: 100%;">
 						<div style="width: 100%;display: flex;">
 							<div class="input-group" style="width: calc(100% - 80px);height: 40px;">
-      							<input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm mong muốn..." style="border: none;border-bottom-right-radius: 0px;border-top-right-radius: 0px;font-size: 14px;">
-    						</div>
-    						<button type="button" class="hand btn btn-default" style="width: 80px;height: 40px;background-color: blue;border-top-left-radius: 0px;border-bottom-left-radius: 0px;border: none;">
-  								<span class="fa fa-search" style="font-size: 15pt;color: white;"></span>
+								<input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm mong muốn..." style="border: none;border-bottom-right-radius: 0px;border-top-right-radius: 0px;font-size: 14px;">
+							</div>
+							<button type="button" class="hand btn btn-default" style="width: 80px;height: 40px;background-color: blue;border-top-left-radius: 0px;border-bottom-left-radius: 0px;border: none;">
+								<span class="fa fa-search" style="font-size: 15pt;color: white;"></span>
 							</button>
 						</div>
 						<div style="height: 20px;font-size: 10px;display: table-cell;vertical-align: middle;">
 							Nhập sản phẩm bạn muốn tìm. Ví dụ: Quần áo, Nước hoa,...
 						</div>
 					</div>
-					
 				</div>
 				<div class="col-md-2 col-sm-2" style="display: flex;align-items: center;">
 					<div style="width: 50px;" class="hand">
@@ -45,6 +44,41 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+
+	<div id="header-mobile" style="width: 100%;background-color: #5e9900;">
+		<nav class="navbar navbar-expand-md navbar-dark">
+			<img src="https://cdn.timviecnhanh.com/asset/home/img/logo.png" alt="logo" title="Web ban hang online uy tin" class="img-responsive" style="max-width: 50%;">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<div style="margin-top: 20px;width: 100%;">
+							<div style="width: 100%;display: flex;">
+								<div class="input-group" style="width: calc(100% - 80px);height: 40px;">
+									<input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm mong muốn..." style="border: none;border-bottom-right-radius: 0px;border-top-right-radius: 0px;font-size: 14px;">
+								</div>
+								<button type="button" class="hand btn btn-default" style="width: 80px;height: 40px;background-color: blue;border-top-left-radius: 0px;border-bottom-left-radius: 0px;border: none;">
+									<span class="fa fa-search" style="font-size: 15pt;color: white;"></span>
+								</button>
+							</div>
+							<div style="height: 20px;font-size: 10px;display: table-cell;vertical-align: middle;">
+								Nhập sản phẩm bạn muốn tìm. Ví dụ: Quần áo, Nước hoa,...
+							</div>
+						</div>
+					</li>
+					<li class="nav-item" style="text-align: -webkit-center;padding: 10px;">
+						<div style="width: 50px;" class="hand">
+							<div class="fa fa-shopping-cart" style="width:100%;font-size: 30px;color: lightgoldenrodyellow;text-align: center;"></div>
+							<div style="font-size: 11px;text-align: center;line-height: 130%;color: #f2b7b7;">Giỏ hàng của tôi</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
 	</div>
 	<!-- header stop -->
 </body>
