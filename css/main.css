@@ -19,3 +19,28 @@
         display: block;
     }
 }
+
+.item_menu {
+	width: 100px;
+	height: 35px;
+}
+
+.item_menu a {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	text-decoration: none !important;
+}
+
+.item_menu:hover {
+	background-color: #9100ff !important;
+}
+
+.item_menu a:hover div .item_menu_icon {
+	background-color: #d6ffe7 !important;
+}
+
+.item_menu a:hover div .item_menu_content {
+	color: #d6ffe7 !important;
+}
