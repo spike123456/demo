@@ -38,9 +38,9 @@
 }
 
 .item_menu a:hover div .item_menu_icon {
-	background-color: #d6ffe7 !important;
+	background-color: #ff6262 !important;
 }
 
 .item_menu a:hover div .item_menu_content {
-	color: #d6ffe7 !important;
+	color: #ff6262 !important;
 }
