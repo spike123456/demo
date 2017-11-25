@@ -1,0 +1,73 @@
+.banner-padding {
+	padding: 3px !important;
+}
+
+.container-fluid .row .banner-padding {
+	height: 400px;
+}
+
+@media only screen and (max-width: 700px) {
+	#banner {
+		margin-top: 95px !important;
+		padding: 0px !important;
+	}
+
+	.banner-padding {
+		padding: 3px 0px !important;
+	}
+
+	.container-fluid .row .banner-padding {
+		height: 300px;
+	}
+}
+
+#banner {
+	margin-top: 170px;
+	padding: 0px 7%;
+}
+
+.carousel-indicators li {
+	width: 12px !important;
+	height: 12px !important;
+	cursor: pointer;
+	border-radius: 999px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	width: 30px !important;
+	height: 30px !important;
+}
+
+.carousel-control-next-icon {
+	background-image: url('../svg/chevron-sign-to-right.svg') !important;
+}
+
+.carousel-control-prev-icon {
+	background-image: url('../svg/chevron-sign-to-left.svg') !important;
+}
+
+.banner-around-item:hover {
+	filter: brightness(120%);
+	-webkit-filter:brightness(120%);
+}
+
+.container-fluid .row .banner-padding div {
+	height: 100%;
+}
+
+.carousel-item {
+	height: 100%;
+}
+
+.carousel-item div {
+	background-size: 100% 100%;
+}
+
+.banner-item {
+	height: 200px !important;
+}
+
+.banner-around-item {
+	background-size: cover;
+	background-position: center;
+}

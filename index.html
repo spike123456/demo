@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/home.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
@@ -13,113 +14,113 @@
 </head>
 <body>
 	<!-- header start -->
-	<div id="header-desktop" class="fixed-top" style="width: 100%;">
-		<div style="background-color: #ff6912;padding: 2px 10% 2px 0px;text-align: right;">
-			<div style="display: inline-block;"><span class="fa fa-phone" style="font-weight: bold;font-size: 18px;"></span><span style="margin-left: 5px;font-weight: bold;font-size: 15px;">0907.007.620 - 0166.663.3589</span></div>
+	<div id="header-desktop" class="fixed-top">
+		<div class="status-bar">
+			<div>
+				<span class="fa fa-phone"></span><span>0907.007.620 - 0166.663.3589</span>
+			</div>
 		</div>
-		<div style="background-color: #5e9900;padding:0px 10%;">
-			<div class="container-fluid" style="padding:0px;">
-				<div class="row" style="margin:0px;">
-					<div class="col-md-3 col-sm-3" style="padding: 20px 0px;text-align: center;">
+		<div class="header-accent">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-3 col-sm-3" id="logo-container">
 						<a href="">
-							<img src="https://cdn.timviecnhanh.com/asset/home/img/logo.png" alt="logo" title="Web ban hang online uy tin" class="img-responsive" style="max-width: 80%;">
+							<img src="https://cdn.timviecnhanh.com/asset/home/img/logo.png" alt="logo" title="Web ban hang online uy tin" class="img-responsive logo-style">
 						</a>
 					</div>
-					<div class="col-md-6 col-sm-6" style="padding: 0px 10px;display: flex;align-items: center;">
-						<div style="margin-top: 20px;width: 100%;">
-							<div style="width: 100%;display: flex;">
-								<div class="input-group" style="width: calc(100% - 80px);height: 35px;">
-									<input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm mong muốn..." style="border: none;border-bottom-right-radius: 0px;border-top-right-radius: 0px;font-size: 14px;">
+					<div class="col-md-6 col-sm-6" id="search-container">
+						<div class="search-container-first-child">
+							<div>
+								<div class="input-group search-box">
+									<input type="text" class="form-control main-input-box" placeholder="Tìm kiếm sản phẩm mong muốn...">
 								</div>
-								<button type="button" class="hand btn btn-default" style="width: 80px;height: 35px;background-color: blue;border-top-left-radius: 0px;border-bottom-left-radius: 0px;border: none;">
-									<span class="fa fa-search" style="font-size: 20px;color: white;"></span>
+								<button type="button" class="hand btn btn-default button-input-box">
+									<span class="fa fa-search"></span>
 								</button>
 							</div>
-							<div style="height: 20px;font-size: 10px;display: table-cell;vertical-align: middle;">
-								Nhập sản phẩm bạn muốn tìm. Ví dụ: Quần áo, Nước hoa,...
-							</div>
+							<div class="hint-search-box">Nhập sản phẩm bạn muốn tìm. Ví dụ: Quần áo, Nước hoa,...</div>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-3" style="display: flex;align-items: center;">
-						<div style="width: 60px;" class="hand">
-							<div class="fa fa-shopping-cart" style="width:100%;font-size: 30px;color: lightgoldenrodyellow;text-align: center;"></div>
-							<div style="font-size: 11px;text-align: center;color: #f2b7b7;">Giỏ hàng</div>
+					<div class="col-md-3 col-sm-3 center-middle">
+						<div style="margin-left: 0px;" class="hand btn-system">
+							<div class="fa fa-shopping-cart"></div>
+							<div class="title-btn-system">Giỏ hàng</div>
 						</div>
-						<div style="width: 60px;margin-left: 15px;" class="hand">
-							<div class="fa fa-bell" style="width:100%;font-size: 30px;color: lightgoldenrodyellow;text-align: center;"></div>
-							<div style="font-size: 11px;text-align: center;color: #f2b7b7;">Thông báo</div>
+						<div class="hand btn-system">
+							<div class="fa fa-bell""></div>
+							<div class="title-btn-system">Thông báo</div>
 						</div>
-						<div style="width: 60px;margin-left: 15px;" class="hand">
-							<div class="fa fa-star" style="width:100%;font-size: 30px;color: lightgoldenrodyellow;text-align: center;"></div>
-							<div style="font-size: 11px;text-align: center;color: #f2b7b7;">Yêu thích</div>
+						<div class="hand btn-system">
+							<div class="fa fa-star"></div>
+							<div class="title-btn-system">Yêu thích</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div>
-			<ul style="list-style: none;display: flex;padding: 0px;margin: 0px auto;width: fit-content;">
-				<li class="item_menu" style="background-color: #eaa7a7;">
+			<ul id="category-bar">
+				<li class="item_menu mom-style">
 					<a href="">
-						<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-							<div class="item_menu_icon" style="width:10px;height:15px;-webkit-mask-image: url('svg/pregnant.svg');background-color: white;"></div>
-							<div style="margin-left: 4px;font-weight: bold;font-size: 13px;color: white;" class="item_menu_content">Mẹ&amp;Bé</div>
+						<div class="center-middle">
+							<div class="item_menu_icon mom-icon"></div>
+							<div class="item_menu_content">Mẹ&amp;Bé</div>
 						</div>
 					</a>
 				</li>
-				<li class="item_menu" style="background-color: #4d62c5;">
+				<li class="item_menu beautiful-style">
 					<a href="">
-						<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-							<div class="item_menu_icon" style="width:7px;height:15px;-webkit-mask-image: url('svg/lipstick.svg');background-color: white;"></div>
-							<div style="margin-left: 4px;font-weight: bold;font-size: 13px;color: white;" class="item_menu_content">Làm đẹp</div>
+						<div class="center-middle">
+							<div class="item_menu_icon beautiful-icon"></div>
+							<div class="item_menu_content">Làm đẹp</div>
 						</div>
 					</a>
 				</li>
-				<li class="item_menu" style="background-color: #a0aa69;">
+				<li class="item_menu fashion-style">
 					<a href="">
-						<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-							<div class="item_menu_icon" style="width:10px;height:15px;-webkit-mask-image: url('svg/dress.svg');background-color: white;"></div>
-							<div style="margin-left: 4px;font-weight: bold;font-size: 13px;color: white;" class="item_menu_content">Thời trang</div>
+						<div class="center-middle">
+							<div class="item_menu_icon fashion-icon"></div>
+							<div class="item_menu_content">Thời trang</div>
 						</div>
 					</a>
 				</li>
-				<li class="item_menu" style="background-color: #9a464d;">
+				<li class="item_menu furniture-style">
 					<a href="">
-						<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-							<div class="item_menu_icon" style="width:17px;height:15px;-webkit-mask-image: url('svg/armchair.svg');background-color: white;"></div>
-							<div style="margin-left: 4px;font-weight: bold;font-size: 13px;color: white;" class="item_menu_content">Gia dụng</div>
+						<div class="center-middle">
+							<div class="item_menu_icon furniture-icon"></div>
+							<div class="item_menu_content">Gia dụng</div>
 						</div>
 					</a>
 				</li>
-				<li class="item_menu" style="background-color: #778094;">
+				<li class="item_menu elec-style">
 					<a href="">
-						<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-							<div class="item_menu_icon" style="width:9px;height:15px;-webkit-mask-image: url('svg/smartphone.svg');background-color: white;"></div>
-							<div style="margin-left: 4px;font-weight: bold;font-size: 13px;color: white;" class="item_menu_content">Điện tử</div>
+						<div class="center-middle">
+							<div class="item_menu_icon elec-icon"></div>
+							<div class="item_menu_content">Điện tử</div>
 						</div>
 					</a>
 				</li>
-				<li class="item_menu" style="background-color: #f93ed9;">
+				<li class="item_menu sport-style">
 					<a href="">
-						<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-							<div class="item_menu_icon" style="width:16px;height:15px;-webkit-mask-image: url('svg/running.svg');background-color: white;"></div>
-							<div style="margin-left: 4px;font-weight: bold;font-size: 13px;color: white;" class="item_menu_content">Thể thao</div>
+						<div class="center-middle">
+							<div class="item_menu_icon sport-icon"></div>
+							<div class="item_menu_content">Thể thao</div>
 						</div>
 					</a>
 				</li>
-				<li class="item_menu" style="background-color: #46b4bf;">
+				<li class="item_menu shoe-style">
 					<a href="">
-						<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-							<div class="item_menu_icon" style="width:14px;height:15px;-webkit-mask-image: url('svg/shoe.svg');background-color: white;"></div>
-							<div style="margin-left: 4px;font-weight: bold;font-size: 13px;color: white;" class="item_menu_content">Giày dép</div>
+						<div class="center-middle">
+							<div class="item_menu_icon shoe-icon"></div>
+							<div class="item_menu_content">Giày dép</div>
 						</div>
 					</a>
 				</li>
-				<li class="item_menu" style="background-color: #bf7373;">
+				<li class="item_menu office-style">
 					<a href="">
-						<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-							<div class="item_menu_icon" style="width:12px;height:15px;-webkit-mask-image: url('svg/pencil.svg');background-color: white;"></div>
-							<div style="margin-left: 4px;font-weight: bold;font-size: 13px;color: white;" class="item_menu_content">Văn phòng</div>
+						<div class="center-middle">
+							<div class="item_menu_icon office-icon"></div>
+							<div class="item_menu_content">Văn phòng</div>
 						</div>
 					</a>
 				</li>
@@ -128,120 +129,120 @@
 	</div>
 
 
-	<div id="header-mobile" class="fixed-top" style="width: 100%;background-color: #5e9900;">
-		<div style="background-color: #ff6912;padding: 2px 0px;text-align: center;">
-			<div style="display: inline-block;"><span class="fa fa-phone" style="font-weight: bold;font-size: 18px;"></span><span style="margin-left: 5px;font-weight: bold;font-size: 15px;">0907.007.620 - 0166.663.3589</span></div>
+	<div id="header-mobile" class="fixed-top header-accent">
+		<div class="status-bar">
+			<div>
+				<span class="fa fa-phone"></span><span>0907.007.620 - 0166.663.3589</span>
+			</div>
 		</div>
 		<nav class="navbar navbar-expand-md navbar-dark">
-			<img src="https://cdn.timviecnhanh.com/asset/home/img/logo.png" alt="logo" title="Web ban hang online uy tin" class="img-responsive" style="max-width: 50%;">
+			<img src="https://cdn.timviecnhanh.com/asset/home/img/logo.png" alt="logo" title="Web ban hang online uy tin" class="img-responsive logo-style">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<div class="container-fluid" style="margin-top: 20px;padding:0px;">
-							<div class="row" style="margin:0px;">
-								<div class="col-4" style="padding: 0px;text-align: center;">
-									<div style="width: 60px;margin-left: auto;margin-right: auto;" class="hand">
-										<div class="fa fa-shopping-cart" style="width:100%;font-size: 30px;color: lightgoldenrodyellow;text-align: center;"></div>
-										<div style="font-size: 11px;text-align: center;color: #f2b7b7;">Giỏ hàng</div>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-4">
+									<div class="hand">
+										<div class="fa fa-shopping-cart"></div>
+										<div class="title-btn-system">Giỏ hàng</div>
 									</div>
 								</div>
-								<div class="col-4" style="padding: 0px;text-align: center;">
-									<div style="width: 60px;margin-left: auto;margin-right: auto;" class="hand">
-										<div class="fa fa-bell" style="width:100%;font-size: 30px;color: lightgoldenrodyellow;text-align: center;"></div>
-										<div style="font-size: 11px;text-align: center;color: #f2b7b7;">Thông báo</div>
+								<div class="col-4">
+									<div class="hand">
+										<div class="fa fa-bell"></div>
+										<div class="title-btn-system">Thông báo</div>
 									</div>
 								</div>
-								<div class="col-4" style="padding: 0px;text-align: center;">
-									<div style="width: 60px;margin-left: auto;margin-right: auto;" class="hand">
-										<div class="fa fa-star" style="width:100%;font-size: 30px;color: lightgoldenrodyellow;text-align: center;"></div>
-										<div style="font-size: 11px;text-align: center;color: #f2b7b7;">Yêu thích</div>
+								<div class="col-4">
+									<div class="hand">
+										<div class="fa fa-star"></div>
+										<div class="title-btn-system">Yêu thích</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</li>
 					<li class="nav-item">
-						<div style="margin-top: 20px;width: 100%;">
-							<div style="width: 100%;display: flex;">
-								<div class="input-group" style="width: calc(100% - 80px);height: 35px;">
-									<input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm mong muốn..." style="border: none;border-bottom-right-radius: 0px;border-top-right-radius: 0px;font-size: 14px;">
+						<div class="search-container-first-child">
+							<div class="flex-class">
+								<div class="input-group search-box">
+									<input type="text" class="form-control main-input-box" placeholder="Tìm kiếm sản phẩm mong muốn...">
 								</div>
-								<button type="button" class="hand btn btn-default" style="width: 80px;height: 35px;background-color: blue;border-top-left-radius: 0px;border-bottom-left-radius: 0px;border: none;">
-									<span class="fa fa-search" style="font-size: 20px;color: white;"></span>
+								<button type="button" class="hand btn btn-default button-input-box">
+									<span class="fa fa-search"></span>
 								</button>
 							</div>
-							<div style="height: 20px;font-size: 10px;display: table-cell;vertical-align: middle;">
-								Nhập sản phẩm bạn muốn tìm. Ví dụ: Quần áo, Nước hoa,...
-							</div>
+							<div class="hint-search-box">Nhập sản phẩm bạn muốn tìm. Ví dụ: Quần áo, Nước hoa,...</div>
 						</div>
 					</li>
 					<li class="nav-item">
-						<div class="container-fluid" style="padding:0px;margin-top: 10px;">
-							<div class="row" style="margin:0px;">
-								<div class="col-6" style="background-color: #eaa7a7;height: 30px;padding: 0px;">
-									<a href="" style="display: flex;align-items: center;width: 100%;height: 100%;text-decoration: none;">
-										<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-											<div style="width:10px;height:15px;-webkit-mask-image: url('svg/pregnant.svg');background-color: white;"></div>
-											<div style="margin-left: 4px;font-weight: bold;font-size: 11px;color: white;">Mẹ&amp;Bé</div>
+						<div class="container-fluid" id="mobile-grid">
+							<div class="row">
+								<div class="col-6 mobile-grid-item mom-style">
+									<a href="">
+										<div>
+											<div class="item_menu_icon mom-icon"></div>
+											<div class="item_menu_content">Mẹ&amp;Bé</div>
 										</div>
 									</a>
 								</div>
-								<div class="col-6" style="background-color: #4d62c5;height: 30px;padding: 0px;">
-									<a href="" style="display: flex;align-items: center;width: 100%;height: 100%;text-decoration: none;">
-										<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-											<div style="width:7px;height:15px;-webkit-mask-image: url('svg/lipstick.svg');background-color: white;"></div>
-											<div style="margin-left: 4px;font-weight: bold;font-size: 11px;color: white;">Làm đẹp</div>
+								<div class="col-6 mobile-grid-item beautiful-style">
+									<a href="">
+										<div>
+											<div class="item_menu_icon beautiful-icon"></div>
+											<div class="item_menu_content">Làm đẹp</div>
 										</div>
 									</a>
 								</div>
-								<div class="col-6" style="background-color: #a0aa69;height: 30px;padding: 0px;">
-									<a href="" style="display: flex;align-items: center;width: 100%;height: 100%;text-decoration: none;">
-										<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-											<div style="width:10px;height:15px;-webkit-mask-image: url('svg/dress.svg');background-color: white;"></div>
-											<div style="margin-left: 4px;font-weight: bold;font-size: 11px;color: white;">Thời trang</div>
+								<div class="col-6 mobile-grid-item fashion-style">
+									<a href="">
+										<div>
+											<div class="item_menu_icon fashion-icon"></div>
+											<div class="item_menu_content">Thời trang</div>
 										</div>
 									</a>
 								</div>
-								<div class="col-6" style="background-color: #9a464d;height: 30px;padding: 0px;">
-									<a href="" style="display: flex;align-items: center;width: 100%;height: 100%;text-decoration: none;">
-										<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-											<div style="width:17px;height:15px;-webkit-mask-image: url('svg/armchair.svg');background-color: white;"></div>
-											<div style="margin-left: 4px;font-weight: bold;font-size: 11px;color: white;">Gia dụng</div>
+								<div class="col-6 mobile-grid-item furniture-style">
+									<a href="">
+										<div>
+											<div class="item_menu_icon furniture-icon"></div>
+											<div class="item_menu_content">Gia dụng</div>
 										</div>
 									</a>
 								</div>
-								<div class="col-6" style="background-color: #778094;height: 30px;padding: 0px;">
-									<a href="" style="display: flex;align-items: center;width: 100%;height: 100%;text-decoration: none;">
-										<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-											<div style="width:9px;height:15px;-webkit-mask-image: url('svg/smartphone.svg');background-color: white;"></div>
-											<div style="margin-left: 4px;font-weight: bold;font-size: 11px;color: white;">Điện tử</div>
+								<div class="col-6 mobile-grid-item elec-style">
+									<a href="">
+										<div>
+											<div class="item_menu_icon elec-icon"></div>
+											<div class="item_menu_content">Điện tử</div>
 										</div>
 									</a>
 								</div>
-								<div class="col-6" style="background-color: #f93ed9;height: 30px;padding: 0px;">
-									<a href="" style="display: flex;align-items: center;width: 100%;height: 100%;text-decoration: none;">
-										<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-											<div style="width:16px;height:15px;-webkit-mask-image: url('svg/running.svg');background-color: white;"></div>
-											<div style="margin-left: 4px;font-weight: bold;font-size: 11px;color: white;">Thể thao</div>
+								<div class="col-6 mobile-grid-item sport-style">
+									<a href="">
+										<div>
+											<div class="item_menu_icon sport-icon"></div>
+											<div class="item_menu_content">Thể thao</div>
 										</div>
 									</a>
 								</div>
-								<div class="col-6" style="background-color: #46b4bf;height: 30px;padding: 0px;">
-									<a href="" style="display: flex;align-items: center;width: 100%;height: 100%;text-decoration: none;">
-										<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-											<div style="width:14px;height:15px;-webkit-mask-image: url('svg/shoe.svg');background-color: white;"></div>
-											<div style="margin-left: 4px;font-weight: bold;font-size: 11px;color: white;">Giày dép</div>
+								<div class="col-6 mobile-grid-item shoe-style">
+									<a href="">
+										<div>
+											<div class="item_menu_icon shoe-icon"></div>
+											<div class="item_menu_content">Giày dép</div>
 										</div>
 									</a>
 								</div>
-								<div class="col-6" style="background-color: #bf7373;height: 30px;padding: 0px;">
-									<a href="" style="display: flex;align-items: center;width: 100%;height: 100%;text-decoration: none;">
-										<div style="display: flex;align-items: center;width: fit-content;height: fit-content;margin-left: auto;margin-right: auto;">
-											<div style="width:12px;height:15px;-webkit-mask-image: url('svg/pencil.svg');background-color: white;"></div>
-											<div style="margin-left: 4px;font-weight: bold;font-size: 11px;color: white;">Văn phòng</div>
+								<div class="col-6 mobile-grid-item office-style">
+									<a href="">
+										<div>
+											<div class="item_menu_icon office-icon"></div>
+											<div class="item_menu_content">Văn phòng</div>
 										</div>
 									</a>
 								</div>
@@ -253,5 +254,84 @@
 		</nav>
 	</div>
 	<!-- header stop -->
+
+
+	<!-- banner start -->
+	<div id="banner">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 col-lg-6 order-lg-2 order-md-2 banner-padding">
+					<div id="main-carousel" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ul class="carousel-indicators">
+							<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#main-carousel" data-slide-to="1"></li>
+							<li data-target="#main-carousel" data-slide-to="2"></li>
+							<li data-target="#main-carousel" data-slide-to="3"></li>
+							<li data-target="#main-carousel" data-slide-to="4"></li>
+						</ul>
+
+						<!-- The slideshow -->
+						<div class="carousel-inner">
+							<a href="" class="carousel-item active">
+								<div style="background-image: url('http://www.thehindubusinessline.com/multimedia/dynamic/03166/BL20_MAIN_THINK1_3166338f.jpg');"></div>
+							</a>
+							<a href="" class="carousel-item">
+								<div style="background-image: url('http://www.natural-beginning.com/wp-content/uploads/2013/09/natural-beginning-home-4.png');"></div>
+							</a>
+							<a href="" class="carousel-item">
+								<div style="background-image: url('http://mediad.publicbroadcasting.net/p/radiowest/files/styles/x_large/public/201611/lost_art_natural_navigation.jpg');"></div>
+							</a>
+							<a href="" class="carousel-item">
+								<div style="background-image: url('http://visitportoandnorth.travel/var/porto_norte/storage/images/porto-and-the-north/visit/artigos/north-coast-natural-park/940974-1-eng-US/North-Coast-Natural-Park.jpg');"></div>
+							</a>
+							<a href="" class="carousel-item">
+								<div style="background-image: url('http://2ff8n03drmib1b12373aauek-wpengine.netdna-ssl.com/wp-content/uploads/igm/c/gartenart-natural-pool.jpg');"></div>
+							</a>
+						</div>
+
+						<!-- Left and right controls -->
+						<a class="carousel-control-prev" href="#main-carousel" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#main-carousel" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 col-lg-3 order-lg-1 order-md-1">
+					<div class="banner-padding banner-item">
+						<a href=""><div class="banner-around-item" style="background-image: url('https://www.billboard.com/files/styles/article_main_image/public/media/02-BTS-kpop-artist-visit-march-2017-billboard-1548.jpg');"></div></a>
+					</div>
+					<div class="banner-padding banner-item">
+						<a href=""><div class="banner-around-item" style="background-image: url('https://znews-photo-td.zadn.vn/w1024/Uploaded/qfssu/2017_09_26/2.jpg');"></div></a>
+					</div>
+				</div>
+				<div class="col-md-3 col-lg-3 order-lg-3 order-md-3">
+					<div class="banner-padding banner-item">
+						<a href=""><div class="banner-around-item" style="background-image: url('http://www.sbs.com.au/yourlanguage/sites/sbs.com.au.yourlanguage/files/boyfriend_image_copyright_starship_entertainment_all_rights_reserved_0.jpg');"></div></a>
+					</div>
+					<div class="banner-padding banner-item">
+						<a href=""><div class="banner-around-item" style="background-image: url('https://kenh14cdn.com/2017/photo-5-1509120616376.jpg');"></div></a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-lg-3 banner-padding banner-item">
+					<a href=""><div class="banner-around-item" style="background-image: url('https://www.allkpop.com/upload/2017/08/af_org/21023753/Brown-Eyed-Girls.jpg');"></div></a>
+				</div>
+				<div class="col-md-3 col-lg-3 banner-padding banner-item">
+					<a href=""><div class="banner-around-item" style="background-image: url('https://img.kpopmap.com/2016/07/redvelv.jpg');"></div></a>
+				</div>
+				<div class="col-md-3 col-lg-3 banner-padding banner-item">
+					<a href=""><div class="banner-around-item" style="background-image: url('https://0.soompi.io/wp-content/uploads/2016/05/31172954/kpop-june-birthdays.jpg');"></div></a>
+				</div>
+				<div class="col-md-3 col-lg-3 banner-padding banner-item">
+					<a href=""><div class="banner-around-item" style="background-image: url('https://blog-cdn.feedspot.com/wp-content/uploads/2017/08/Kpop-Fashion-Blogs-1.jpg');"></div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- banner stop -->
 </body>
 </html>
