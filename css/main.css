@@ -3,7 +3,7 @@ body {
 }
 
 .logo-style {
-	max-width: 80%;
+	max-width: 80% !important;
 }
 
 .hand {
@@ -28,7 +28,7 @@ body {
 	}
 
 	.logo-style {
-		max-width: 50%;
+		max-width: 50% !important;
 	}
 
 	.item_menu_content {
@@ -394,4 +394,25 @@ body {
 .discount-product {
 	margin-left: 10px;
 	font-weight: bold;
+}
+
+.see-all {
+	display: block;
+    color: #c32366;
+    text-align: center;
+    width: 145px;
+    border: 1px solid #c32366;
+    height: 30px;
+    line-height: 28px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 15px auto 10px;
+    background-color: white;
+}
+
+.see-all:hover {
+	color: #fff;
+	background-color: #c32366;
+    text-decoration: none;
 }
