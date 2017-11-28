@@ -1,3 +1,43 @@
+.category-more-detail {
+	margin-top:70px;
+	padding: 0px 7%;
+}
+
+.category-title {
+	display: flex;
+	margin: 0px 300px;
+}
+
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-15 {
+    width: 20% !important;
+    float: left;
+}
+
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20% !important;
+        float: left;
+        max-width: 20% !important;
+    }
+}
+
 .banner-padding {
 	padding: 3px !important;
 }
@@ -18,6 +58,14 @@
 
 	.container-fluid .row .banner-padding {
 		height: 300px;
+	}
+
+	.category-more-detail {
+		padding: 0px !important;
+	}
+
+	.category-title {
+		margin: 0px !important;
 	}
 }
 
@@ -70,4 +118,85 @@
 .banner-around-item {
 	background-size: cover;
 	background-position: center;
+}
+
+.nav-tabs .nav-link.active {
+	border: none;
+    border-radius: unset;
+    color: #2e81a0 !important;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.nav-tabs .nav-link {
+	border: none !important;
+    border-radius: unset;
+    color: #2e81a0 !important;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.nav-tabs {
+    border-bottom:none !important;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: 0px !important;
+}
+
+.nav-tabs .nav-link:hover {
+	background-color: #bbb;
+	border-radius: 0px;
+}
+
+.card:hover {
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.line-category {
+	height: 3px;
+}
+
+.category-title-style {
+	height: 40px;
+	display: flex;
+	align-items: center;
+}
+
+.category-icon {
+	height: 20px;
+	background-color: white;
+}
+
+.mom-category-icon {
+	width: 13px !important;
+	-webkit-mask-size: 13px 20px;
+}
+
+.category-title-content {
+	margin-left: 10px !important;
+	font-size: 15px;
+}
+
+.tab-category {
+	background-color: #c9c9c9;
+}
+
+.tab-category .nav-tabs {
+	display: flex;
+	width: fit-content;
+}
+
+.tab-content {
+	border: 1px solid #c9c9c9;
+	border-top: none;
+	padding: 5px;
+}
+
+.mom-line {
+	width: calc((100% - 140px)/2);
+}
+
+#mom-width-category {
+	width: 140px;
 }
