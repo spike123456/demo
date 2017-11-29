@@ -3,6 +3,10 @@
 	padding: 0px 7%;
 }
 
+#introduce-area {
+	padding: 0px 5%;
+}
+
 .tab-content {
 	border: 1px solid #c9c9c9;
 	border-top: none;
@@ -80,6 +84,10 @@
 	.category-title {
 		margin: 0px !important;
 	}
+
+	#introduce-area {
+		padding: 0px;
+	}
 }
 
 #banner {
@@ -110,6 +118,7 @@
 .banner-around-item:hover {
 	filter: brightness(120%);
 	-webkit-filter:brightness(120%);
+	transition: filter .15s ease-in;
 }
 
 .container-fluid .row .banner-padding div {
@@ -138,7 +147,7 @@
 	border-radius: unset;
 	color: #2e81a0 !important;
 	font-size: 13px;
-	padding: 5px;
+	padding: 5px 10px;
 }
 
 .nav-tabs .nav-link {
@@ -146,7 +155,7 @@
 	border-radius: unset;
 	color: #2e81a0 !important;
 	font-size: 13px;
-	padding: 5px;
+	padding: 5px 10px;
 }
 
 .nav-tabs {
@@ -208,4 +217,56 @@
 
 #mom-width-category {
 	width: 140px;
+}
+
+.bottom-category {
+	margin-top: 30px;
+}
+
+.bottom-category a {
+	text-decoration: none !important;
+}
+
+#line-home {
+	height: 4px;
+    background-color: #e8467b;
+    margin-top: 70px;
+}
+
+.introduce-item {
+	padding: 20px !important;
+}
+
+.icon-introduce {
+	height: 70px;
+}
+
+.title-introduce {
+	text-align: center;
+	margin-top: 12px;
+	color: #7e6aee;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.content-introduce {
+	color: rgba(0,0,0,.54);
+	font-size: 14px;
+	margin-top: 3px;
+	text-align: center;
+}
+
+#delivery-icon {
+	width: 70px;
+	background-image: url('../svg/free-delivery.svg');
+}
+
+#medal-icon {
+	width: 46px;
+	background-image: url('../svg/medal.svg');
+}
+
+#comfortable-icon {
+	width: 80px;
+	background-image: url('../svg/armchair_com.svg');
 }
