@@ -3,10 +3,6 @@
 	padding: 0px 7%;
 }
 
-#introduce-area {
-	padding: 0px 5%;
-}
-
 .tab-content {
 	border: 1px solid #c9c9c9;
 	border-top: none;
@@ -83,10 +79,6 @@
 
 	.category-title {
 		margin: 0px !important;
-	}
-
-	#introduce-area {
-		padding: 0px;
 	}
 }
 

@@ -2,6 +2,19 @@ body {
 	background-color: #e8e4e4 !important;
 }
 
+#main-footer {
+	background-color: #2a2f35;
+	padding: 30px 15%;
+}
+
+.info-footer {
+	padding: 15px !important;
+}
+
+.common-padding {
+	padding: 0px 5%;
+}
+
 .logo-style {
 	max-width: 80% !important;
 }
@@ -37,6 +50,18 @@ body {
 
 	.main-item-product {
 		padding: 2px !important;
+	}
+
+	.common-padding {
+		padding: 0px;
+	}
+
+	#main-footer {
+		padding: 30px 0px;
+	}
+
+	.info-footer {
+		padding: 15px 5px !important;
 	}
 }
 
@@ -398,21 +423,45 @@ body {
 
 .see-all {
 	display: block;
-    color: #c32366;
-    text-align: center;
-    width: 145px;
-    border: 1px solid #c32366;
-    height: 30px;
-    line-height: 28px;
-    border-radius: 4px;
-    font-size: 13px;
-    font-weight: 400;
-    margin: 15px auto 10px;
-    background-color: white;
+	color: #c32366;
+	text-align: center;
+	width: 145px;
+	border: 1px solid #c32366;
+	height: 30px;
+	line-height: 28px;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 400;
+	margin: 15px auto 10px;
+	background-color: white;
 }
 
 .see-all:hover {
 	color: #fff;
 	background-color: #c32366;
-    text-decoration: none;
+	text-decoration: none;
+}
+
+.title-footer {
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.link-footer {
+	margin-top: 3px;
+}
+
+.first-link-footer {
+	margin-top: 10px;
+}
+
+.link-footer a, .first-link-footer a, .link-footer a:hover, .first-link-footer a:hover {
+	color: #ababab;
+	font-size: 14px;
+	font-weight: 100;
+}
+
+#fb-footer {
+	text-align: center;
 }
