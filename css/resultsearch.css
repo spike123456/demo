@@ -142,3 +142,14 @@ input[type="checkbox"] {
     background-color:#d795dc !important;
     background-image: none !important;
 }
+
+#display-price {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 8px;
+    color: #6a6f68;
+}
+
+#price-bar-wrapper {
+    padding: 8px;
+}
