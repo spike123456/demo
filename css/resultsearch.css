@@ -2,12 +2,16 @@
     padding-left: 2%;
 }
 
+.main-page-content {
+    padding: 0px 5px;
+}
+
 #main-panel {
     padding: 0px 4%;
 }
 
 .panel-title:first-child {
-    margin-top: 40px;
+    margin-top: 70px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -22,6 +26,10 @@
 
     .panel-title:first-child {
         margin-top: 0px;
+    }
+
+    .main-page-content {
+        padding: 0px;
     }
 }
 
@@ -50,6 +58,7 @@
     border-bottom-right-radius: 5px;
     border-color: #45bbff;
     padding: 5px;
+    background-color: #d8d8d8;
 }
 
 .filter-box label {
@@ -148,7 +157,7 @@ input[type="checkbox"] {
 
 .slider-track {
     height: 6px !important;
-    margin-top: -6px !important;
+    margin-top: -5px !important;
 }
 
 .slider {
@@ -156,11 +165,11 @@ input[type="checkbox"] {
 }
 
 .slider-track-low, .slider-track-high {
-    background-color:#d8d8d8 !important;
+    background-color:#cbacd8 !important;
 }
 
 .slider-selection {
-    background-color:#d795dc !important;
+    background-color:#db67e4 !important;
     background-image: none !important;
 }
 
@@ -215,4 +224,16 @@ input[type="checkbox"] {
 
 .tag-filter span:last-child:hover {
     background-color: #bf7327;
+}
+
+.custom-select {
+    font-size: 14px;
+    padding: 5px 1.75rem 5px 8px !important;
+    height: auto !important;
+    cursor: pointer;
+}
+
+#right-panel > div:first-child {
+    font-size: 15px;
+    color: #717171;
 }
