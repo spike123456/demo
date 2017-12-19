@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head>
 <body>
 	<!-- header start -->
@@ -627,6 +628,24 @@
 							</div>
 						</div>
 					</div>
+
+					<nav class="main-page-content custom-pagination" style="margin-top: 25px;" ng-app="SinglePage" ng-controller="pagingController">
+						<ul class="pagination pagination-sm justify-content-center">
+							<li class="page-item{{currentPage==1?' disabled':''}}" ng-click="back()">
+								<div class="page-link" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+									<span class="sr-only">Previous</span>
+								</div>
+							</li>
+							<li ng-repeat="item in pagingArr" class="page-item{{currentPage==item?' active':''}}" ng-click="updatePaging(item)"><div class="page-link">{{item}}</div></li>
+							<li class="page-item{{currentPage==totalPages?' disabled':''}}" ng-click="next()">
+								<div class="page-link" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+									<span class="sr-only">Next</span>
+								</div>
+							</li>
+						</ul>
+					</nav>
 				</div>
 			</div>
 		</div>
@@ -671,25 +690,5 @@
 
 
 	<script src="js/resultsearch.js"></script>
-	<!--Start of Tawk.to Script-->
-	<script type="text/javascript">
-		function numberWithCommas(x) {
-			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-		}
-		$("#price-bar").slider({}).on('change', function(e) {
-			var mainValue=e.value.newValue;
-			$("#display-price").html("Từ "+numberWithCommas(mainValue[0])+".000<sup>đ</sup> đến "+numberWithCommas(mainValue[1])+".000<sup>đ</sup>");
-		});
-		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-		(function(){
-			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-			s1.async=true;
-			s1.src='https://embed.tawk.to/5a1fb2e6bb0c3f433d4cc206/default';
-			s1.charset='UTF-8';
-			s1.setAttribute('crossorigin','*');
-			s0.parentNode.insertBefore(s1,s0);
-		})();
-	</script>
-	<!--End of Tawk.to Script-->
 </body>
 </html>
