@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Kết quả tìm kiếm</title>
+	<title>Chi tiết</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/resultsearch.css">
+	<link rel="stylesheet" href="css/detail.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	<link rel="stylesheet" href="photoswipe/photoswipe.css">
+	<link rel="stylesheet" href="photoswipe/default-skin/default-skin.css">
+	<script src="photoswipe/photoswipe.min.js"></script>
+	<script src="photoswipe/photoswipe-ui-default.min.js"></script>
 </head>
 <body>
 	<!-- header start -->
@@ -261,434 +262,132 @@
 	<!-- header stop -->
 
 
-	<!-- content start -->
-	<div class="content-margin" id="main-panel">
+	<!-- detail start -->
+	<div class="content-margin content-detail">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-12 col-lg-2 col-xl-2">
-					<a class="panel-title" data-toggle="collapse" href="#sub-category" aria-expanded="false" aria-controls="sub-category">
-						<span>DANH MỤC</span>
-						<span class="float-right"><div id="sub-category-arrow" class="fa fa-chevron-down arrow-filter"></div></span>
-					</a>
-					<div class="collapse" id="sub-category">
-						<div class="filter-box">
-							<label>
-								<input type="checkbox"> Đồ chơi
-								<span class="quantity-product">(4)</span>
-							</label>
-							<label>
-								<input type="checkbox"> Thực phẩm
-								<span class="quantity-product">(232)</span>
-							</label>
-							<div class="button-search-group">
-								<button>Lọc</button>
-							</div>
-						</div>
-					</div>
-					<a class="panel-title" data-toggle="collapse" href="#time-delivery" aria-expanded="false" aria-controls="time-delivery">
-						<span>THỜI GIAN GIAO</span>
-						<span class="float-right"><div id="time-delivery-arrow" class="fa fa-chevron-down arrow-filter"></div></span>
-					</a>
-					<div class="collapse" id="time-delivery">
-						<div class="filter-box">
-							<label>
-								<input type="radio" name="delivery-option" checked> Tất cả
-							</label>
-							<label>
-								<input type="radio" name="delivery-option"> Trong vòng 1 ngày
-								<span class="quantity-product">(56)</span>
-							</label>
-							<label>
-								<input type="radio" name="delivery-option"> Trong vòng 20-49 ngày
-								<span class="quantity-product">(82)</span>
-							</label>
-							<div class="button-search-group">
-								<button>Lọc</button>
-							</div>
-						</div>
-					</div>
-					<a class="panel-title" data-toggle="collapse" href="#payment-method" aria-expanded="false" aria-controls="payment-method">
-						<span>HÌNH THỨC THANH TOÁN</span>
-						<span class="float-right"><div id="payment-method-arrow" class="fa fa-chevron-down arrow-filter"></div></span>
-					</a>
-					<div class="collapse" id="payment-method">
-						<div class="filter-box">
-							<label>
-								<input type="checkbox"> Tiền mặt
-								<span class="quantity-product">(10)</span>
-							</label>
-							<label>
-								<input type="checkbox"> Chuyển khoản bằng ngân hàng
-								<span class="quantity-product">(36)</span>
-							</label>
-							<div class="button-search-group">
-								<button>Lọc</button>
-							</div>
-						</div>
-					</div>
-					<a class="panel-title" data-toggle="collapse" href="#range-price" aria-expanded="false" aria-controls="range-price">
-						<span>KHOẢNG GIÁ</span>
-						<span class="float-right"><div id="range-price-arrow" class="fa fa-chevron-down arrow-filter"></div></span>
-					</a>
-					<div class="collapse" id="range-price">
-						<div class="filter-box">
-							<div id="display-price">Từ 50.000<sup>đ</sup> đến 5.000.000<sup>đ</sup></div>
-							<div id="price-bar-wrapper">
-								<input id="price-bar" type="text" data-slider-min="50" data-slider-max="5000" data-slider-step="50" data-slider-value="[50,5000]" data-slider-tooltip="hide" />
-							</div>
-							<div class="button-search-group">
-								<button>Lọc</button>
-							</div>
+				<div class="col-lg-4 col-xl-4" ng-app="SinglePage" ng-controller="thumbnailController">
+					<img id="main-product-image" class="img-fluid hand" alt="Hinh anh chi tiet san pham" ng-click="handleThumbnailMiniClick()">
+					<div id="thumbnail-small">
+						<div class="hand thumnail-item" ng-repeat="item in thumbnailArr" ng-click="handleThumbnailClick($index,item.src)" style="background-color: {{$index==currentGallery?'#ee3ad8':'transparent'}};">
+							<img src="{{item.src}}" class="img-fluid" alt="Hinh anh chi tiet san pham">
 						</div>
 					</div>
 				</div>
-				<div class="col-12 col-lg-10 col-xl-10" id="right-panel">
-					<div class="main-page-content">Có 10 kết quả tìm kiếm với điều kiện:</div>
-					<div class="main-page-content">
-						<div class="tag-filter">
-							<span style="">Tên sản phẩm: long bào</span>
-							<span class="fa fa-times"></span>
-						</div>
-						<div class="tag-filter">
-							<span style="">Tasd</span>
-							<span class="fa fa-times"></span>
-						</div>
-						<div class="tag-filter">
-							<span style="">ejejejerj</span>
-							<span class="fa fa-times"></span>
-						</div>
-					</div>
-					<div class="main-page-content" style="text-align: right;margin-top: 10px;">
-						<span style="font-size: 14px;display: inline-block;vertical-align: middle;color: #757575;font-weight: 500;">Sắp xếp theo: </span>
-						<select class="custom-select">
-							<option value="0" selected>Sản phẩm mới nhất</option>
-							<option value="1">Giá: Từ cao đến thấp</option>
-							<option value="2">Giá: Từ thấp đến cao</option>
-							<option value="3">Lượt mua nhiều nhất</option>
-							<option value="4">Giảm giá nhiều nhất</option>
-						</select>
-					</div>
-					<div class="container-fluid" style="margin-top: 10px;">
-						<div class="row">
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/ts/product/54/24/a7/e2f49abe6b2d449df0c4b225d170b3a0.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/ts/product/54/24/a7/e2f49abe6b2d449df0c4b225d170b3a0.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/ts/product/54/24/a7/e2f49abe6b2d449df0c4b225d170b3a0.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/ts/product/54/24/a7/e2f49abe6b2d449df0c4b225d170b3a0.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/ts/product/54/24/a7/e2f49abe6b2d449df0c4b225d170b3a0.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/ts/product/54/24/a7/e2f49abe6b2d449df0c4b225d170b3a0.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/ts/product/54/24/a7/e2f49abe6b2d449df0c4b225d170b3a0.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="main-item-product col-lg-4 col-xl-3 col-6">
-								<a href="">
-									<div class="card">
-										<div class="card-img-top main-img-product" style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/ts/product/54/24/a7/e2f49abe6b2d449df0c4b225d170b3a0.jpg');">
-											<span class="fa fa-star favorite-btn"></span>
-											<span class="float-right discount-product">-40%</span>
-										</div>
-										<div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
-										<div class="price-product">50,000<sup>đ</sup></div>
-										<div class="content-product">
-											<span class="real-price">500,000<sup>đ</sup></span>
-											<span class="float-right"><span class="fa fa-shopping-cart"></span>&nbsp;<span>235</span></span>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<nav class="main-page-content custom-pagination" style="margin-top: 25px;" ng-app="SinglePage" ng-controller="pagingController">
-						<ul class="pagination pagination-sm justify-content-center">
-							<li class="page-item{{currentPage==1?' disabled':''}}" ng-click="back()">
-								<div class="page-link" aria-label="Previous">
-									<span aria-hidden="true">&laquo;</span>
-									<span class="sr-only">Previous</span>
-								</div>
-							</li>
-							<li ng-repeat="item in pagingArr" class="page-item{{currentPage==item?' active':''}}" ng-click="updatePaging(item)"><div class="page-link">{{item}}</div></li>
-							<li class="page-item{{currentPage==totalPages?' disabled':''}}" ng-click="next()">
-								<div class="page-link" aria-label="Next">
-									<span aria-hidden="true">&raquo;</span>
-									<span class="sr-only">Next</span>
-								</div>
-							</li>
-						</ul>
-					</nav>
+				<div class="col-lg-8 col-xl-8">
+					
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- content stop -->
+	<!-- detail stop -->
+
+	<!-- photo start -->
+	<!-- Root element of PhotoSwipe. Must have class pswp. -->
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+    	It's a separate element, as animating opacity is faster than rgba(). -->
+    	<div class="pswp__bg"></div>
+
+    	<!-- Slides wrapper with overflow:hidden. -->
+    	<div class="pswp__scroll-wrap">
+
+    		<!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+    		<div class="pswp__container">
+    			<!-- don't modify these 3 pswp__item elements, data is added later on -->
+    			<div class="pswp__item"></div>
+    			<div class="pswp__item"></div>
+    			<div class="pswp__item"></div>
+    		</div>
+
+    		<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    		<div class="pswp__ui pswp__ui--hidden">
+
+    			<div class="pswp__top-bar">
+
+    				<!--  Controls are self-explanatory. Order can be changed. -->
+
+    				<div class="pswp__counter"></div>
+
+    				<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+    				<button class="pswp__button pswp__button--share" title="Share"></button>
+
+    				<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+    				<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+    				<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+    				<!-- element will get class pswp__preloader--active when preloader is running -->
+    				<div class="pswp__preloader">
+    					<div class="pswp__preloader__icn">
+    						<div class="pswp__preloader__cut">
+    							<div class="pswp__preloader__donut"></div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+
+    			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+    				<div class="pswp__share-tooltip"></div> 
+    			</div>
+
+    			<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    			</button>
+
+    			<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    			</button>
+
+    			<div class="pswp__caption">
+    				<div class="pswp__caption__center"></div>
+    			</div>
+
+    		</div>
+
+    	</div>
+
+    </div>
+    <!-- photo stop -->
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<!-- footer start -->
-	<div id="main-footer">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-6 col-md-6 col-lg-6 col-xl-2 info-footer">
-					<div class="title-footer">VỀ CHÚNG TÔI</div>
-					<div class="first-link-footer"><a href="">abc là gì?</a></div>
-					<div class="link-footer"><a href="">Quy định sử dụng</a></div>
-				</div>
-				<div class="col-6 col-md-6 col-lg-6 col-xl-2 info-footer">
-					<div class="title-footer">HƯỚNG DẪN SỬ DỤNG</div>
-					<div class="first-link-footer"><a href="">Hướng dẫn mua hàng</a></div>
-					<div class="link-footer"><a href="">Hướng dẫn thanh toán</a></div>
-					<div class="link-footer"><a href="">Hướng dẫn phản hồi</a></div>
-				</div>
-				<div class="col-6 col-md-6 col-lg-6 col-xl-2 info-footer">
-					<div class="title-footer">TRỢ GIÚP</div>
-					<div class="first-link-footer"><a href="">Cách kiểm tra hàng</a></div>
-					<div class="link-footer"><a href="">Hình thức thanh toán</a></div>
-				</div>
-				<div class="col-6 col-md-6 col-lg-6 col-xl-2 info-footer">
-					<div class="title-footer">LIÊN HỆ</div>
-					<div class="first-link-footer"><a href="">Thông tin liên hệ</a></div>
-					<div class="link-footer"><a href="">Giờ làm việc</a></div>
-				</div>
-				<div class="col-12 col-md-12 col-lg-12 col-xl-4" id="fb-footer">
-					<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FdeliveryNow.vn%2F&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=348039728945856" width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- footer stop -->
+    <!-- footer start -->
+    <div id="main-footer">
+    	<div class="container-fluid">
+    		<div class="row">
+    			<div class="col-6 col-md-6 col-lg-6 col-xl-2 info-footer">
+    				<div class="title-footer">VỀ CHÚNG TÔI</div>
+    				<div class="first-link-footer"><a href="">abc là gì?</a></div>
+    				<div class="link-footer"><a href="">Quy định sử dụng</a></div>
+    			</div>
+    			<div class="col-6 col-md-6 col-lg-6 col-xl-2 info-footer">
+    				<div class="title-footer">HƯỚNG DẪN SỬ DỤNG</div>
+    				<div class="first-link-footer"><a href="">Hướng dẫn mua hàng</a></div>
+    				<div class="link-footer"><a href="">Hướng dẫn thanh toán</a></div>
+    				<div class="link-footer"><a href="">Hướng dẫn phản hồi</a></div>
+    			</div>
+    			<div class="col-6 col-md-6 col-lg-6 col-xl-2 info-footer">
+    				<div class="title-footer">TRỢ GIÚP</div>
+    				<div class="first-link-footer"><a href="">Cách kiểm tra hàng</a></div>
+    				<div class="link-footer"><a href="">Hình thức thanh toán</a></div>
+    			</div>
+    			<div class="col-6 col-md-6 col-lg-6 col-xl-2 info-footer">
+    				<div class="title-footer">LIÊN HỆ</div>
+    				<div class="first-link-footer"><a href="">Thông tin liên hệ</a></div>
+    				<div class="link-footer"><a href="">Giờ làm việc</a></div>
+    			</div>
+    			<div class="col-12 col-md-12 col-lg-12 col-xl-4" id="fb-footer">
+    				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FdeliveryNow.vn%2F&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=348039728945856" width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <!-- footer stop -->
 
 
-	<script src="js/resultsearch.js"></script>
+    <script src="js/detail.js"></script>
 </body>
 </html>
