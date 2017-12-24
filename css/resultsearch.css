@@ -226,13 +226,6 @@ input[type="checkbox"] {
     background-color: #bf7327;
 }
 
-.custom-select {
-    font-size: 14px;
-    padding: 5px 1.75rem 5px 8px !important;
-    height: auto !important;
-    cursor: pointer;
-}
-
 #right-panel > div:first-child {
     font-size: 15px;
     color: #717171;
@@ -244,4 +237,17 @@ input[type="checkbox"] {
 
 .custom-pagination > ul > li {
     cursor: pointer;
+}
+
+#sort-label {
+    text-align: right;
+    margin-top: 10px;
+}
+
+#sort-label > span {
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #757575;
+    font-weight: 500;
 }

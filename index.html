@@ -18,7 +18,7 @@
 	<script src="photoswipe/photoswipe.min.js"></script>
 	<script src="photoswipe/photoswipe-ui-default.min.js"></script>
 </head>
-<body>
+<body ng-app="SinglePage">
 	<!-- header start -->
 	<div id="header-desktop" class="fixed-top">
 		<div class="status-bar">
@@ -266,16 +266,65 @@
 	<div class="content-margin content-detail">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-4 col-xl-4" ng-app="SinglePage" ng-controller="thumbnailController">
+				<div class="col-lg-4 col-xl-4" ng-controller="thumbnailController">
 					<img id="main-product-image" class="img-fluid hand" alt="Hinh anh chi tiet san pham" ng-click="handleThumbnailMiniClick()">
 					<div id="thumbnail-small">
-						<div class="hand thumnail-item" ng-repeat="item in thumbnailArr" ng-click="handleThumbnailClick($index,item.src)" style="background-color: {{$index==currentGallery?'#ee3ad8':'transparent'}};">
-							<img src="{{item.src}}" class="img-fluid" alt="Hinh anh chi tiet san pham">
+						<div class="hand thumnail-item" ng-repeat="item in thumbnailArr" ng-click="handleThumbnailClick($index,item)" style="background-color: {{$index==currentGallery?'#ee3ad8':'transparent'}};">
+							<img src="{{item}}" class="img-fluid" alt="Hinh anh chi tiet san pham">
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-8 col-xl-8">
-					
+				<div class="col-lg-8 col-xl-8" id="right-panel">
+					<div id="title">Loa Di Động Bluetooth JBL Trip (Đen) - Hàng Chính Hãng</div>
+					<div id="short-description">Trải Nghiệm Những Món Ăn Ngon Độc Đáo, Tinh Tế Của Nghệ Thuật Ẩm Thực Thế Giới Trong Tiệc Buffet Cao Cấp Trưa/ Tối Sushi Và Tinh Hoa Lẩu Nhật Tại Annz Japanese Dining – Free Khăn Lạnh. Voucher 359,000 VNĐ, Còn 199,000 VNĐ, Giảm 45%</div>
+
+					<div class="line" style="margin-top: 20px;"></div>
+					<div class="container-fluid" style="margin-top: 5px;">
+						<div class="row">
+							<div class="col-lg-4 col-xl-4 column-info">
+								<div id="column-info-first">
+									<div id="price">1,000,000<sup>đ</sup></div>
+									<div class="price-detail"><span>Tiết kiệm:</span> <span id="discount">20%</span> <span>(125,000 đồng)</span></div>
+									<div class="price-detail">Giá gốc: 1,500,000 đồng</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-xl-4 column-info">
+								<div id="sold">
+									<div class="number-display" id="number-display-sold">432</div>
+									<div class="extra-display">lượt đã mua</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-xl-4 column-info">
+								<div id="column-info-third">
+									<div class="number-display" id="number-display-time">40-49</div>
+									<div class="extra-display">ngày giao hàng</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="margin-top: 5px;" class="line"></div>
+					<div style="margin-top: 10px;">
+						<div id="label-option">Chọn kích cỡ</div>
+						<div ng-controller="optionController">
+							<div ng-repeat="item in optionList" class="selection-card{{$index==currentOption?' selection-card-active':''}}" ng-click="handleOptionClick($index)">{{item}}</div>
+						</div>
+					</div>
+					<div style="margin-top: 10px;" class="line"></div>
+					<div class="container-fluid" style="margin-top: 10px;">
+						<div class="row">
+							<div class="col-lg-3 col-xl-3" ng-controller="quantityController">
+								<div>
+									<span style="display: inline-block;vertical-align: middle">Số lượng </span>
+									<select class="custom-select">
+										<option ng-repeat="item in quantity" value="{{item}}">{{item}}</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-9 col-xl-9">
+								
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
