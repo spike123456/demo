@@ -161,3 +161,64 @@
 	color: #818181;
 	font-weight: 400;
 }
+
+#add-cart {
+	background-color: #ea740e;
+    padding: 0px 20px 0px 80px;
+}
+
+#bookmark-product {
+	background-color: #1fa9b7;
+    padding: 0px 40px 0px 100px;
+}
+
+.btn-detail-page {
+	height: 50px;
+	display: flex;
+    align-items: center;
+    width: fit-content;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+    font-size: 15px;
+    font-weight: 450;
+}
+
+#add-cart:hover {
+	background-color: #f0994e;
+}
+
+#bookmark-product:hover {
+	background-color: #3dc6d4;
+}
+
+.btn-detail-page:active {
+	top: 1px;
+}
+
+#add-cart:before {
+	background-image: url('../svg/shopping_cart.svg');
+	
+}
+
+#bookmark-product:before {
+	background-image: url('../svg/rate_star.svg');
+}
+
+.btn-detail-page:before {
+	content : "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 50px;
+	background-color: rgba(0,0,0,0.2);
+	background-repeat: no-repeat;
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
