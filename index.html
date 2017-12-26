@@ -19,6 +19,15 @@
 	<script src="photoswipe/photoswipe-ui-default.min.js"></script>
 </head>
 <body ng-app="SinglePage">
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11';
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
 	<!-- header start -->
 	<div id="header-desktop" class="fixed-top">
 		<div class="status-bar">
@@ -393,6 +402,7 @@
 							Ngoài ra, bạn còn có thể thưởng thức món ăn ngon tại khu ẩm thực của Đầm Sen nữa. Đừng chần chừ nữa, mua ngay và trải nghiệm bạn nhé.
 						</div>
 					</div>
+					<div class="fb-comments" data-href="http://ui.minchang.xyz/" data-numposts="5"></div>
 				</div>
 				<div class="col-lg-3 col-xl-3 margin-content-item">
 					<div id="related-product">Sản phẩm liên quan</div>
