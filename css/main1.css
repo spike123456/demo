@@ -632,6 +632,7 @@ body {
 #cart-first-step {
 	background-color: #FAFAFA;
 	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 #cart-header-label {
