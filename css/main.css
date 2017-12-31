@@ -31,6 +31,12 @@ body {
 	display: none;
 }
 
+#cart-content {
+	height: 300px;
+	overflow-y: auto;
+	display: inline-block;
+}
+
 @media only screen and (max-width: 700px) {
 	#header-desktop {
 		display: none;
@@ -66,6 +72,10 @@ body {
 
 	.content-margin {
 		margin-top: 95px !important;
+	}
+
+	#cart-content {
+		height: 200px;
 	}
 }
 
@@ -641,12 +651,6 @@ body {
 	width: 800px;
 	height: 1px;
 	background-color: #cbcbcb;
-}
-
-#cart-content {
-	height: 300px;
-	overflow-y: auto;
-	display: inline-block;
 }
 
 #cart-content > table {
