@@ -18,6 +18,9 @@
 	<link rel="stylesheet" href="photoswipe/default-skin/default-skin.css">
 	<script src="photoswipe/photoswipe.min.js"></script>
 	<script src="photoswipe/photoswipe-ui-default.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
 <body ng-app="SinglePage">
 	<div id="fb-root"></div>
@@ -58,7 +61,7 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-3 center-middle">
-						<div style="margin-left: 0px;" class="hand btn-system">
+						<div style="margin-left: 0px;" class="hand btn-system" data-toggle="modal" data-target="#cart-modal">
 							<div class="fa fa-shopping-cart"></div>
 							<div class="title-btn-system">Giỏ hàng</div>
 						</div>
@@ -162,7 +165,7 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-4">
-									<div class="hand">
+									<div class="hand" data-toggle="modal" data-target="#cart-modal">
 										<div class="fa fa-shopping-cart"></div>
 										<div class="title-btn-system">Giỏ hàng</div>
 									</div>
@@ -406,7 +409,7 @@
 					<div class="panel-detail margin-content-item" style="padding-bottom: 0px;">
 						<div class="title-detail-product">Bình luận</div>
 						<div style="margin: 10px 0px;" class="line"></div>
-						<div class="fb-comments" data-href="http://ui.minchang.xyz/detail.html" data-numposts="5" data-width="100%"></div>
+						<div class="fb-comments" data-href="http://ui.minchang.xyz/" data-numposts="5" data-width="100%"></div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-xl-3 margin-content-item">
@@ -586,6 +589,76 @@
     <!-- photo stop -->
 
 
+    <!-- cart start -->
+    <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    	<div class="modal-dialog modal-lg" role="document">
+    		<div class="modal-content">
+    			<div id="header-cart">
+    				<div class="container-fluid">
+    					<div class="row" id="size-step">
+    						<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 center-middle">
+    							<div class="half-line-step space-line-step"></div><div class="checkout-step current-step">1</div><div class="half-line-step line-step"></div>
+    						</div>
+    						<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 center-middle">
+    							<div class="half-line-step line-step"></div><div class="checkout-step">2</div><div class="half-line-step line-step"></div>
+    						</div>
+    						<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 center-middle">
+    							<div class="half-line-step line-step"></div><div class="checkout-step">3</div><div class="half-line-step space-line-step"></div>
+    						</div>
+    					</div>
+    					<div class="row">
+    						<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 step-label current-step-label">Giỏ hàng</div>
+    						<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 step-label">Địa chỉ giao hàng</div>
+    						<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 step-label">Thanh toán</div>
+    					</div>
+    				</div>
+    			</div>
+
+    			<!-- first step start -->
+    			<div id="cart-first-step">
+    				<table id="cart-header-label">
+    					<tr>
+    						<td style="width: 52%;">Sản phẩm</td>
+    						<td style="width: 15%;">Đơn giá</td>
+    						<td style="width: 12%;">Số lượng</td>
+    						<td style="width: 15%;">Thành tiền</td>
+    						<td style="width: 6%;"></td>
+    					</tr>
+    				</table>
+    				<div id="cart-line"></div>
+    				<div id="cart-content">
+    					<table ng-controller="cartController">
+    						<tr ng-repeat="item in cacheCart">
+    							<td style="width: 9%;">
+    								<img src="{{item.img}}" class="img-fluid" alt="hinh anh san pham">
+    							</td>
+    							<td style="width: 43%;">{{item.title}}</td>
+    							<td style="width: 15%;">{{formatPrice(item.price*1000)}}<sup>đ</sup></td>
+    							<td style="width: 12%;">
+    								<select class="custom-select cart-select">
+										<option ng-repeat="subQuantity in quantity" value="{{subQuantity}}" ng-selected="subQuantity==item.quantity">{{subQuantity}}</option>
+									</select>
+    							</td>
+    							<td style="width: 15%;">{{formatPrice(item.price*item.quantity*1000)}}<sup>đ</sup></td>
+    							<td style="width: 6%;">
+    								<div id="remove-cart"></div>
+    							</td>
+    						</tr>
+    					</table>
+    				</div>
+    			</div>
+    			<!-- first step stop -->
+
+    			<div class="footer-modal">
+    				<div class="cancel-modal" data-dismiss="modal">HUỶ BỎ</div>
+    				<div class="confirm-modal">TIẾP TỤC</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <!-- cart stop -->
+
+
     <!-- footer start -->
     <div id="main-footer">
     	<div class="container-fluid">
@@ -621,5 +694,6 @@
 
 
     <script src="js/detail.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
