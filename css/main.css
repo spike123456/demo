@@ -537,6 +537,14 @@ body {
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+#cart-address-option {
+	width: 100%;
+	font-size: 15px;
+	padding: 6px 1.75rem 6px .75rem !important;
+	color: #81888f !important;
+	font-weight: 400;
+}
+
 .custom-select {
     font-size: 14px;
     padding: 5px 1.75rem 5px 8px !important;
@@ -739,18 +747,8 @@ body {
 	box-shadow: 0 0 0 0.2rem #d06e0a40 !important;
 }
 
-.form-control::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder, .form-control::-moz-placeholder, .form-control::-ms-placeholder {
 	color: #81888f !important;
-	font-weight: 400;
-}
-
-.form-control::-moz-placeholder {
-	color:#81888f !important;
-	font-weight: 400;
-}
-
-.form-control::-ms-placeholder {
-	color:#81888f !important;
 	font-weight: 400;
 }
 

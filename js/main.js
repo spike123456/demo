@@ -1,5 +1,10 @@
 var cartStep=1;
 
+function onUpdateCartOption(e) {
+    console.log(e);
+    e.style.cssText="color: black !important;";
+}
+
 function goToStep() {
     $(".checkout-cart-step").css("display","none");
     $(".current-step").removeClass("current-step");
@@ -17,6 +22,7 @@ function goNextStep(e) {
     var ward=$("#ward-address");
     var main=$("#main-address");
     var note=$("#note-address");
+    var option=$("#cart-address-option");
 
     switch (cartStep) {
         case 1:
@@ -25,6 +31,8 @@ function goNextStep(e) {
             city.val("");
             district.val("");
             ward.val("");
+            option.css("color","#81888f");
+            option.val("");
             main.val("");
             note.val("");
             break;
@@ -51,6 +59,11 @@ function goNextStep(e) {
 
             if (!ward.val()) {
                 showToast("error","Lỗi","Phường/Xã không hợp lệ");
+                return;
+            }
+
+            if (!option.val()) {
+                showToast("error","Lỗi","Loại địa chỉ không hợp lệ");
                 return;
             }
 

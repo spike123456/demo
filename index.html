@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="fb:app_id" content="295434974194630"/>
-    <link rel="stylesheet" href="css/main3.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/detail.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -778,10 +778,17 @@
                                 <input type="text" class="form-control" id="ward-address" placeholder="Phường/Xã">
                             </div>
                             <div class="col-lg-6 col-xl-6">
+                                <select class="custom-select" id="cart-address-option" onchange="onUpdateCartOption(this)">
+                                    <option value="" disabled selected>Loại địa chỉ</option>
+                                    <option value="0">Nhà riêng</option>
+                                    <option value="1">Công ty</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-12 col-xl-12">
                                 <input type="text" class="form-control" id="main-address" placeholder="Địa chỉ (Số nhà, Đường,...)">
                             </div>
                             <div class="col-lg-12 col-xl-12">
-                                <textarea class="form-control" id="note-address" placeholder="Lưu ý (Hướng dẫn giao hàng ở một số địa chỉ đặc biệt nếu có)" rows="4"></textarea>
+                                <textarea class="form-control" id="note-address" placeholder="Ghi chú (Hướng dẫn giao hàng ở một số địa chỉ đặc biệt nếu có)" rows="4"></textarea>
                             </div>
                         </div>
                     </div>
@@ -844,6 +851,6 @@
 
 
 <script src="js/detail.js"></script>
-<script src="js/main3.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
