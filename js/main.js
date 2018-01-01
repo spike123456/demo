@@ -1,4 +1,78 @@
+var cartStep=1;
 
+function goToStep() {
+    $(".checkout-cart-step").css("display","none");
+    $(".current-step").removeClass("current-step");
+    $(".current-step-label").removeClass("current-step-label");
+    $(".checkout-cart-step").get(cartStep-1).style.display="block";
+    $(".checkout-step").get(cartStep-1).className += " current-step";
+    $(".step-label").get(cartStep-1).className += " current-step-label";
+}
+
+function goNextStep(e) {
+    var name=$("#name-address");
+    var phone=$("#phone-address");
+    var city=$("#city-address");
+    var district=$("#district-address");
+    var ward=$("#ward-address");
+    var main=$("#main-address");
+    var note=$("#note-address");
+
+    switch (cartStep) {
+        case 1:
+            name.val("");
+            phone.val("");
+            city.val("");
+            district.val("");
+            ward.val("");
+            main.val("");
+            note.val("");
+            break;
+        case 2:
+            if (!name.val()) {
+                showToast("error","Lỗi","Tên không hợp lệ");
+                return;
+            }
+
+            if (!phone.val() || !isNumeric(phone.val())) {
+                showToast("error","Lỗi","Số điện thoại không hợp lệ");
+                return;
+            }
+
+            if (!city.val()) {
+                showToast("error","Lỗi","Tỉnh/Thành phố không hợp lệ");
+                return;
+            }
+
+            if (!district.val()) {
+                showToast("error","Lỗi","Quận/Huyện không hợp lệ");
+                return;
+            }
+
+            if (!ward.val()) {
+                showToast("error","Lỗi","Phường/Xã không hợp lệ");
+                return;
+            }
+
+            if (!main.val()) {
+                showToast("error","Lỗi","Địa chỉ không hợp lệ");
+                return;
+            }
+            break;
+        case 3:
+            return;
+        default:
+            break;
+    }
+
+    cartStep++;
+    goToStep();
+    e.innerHTML=cartStep===3?"THANH TOÁN":"TIẾP TỤC";
+}
+
+function isNumeric(num){
+    return !isNaN(num);
+}
 
 function showToast(type,title,message) {
 	toastr.options = {
@@ -19,7 +93,7 @@ function showToast(type,title,message) {
 		"hideMethod": "fadeOut"
 	};
 
-	toastr[type](title,message);
+	toastr[type](message,title);
 }
 
 
@@ -100,7 +174,8 @@ app.controller('cartController', function($scope) {
     ];
 
     $('#cart-modal').on('show.bs.modal', function (e) {
-    	
+    	cartStep=0;
+        goNextStep(document.getElementsByClassName("confirm-modal")[0]);
 	});
 
     $scope.formatPrice = function(num) {

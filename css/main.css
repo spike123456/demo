@@ -31,7 +31,7 @@ body {
 	display: none;
 }
 
-#cart-content {
+#cart-content-list {
 	height: 300px;
 	overflow-y: auto;
 	display: inline-block;
@@ -45,6 +45,15 @@ body {
     padding: 5px;
     background-color: yellow;
     display: none;
+}
+
+.cart-height {
+	height: 347px;
+}
+
+#cart-content-address {
+	overflow-y: auto;
+	height: 314px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -84,8 +93,16 @@ body {
 		margin-top: 95px !important;
 	}
 
-	#cart-content {
+	#cart-content-list {
 		height: 200px;
+	}
+
+	.cart-height {
+		height: 275px;
+	}
+
+	#cart-content-address {
+		height: 242px;
 	}
 }
 
@@ -664,39 +681,39 @@ body {
 	text-align: center;
 }
 
-#cart-line {
+.cart-line {
 	width: 800px;
 	height: 1px;
 	background-color: #cbcbcb;
 }
 
-#cart-content > table {
+#cart-content-list > table {
 	width: 800px;
 	font-size: 12px;
 }
 
-#cart-content > table > tbody > tr > td {
+#cart-content-list > table > tbody > tr > td {
 	vertical-align: top;
 	font-weight: 400;
 	text-align: center;
 	padding-top: 12px;
 }
 
-#cart-content > table > tbody > tr > td:first-child {
+#cart-content-list > table > tbody > tr > td:first-child {
 	padding: 7px;
 }
 
-#cart-content > table > tbody > tr > td:nth-child(2) {
+#cart-content-list > table > tbody > tr > td:nth-child(2) {
 	padding-left: 5px;
 	text-align: left;
 	font-weight: 600;
 }
 
-#cart-content > table > tbody > tr > td:nth-child(4) {
+#cart-content-list > table > tbody > tr > td:nth-child(4) {
 	padding-top: 5px;
 }
 
-#cart-content > table > tbody > tr > td:last-child {
+#cart-content-list > table > tbody > tr > td:last-child {
 	text-align: left;
 }
 
@@ -715,4 +732,48 @@ body {
 	text-align: right;
 	line-height: 60px;
 	padding-right: 20px;
+}
+
+.form-control:focus {
+	border-color: #dca817 !important;
+	box-shadow: 0 0 0 0.2rem #d06e0a40 !important;
+}
+
+.form-control::-webkit-input-placeholder {
+	color: #81888f !important;
+	font-weight: 400;
+}
+
+.form-control::-moz-placeholder {
+	color:#81888f !important;
+	font-weight: 400;
+}
+
+.form-control::-ms-placeholder {
+	color:#81888f !important;
+	font-weight: 400;
+}
+
+#label-cart-address {
+	color: #505050;
+	font-size: 14px;
+	height: 32px;
+	padding: 0px 10px;
+	line-height: 32px;
+}
+
+#cart-content-address > .container-fluid {
+	margin: 10px 0px;
+}
+
+#cart-content-address > .container-fluid > .row > div {
+	padding: 10px;
+}
+
+#cart-content-address > .container-fluid > .row > div > .form-control {
+	font-size: 15px;
+}
+
+textarea {
+	resize: none !important;
 }
