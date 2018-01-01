@@ -777,3 +777,7 @@ body {
 textarea {
 	resize: none !important;
 }
+
+.toast-bottom-right {
+	bottom: 50px !important;
+}
