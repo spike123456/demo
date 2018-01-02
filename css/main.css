@@ -47,10 +47,6 @@ body {
     display: none;
 }
 
-.cart-height {
-	height: 347px;
-}
-
 #cart-content-address {
 	overflow-y: auto;
 	height: 314px;
@@ -95,10 +91,6 @@ body {
 
 	#cart-content-list {
 		height: 200px;
-	}
-
-	.cart-height {
-		height: 275px;
 	}
 
 	#cart-content-address {
@@ -537,7 +529,7 @@ body {
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-#cart-address-option {
+#cart-address-option, #cart-city-address-option {
 	width: 100%;
 	font-size: 15px;
 	padding: 6px 1.75rem 6px .75rem !important;
@@ -778,4 +770,13 @@ textarea {
 
 .toast-bottom-right {
 	bottom: 50px !important;
+}
+
+#total-price-first-step {
+	text-align: center;
+	background-color: #39cda4;
+	font-size: 13px;
+	font-weight: 400;
+	color: #f00668;
+	padding: 5px;
 }

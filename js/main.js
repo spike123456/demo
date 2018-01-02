@@ -1,7 +1,6 @@
 var cartStep=1;
 
 function onUpdateCartOption(e) {
-    console.log(e);
     e.style.cssText="color: black !important;";
 }
 
@@ -17,7 +16,7 @@ function goToStep() {
 function goNextStep(e) {
     var name=$("#name-address");
     var phone=$("#phone-address");
-    var city=$("#city-address");
+    var city=$("#cart-city-address-option");
     var district=$("#district-address");
     var ward=$("#ward-address");
     var main=$("#main-address");
@@ -28,6 +27,7 @@ function goNextStep(e) {
         case 1:
             name.val("");
             phone.val("");
+            city.css("color","#81888f");
             city.val("");
             district.val("");
             ward.val("");

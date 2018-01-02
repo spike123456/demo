@@ -751,6 +751,7 @@
                         </table>
                     </div>
                 </div>
+                <div id="total-price-first-step">Tổng tạm tính: 12,545,000 đồng</div>
             </div>
             <!-- first step stop -->
 
@@ -769,7 +770,72 @@
                                 <input type="text" class="form-control" id="phone-address" placeholder="Điện thoại di động">
                             </div>
                             <div class="col-lg-6 col-xl-6">
-                                <input type="text" class="form-control" id="city-address" placeholder="Tỉnh/Thành phố">
+                                <select class="custom-select" id="cart-city-address-option" onchange="onUpdateCartOption(this)">
+                                    <option value="" disabled selected>Tỉnh/Thành phố</option>
+                                    <option value="294">Hồ Chí Minh</option>
+                                    <option value="297">Hà Nội</option>
+                                    <option value="291">Đà Nẵng</option>
+                                    <option value="278">An Giang</option>
+                                    <option value="280">Bà Rịa - Vũng Tàu</option>
+                                    <option value="282">Bắc Giang</option>
+                                    <option value="281">Bắc Kạn</option>
+                                    <option value="279">Bạc Liêu</option>
+                                    <option value="283">Bắc Ninh</option>
+                                    <option value="284">Bến Tre</option>
+                                    <option value="285">Bình Dương</option>
+                                    <option value="286">Bình Phước</option>
+                                    <option value="287">Bình Thuận</option>
+                                    <option value="316">Bình Định</option>
+                                    <option value="289">Cà Mau</option>
+                                    <option value="290">Cần Thơ</option>
+                                    <option value="288">Cao Bằng</option>
+                                    <option value="293">Gia Lai</option>
+                                    <option value="295">Hà Giang</option>
+                                    <option value="296">Hà Nam</option>
+                                    <option value="299">Hà Tĩnh</option>
+                                    <option value="300">Hải Dương</option>
+                                    <option value="301">Hải Phòng</option>
+                                    <option value="319">Hậu Giang</option>
+                                    <option value="302">Hoà Bình</option>
+                                    <option value="320">Hưng Yên</option>
+                                    <option value="321">Khánh Hòa</option>
+                                    <option value="322">Kiên Giang</option>
+                                    <option value="323">Kon Tum</option>
+                                    <option value="304">Lai Châu</option>
+                                    <option value="306">Lâm Đồng</option>
+                                    <option value="305">Lạng Sơn</option>
+                                    <option value="324">Lào Cai</option>
+                                    <option value="325">Long An</option>
+                                    <option value="326">Nam Định</option>
+                                    <option value="327">Nghệ An</option>
+                                    <option value="307">Ninh Bình</option>
+                                    <option value="328">Ninh Thuận</option>
+                                    <option value="329">Phú Thọ</option>
+                                    <option value="308">Phú Yên</option>
+                                    <option value="309">Quảng Bình</option>
+                                    <option value="310">Quảng Nam</option>
+                                    <option value="311">Quảng Ngãi</option>
+                                    <option value="330">Quảng Ninh</option>
+                                    <option value="312">Quảng Trị</option>
+                                    <option value="313">Sóc Trăng</option>
+                                    <option value="331">Sơn La</option>
+                                    <option value="332">Tây Ninh</option>
+                                    <option value="333">Thái Bình</option>
+                                    <option value="334">Thái Nguyên</option>
+                                    <option value="335">Thanh Hóa</option>
+                                    <option value="303">Thừa Thiên Huế</option>
+                                    <option value="336">Tiền Giang</option>
+                                    <option value="314">Trà Vinh</option>
+                                    <option value="315">Tuyên Quang</option>
+                                    <option value="337">Vĩnh Long</option>
+                                    <option value="338">Vĩnh Phúc</option>
+                                    <option value="339">Yên Bái</option>
+                                    <option value="292">Đắk Lắk</option>
+                                    <option value="340">Đắk Nông</option>
+                                    <option value="341">Điện Biên</option>
+                                    <option value="317">Đồng Nai</option>
+                                    <option value="318">Đồng Tháp</option>
+                                </select>
                             </div>
                             <div class="col-lg-6 col-xl-6">
                                 <input type="text" class="form-control" id="district-address" placeholder="Quận/Huyện">
@@ -798,7 +864,7 @@
 
 
             <!-- third step start -->
-            <div class="checkout-cart-step cart-height">
+            <div class="checkout-cart-step">
 
             </div>
             <!-- third step stop -->
