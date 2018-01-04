@@ -764,10 +764,10 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-6 col-xl-6">
-                                <input type="text" class="form-control" id="name-address" placeholder="Họ và tên">
+                                <input type="text" class="form-control normal-form-control" id="name-address" placeholder="Họ và tên">
                             </div>
                             <div class="col-lg-6 col-xl-6">
-                                <input type="text" class="form-control" id="phone-address" placeholder="Điện thoại di động">
+                                <input type="text" class="form-control normal-form-control" id="phone-address" placeholder="Điện thoại di động">
                             </div>
                             <div class="col-lg-6 col-xl-6">
                                 <select class="custom-select" id="cart-city-address-option" onchange="onUpdateCartOption(this)">
@@ -838,10 +838,10 @@
                                 </select>
                             </div>
                             <div class="col-lg-6 col-xl-6">
-                                <input type="text" class="form-control" id="district-address" placeholder="Quận/Huyện">
+                                <input type="text" class="form-control normal-form-control" id="district-address" placeholder="Quận/Huyện">
                             </div>
                             <div class="col-lg-6 col-xl-6">
-                                <input type="text" class="form-control" id="ward-address" placeholder="Phường/Xã">
+                                <input type="text" class="form-control normal-form-control" id="ward-address" placeholder="Phường/Xã">
                             </div>
                             <div class="col-lg-6 col-xl-6">
                                 <select class="custom-select" id="cart-address-option" onchange="onUpdateCartOption(this)">
@@ -851,10 +851,10 @@
                                 </select>
                             </div>
                             <div class="col-lg-12 col-xl-12">
-                                <input type="text" class="form-control" id="main-address" placeholder="Địa chỉ (Số nhà, Đường,...)">
+                                <input type="text" class="form-control normal-form-control" id="main-address" placeholder="Địa chỉ (Số nhà, Đường,...)">
                             </div>
                             <div class="col-lg-12 col-xl-12">
-                                <textarea class="form-control" id="note-address" placeholder="Ghi chú (Hướng dẫn giao hàng ở một số địa chỉ đặc biệt nếu có)" rows="4"></textarea>
+                                <textarea class="form-control normal-form-control" id="note-address" placeholder="Ghi chú (Hướng dẫn giao hàng ở một số địa chỉ đặc biệt nếu có)" rows="4"></textarea>
                             </div>
                         </div>
                     </div>
@@ -864,8 +864,67 @@
 
 
             <!-- third step start -->
-            <div class="checkout-cart-step">
-
+            <div class="checkout-cart-step" id="cart-payment-third">
+                <div class="third-content">Quý khách vui lòng kiểm tra lại thông tin đơn hàng trước khi thanh toán</div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 col-xl-6" id="left-column-info">
+                            <div class="title-table-third">Địa chỉ giao hàng</div>
+                            <div class="line-third-step"></div>
+                            <div id="review-address" class="review-content">
+                                <b>Họ và tên: </b>Nguyễn Văn A<br>
+                                <b>Điện thoại di động: </b>0907007620<br>
+                                <b>Tỉnh/Thành phố: </b>Hồ Chí Minh<br>
+                                <b>Quận/Huyện: </b>Tân Bình<br>
+                                <b>Phường/Xã: </b>8<br>
+                                <b>Loại địa chỉ: </b>Công ty<br>
+                                <b>Địa chỉ: </b>25/8 Thành Mỹ<br>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-6" id="right-column-info">
+                            <div class="title-table-third">Đơn hàng</div>
+                            <div class="line-third-step"></div>
+                            <div class="review-content">
+                                <table>
+                                    <tr>
+                                        <td class="label-review-order" style="padding-top: 0px;">Tổng sản phẩm</td>
+                                        <td class="value-review-order" style="padding-top: 0px;">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label-review-order">Tổng tạm tính</td>
+                                        <td class="value-review-order">2,000,000 đ</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label-review-order">Giảm giá</td>
+                                        <td class="value-review-order">0 đ</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label-review-order">Phí giao hàng</td>
+                                        <td class="value-review-order">0 đ</td>
+                                    </tr>
+                                </table>
+                                <div id="divider-review-order"></div>
+                                <table>
+                                    <tr>
+                                        <td id="total-label-review-order">Tổng cộng</td>
+                                        <td id="total-value-review-order">2,000,000 đ</td>
+                                    </tr>
+                                </table>
+                                <div id="question-promotion-review-order">Bạn có mã giảm giá ?</div>
+                                <table>
+                                    <tr>
+                                        <td id="group-promotion-input">
+                                            <input type="text" placeholder="Điền mã giảm giá" id="promotion">
+                                        </td>
+                                        <td id="button-promotion-input">
+                                            <div></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- third step stop -->
 
