@@ -71,8 +71,18 @@ function goNextStep(e) {
                 showToast("error","Lỗi","Địa chỉ không hợp lệ");
                 return;
             }
+
+            $("#promotion").val("");
+            $('input[name="payment-option"]').prop('checked', false);
+            $(".detail-info-payment").css("display","none");
+            $(".detail-info-payment").get(0).style.display="block";
             break;
         case 3:
+            var paymentOption=$('input[name=payment-option]:checked').val();
+            if (paymentOption===undefined) {
+                showToast("error","Lỗi","Xin vui lòng chọn hình thức thanh toán");
+                return;
+			}
             return;
         default:
             break;
@@ -82,6 +92,11 @@ function goNextStep(e) {
     goToStep();
     e.innerHTML=cartStep===3?"THANH TOÁN":"TIẾP TỤC";
 }
+
+$('input[name=payment-option]').change(function() {
+    $(".detail-info-payment").css("display","none");
+    $(".detail-info-payment").get(parseInt(this.value)+1).style.display="block";
+});
 
 function isNumeric(num){
     return !isNaN(num);

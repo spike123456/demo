@@ -868,10 +868,10 @@
                 <div class="third-content">Quý khách vui lòng kiểm tra lại thông tin đơn hàng trước khi thanh toán</div>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-6 col-xl-6" id="left-column-info">
+                        <div class="col-lg-6 col-xl-6 left-column-info">
                             <div class="title-table-third">Địa chỉ giao hàng</div>
                             <div class="line-third-step"></div>
-                            <div id="review-address" class="review-content">
+                            <div class="review-content review-info">
                                 <b>Họ và tên: </b>Nguyễn Văn A<br>
                                 <b>Điện thoại di động: </b>0907007620<br>
                                 <b>Tỉnh/Thành phố: </b>Hồ Chí Minh<br>
@@ -881,7 +881,7 @@
                                 <b>Địa chỉ: </b>25/8 Thành Mỹ<br>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-xl-6" id="right-column-info">
+                        <div class="col-lg-6 col-xl-6 right-column-info nth-column-info">
                             <div class="title-table-third">Đơn hàng</div>
                             <div class="line-third-step"></div>
                             <div class="review-content">
@@ -924,6 +924,46 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-xl-6 left-column-info none-column-info">
+                            <div class="title-table-third">Hình thức thanh toán</div>
+                            <div class="line-third-step"></div>
+                            <div class="review-content">
+                                <label class="checkbox-label">
+                                    <input type="radio" name="payment-option" value="0">&nbsp;Thanh toán khi nhận hàng
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="radio" name="payment-option" value="1">&nbsp;Chuyển khoản bằng ngân hàng
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-6 right-column-info none-column-info">
+                            <div class="title-table-third">Thông tin chi tiết</div>
+                            <div class="line-third-step"></div>
+                            <div class="review-content review-info">
+                                <div class="detail-info-payment">
+                                    Xin vui lòng chọn hình thức thanh toán
+                                </div>
+                                <div class="detail-info-payment">
+                                    - Đây là hình thức thanh toán bằng tiền mặt mà bạn chỉ cần thanh toán khi <b>DoraeShop</b> đến giao hàng.<br>
+                                    - Bạn nhớ kiểm tra kỹ thông tin của đơn hàng bên phải vì thông tin này sẽ không thể thay đổi sau khi đơn hàng được xác nhận thành công.<br>
+                                    - <b>DoraeShop</b> sẽ không gửi tin nhắn xác nhận đơn hàng nên bạn vui lòng xem lại thông tin trong kiểm tra đơn hàng.<br>
+                                    - Hiện tại <b>DoraeShop</b> chưa thể hỗ trợ giao hàng lên lầu / tầng đối với các địa chỉ thuộc chung cư hoặc tòa nhà cao tầng.
+                                </div>
+                                <div class="detail-info-payment">
+                                    Thông tin chuyển khoản:<br>
+                                    <b>Tên ngân hàng: </b>Vietcombank<br>
+                                    <b>Chủ tài khoản: </b>Nguyễn Thị Thanh Hà<br>
+                                    <b>Số tài khoản: </b>0071001032955<br>
+                                    <b>Chi nhánh: </b>Hồ Chí Minh PGD Số 7<br>
+                                    <b>Nội dung chuyển khoản: </b>[0121 539 3360]<br>
+                                    - Bạn nhớ kiểm tra kỹ thông tin của đơn hàng bên phải vì thông tin này sẽ không thể thay đổi sau khi đơn hàng được xác nhận thành công.<br>
+                                    - <b>DoraeShop</b> sẽ không gửi tin nhắn xác nhận đơn hàng nên bạn vui lòng xem lại thông tin trong kiểm tra đơn hàng.<br>
+                                    - Hiện tại <b>DoraeShop</b> chưa thể hỗ trợ giao hàng lên lầu / tầng đối với các địa chỉ thuộc chung cư hoặc tòa nhà cao tầng.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- third step stop -->
@@ -945,7 +985,7 @@
         <div class="row">
             <div class="col-6 col-md-6 col-lg-6 col-xl-2 info-footer">
                 <div class="title-footer">VỀ CHÚNG TÔI</div>
-                <div class="first-link-footer"><a href="">abc là gì?</a></div>
+                <div class="first-link-footer"><a href="">DoraeShop là gì?</a></div>
                 <div class="link-footer"><a href="">Quy định sử dụng</a></div>
             </div>
             <div class="col-6 col-md-6 col-lg-6 col-xl-2 info-footer">
@@ -965,7 +1005,7 @@
                 <div class="link-footer"><a href="">Giờ làm việc</a></div>
             </div>
             <div class="col-12 col-md-12 col-lg-12 col-xl-4" id="fb-footer">
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FdeliveryNow.vn%2F&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=348039728945856"
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdoraeshopvn%2F&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=348039728945856"
                         width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                         allowTransparency="true"></iframe>
             </div>

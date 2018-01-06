@@ -53,20 +53,24 @@ body {
 }
 
 #cart-payment-third {
-	overflow-y: auto;
+	overflow-y: scroll;
 	height: 347px;
 }
 
-#left-column-info, #right-column-info {
+.left-column-info, .right-column-info {
 	border: 2px solid #888686;
 }
 
-#left-column-info {
+.left-column-info {
 	border-right-width: 1px;
 }
 
-#right-column-info {
+.right-column-info {
 	border-left-width: 1px;
+}
+
+.none-column-info {
+	border-top-width: 0;
 }
 
 @media only screen and (max-width: 700px) {
@@ -125,12 +129,15 @@ body {
 		display: block;
 	}
 
-	#left-column-info {
+	.left-column-info {
 		border-right-width: 2px;
 	}
 
-	#right-column-info {
+	.right-column-info {
 		border-left-width: 2px;
+	}
+
+	.nth-column-info {
 		border-top-width: 0;
 	}
 }
@@ -836,6 +843,7 @@ textarea {
 	padding: 5px;
 	font-weight: bold;
 	text-align: center;
+	background-color: #f3ffed;
 }
 
 #promotion {
@@ -865,7 +873,7 @@ textarea {
 }
 
 #cart-payment-third > .container-fluid {
-	margin: 0 50px 10px 50px;
+	margin: 0 7% 10px 7%;
 	width: auto;
 }
 
@@ -874,7 +882,7 @@ textarea {
 	background-color: #888686;
 }
 
-#review-address {
+.review-info {
 	font-size: 13px;
 	line-height: 25px;
 	color: #605b5b;
@@ -954,4 +962,18 @@ textarea {
 	width: 20px;
 	height: 20px;
 	margin: 0 auto;
+}
+
+.checkbox-label {
+	position: relative;
+	display: block;
+	padding: 5px 5px 5px 25px;
+	margin: 0 0 0 0;
+	line-height: 20px;
+	color: #000;
+	font-size: 13px;
+	font-weight: 400;
+	cursor: pointer;
+	border-radius: 0px;
+	padding-left: 0px;
 }
