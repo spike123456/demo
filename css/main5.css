@@ -178,7 +178,7 @@ body {
 }
 
 .status-bar {
-	background-color: #ff6912;
+	background-color: #F7F8FA;
 }
 
 #header-desktop .status-bar {
@@ -203,7 +203,7 @@ body {
 }
 
 .header-accent {
-	background-color: #5e9900;
+	background-color: white;
 }
 
 #header-desktop .header-accent {
@@ -243,6 +243,7 @@ body {
 	border-bottom-right-radius: 0px !important;
 	border-top-right-radius: 0px !important;
 	font-size: 14px !important;
+	background-color: #F7F8FA !important;
 }
 
 .search-container-first-child {
@@ -253,7 +254,7 @@ body {
 .button-input-box {
 	width: 80px;
 	height: 35px;
-	background-color: blue;
+	background-color: #FFA1C5;
 	border-top-left-radius: 0px !important;
 	border-bottom-left-radius: 0px !important;
 	border: none !important;
@@ -284,7 +285,7 @@ body {
 .btn-system .fa, #collapsibleNavbar ul li .container-fluid .row div div .fa {
 	width:100%;
 	font-size: 30px;
-	color: lightgoldenrodyellow;
+	color: #FFA1C5;
 	text-align: center;
 }
 
@@ -299,7 +300,15 @@ body {
 	display: flex;
 	padding: 0px;
 	width: fit-content;
+}
+
+#category-bar > li {
+	margin-left: 15px;
 	box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+#category-bar > li:first-child {
+	margin-left: 0;
 }
 
 .item_menu a .center-middle {
@@ -360,6 +369,7 @@ body {
 
 .mobile-grid-item {
 	height: 30px;
+	margin: 5px;
 }
 
 .mobile-grid-item a {
@@ -378,36 +388,8 @@ body {
 	margin:0px auto;
 }
 
-.mom-style {
+.tab-style {
 	background-color: #eaa7a7;
-}
-
-.beautiful-style {
-	background-color: #4d62c5;
-}
-
-.fashion-style {
-	background-color: #a0aa69;
-}
-
-.furniture-style {
-	background-color: #9a464d;
-}
-
-.elec-style {
-	background-color: #778094;
-}
-
-.sport-style {
-	background-color: #f93ed9;
-}
-
-.shoe-style {
-	background-color: #46b4bf;
-}
-
-.office-style {
-	background-color: #bf7373;
 }
 
 .mom-icon {
@@ -792,6 +774,22 @@ body {
 	font-weight: 400;
 }
 
+.main-input-box:focus {
+	box-shadow: none !important;
+}
+
+.main-input-box::-webkit-input-placeholder {
+	color: #919493 !important;
+}
+
+.main-input-box::-moz-placeholder {
+	color: #919493 !important;
+}
+
+.main-input-box::-ms-placeholder {
+	color: #919493 !important;
+}
+
 #label-cart-address {
 	color: #505050;
 	font-size: 14px;
@@ -976,4 +974,12 @@ textarea {
 	cursor: pointer;
 	border-radius: 0px;
 	padding-left: 0px;
+}
+
+.navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(204, 21, 91, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+}
+
+.navbar-toggler {
+	border-color: rgb(212, 0, 0) !important;
 }
