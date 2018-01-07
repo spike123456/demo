@@ -265,6 +265,10 @@ body {
 	color: white;
 }
 
+.button-input-box:focus {
+	box-shadow: none !important;
+}
+
 .hint-search-box {
 	height: 20px;
 	font-size: 10px;
@@ -303,12 +307,8 @@ body {
 }
 
 #category-bar > li {
-	margin-left: 15px;
-	box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.7);
-}
-
-#category-bar > li:first-child {
-	margin-left: 0;
+	/*margin-left: 15px;*/
+	/*box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.7);*/
 }
 
 .item_menu a .center-middle {
@@ -982,4 +982,10 @@ textarea {
 
 .navbar-toggler {
 	border-color: rgb(212, 0, 0) !important;
+}
+
+.note-cart {
+	color: #837878;
+	font-size: 12px;
+	font-weight: 400;
 }

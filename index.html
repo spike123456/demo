@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="fb:app_id" content="295434974194630"/>
-    <link rel="stylesheet" href="css/main5.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/detail.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -71,21 +71,18 @@
                         <div class="fa fa-shopping-cart"></div>
                         <div class="title-btn-system">Giỏ hàng</div>
                     </div>
-                    <div class="hand btn-system">
-                        <div class="fa fa-bell"
-                        ">
+                    <div class="hand btn-system" style="width: 100px;">
+                        <div class="fa fa-first-order"></div>
+                        <div class="title-btn-system">Kiểm tra đơn hàng</div>
                     </div>
-                    <div class="title-btn-system">Thông báo</div>
-                </div>
-                <div class="hand btn-system">
-                    <div class="fa fa-star"></div>
-                    <div class="title-btn-system">Yêu thích</div>
+                    <div class="hand btn-system">
+                        <div class="fa fa-star"></div>
+                        <div class="title-btn-system">Yêu thích</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div>
     <ul id="category-bar" class="center-horizontal">
         <li class="item_menu tab-style">
             <a href="">
@@ -153,7 +150,6 @@
         </li>
     </ul>
 </div>
-</div>
 
 
 <div id="header-mobile" class="fixed-top header-accent">
@@ -180,9 +176,9 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="hand">
-                                    <div class="fa fa-bell"></div>
-                                    <div class="title-btn-system">Thông báo</div>
+                                <div class="hand" style="width: 100px;">
+                                    <div class="fa fa-first-order"></div>
+                                    <div class="title-btn-system">Kiểm tra đơn hàng</div>
                                 </div>
                             </div>
                             <div class="col-4">
@@ -317,7 +313,7 @@
                 </div>
             </div>
             <div class="col-lg-8 col-xl-8" id="right-panel">
-                <div id="title">Loa Di Động Bluetooth JBL Trip (Đen) - Hàng Chính Hãng</div>
+                <h1 id="title">Loa Di Động Bluetooth JBL Trip (Đen) - Hàng Chính Hãng</h1>
                 <div id="short-description">Trải Nghiệm Những Món Ăn Ngon Độc Đáo, Tinh Tế Của Nghệ Thuật Ẩm Thực Thế
                     Giới Trong Tiệc Buffet Cao Cấp Trưa/ Tối Sushi Và Tinh Hoa Lẩu Nhật Tại Annz Japanese Dining – Free
                     Khăn Lạnh. Voucher 359,000 VNĐ, Còn 199,000 VNĐ, Giảm 45%
@@ -750,7 +746,10 @@
                                 <td style="width: 9%;">
                                     <img src="{{item.img}}" class="img-fluid" alt="hinh anh san pham">
                                 </td>
-                                <td style="width: 43%;">{{item.title}}</td>
+                                <td style="width: 43%;">
+                                    <div>{{item.title}}</div>
+                                    <div class="note-cart">Size S, Màu Đỏ</div>
+                                </td>
                                 <td style="width: 15%;">{{formatPrice(item.price*1000)}}<sup>đ</sup></td>
                                 <td style="width: 12%;">
                                     <select class="custom-select cart-select">
