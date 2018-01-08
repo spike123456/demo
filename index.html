@@ -5,24 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="fb:app_id" content="295434974194630"/>
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/detail.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-
     <link rel="stylesheet" href="photoswipe/photoswipe.css">
     <link rel="stylesheet" href="photoswipe/default-skin/default-skin.css">
     <script src="photoswipe/photoswipe.min.js"></script>
     <script src="photoswipe/photoswipe-ui-default.min.js"></script>
+
+    <!--general start-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-    <script src="js/bootstrap-formhelpers-phone.js"></script>
+    <script src="http://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <!--general stop-->
 </head>
 <body ng-app="SinglePage">
 <div id="fb-root"></div>
@@ -36,263 +37,261 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- header start -->
-<div id="header-desktop" class="fixed-top">
-    <div class="status-bar">
-        <div>
-            <span class="fa fa-phone"></span><span>0907.007.620 - 0166.663.3589</span>
-        </div>
+<div class="fixed-top">
+    <div id="status-bar" class="marquee">
+        <a href="">Không công bố giá xăng RON 95, người dùng có quyền nghi ngờ</a>
+        <a href="">Sacombank xử lý hơn 19.000 tỷ đồng nợ xấu trong một năm</a>
+        <a href="">‘Tia chớp đen’ Usain Bolt thử việc tại Dortmund</a>
+        <a href="">Coutinho mới đến Barca, vắng mặt 3 tuần do chấn thương</a>
+        <a href="">Như Quỳnh vui mừng hội ngộ Ngọc Sơn khi ghi hình Thần tượng Bolero</a>
     </div>
-    <div class="header-accent">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 col-sm-3" id="logo-container">
-                    <a href="">
-                        <img src="https://cdn.timviecnhanh.com/asset/home/img/logo.png" alt="logo"
-                             title="Web ban hang online uy tin" class="logo-style img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-6 col-sm-6" id="search-container">
-                    <div class="search-container-first-child">
-                        <div>
-                            <div class="input-group search-box">
-                                <input type="text" class="form-control main-input-box"
-                                       placeholder="Tìm kiếm sản phẩm mong muốn...">
+    <div id="header-desktop">
+        <div class="header-accent">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3" id="logo-container">
+                        <a href="">
+                            <img src="https://cdn.timviecnhanh.com/asset/home/img/logo.png" alt="logo"
+                                 title="Web ban hang online uy tin" class="logo-style img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-sm-6" id="search-container">
+                        <div class="search-container-first-child">
+                            <div>
+                                <div class="input-group search-box">
+                                    <input type="text" class="form-control main-input-box"
+                                           placeholder="Tìm kiếm sản phẩm mong muốn...">
+                                </div>
+                                <button type="button" class="hand btn btn-default button-input-box">
+                                    <span class="fa fa-search"></span>
+                                </button>
                             </div>
-                            <button type="button" class="hand btn btn-default button-input-box">
-                                <span class="fa fa-search"></span>
-                            </button>
+                            <div class="hint-search-box">Nhập sản phẩm bạn muốn tìm. Ví dụ: Quần áo, Nước hoa,...</div>
                         </div>
-                        <div class="hint-search-box">Nhập sản phẩm bạn muốn tìm. Ví dụ: Quần áo, Nước hoa,...</div>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-3 center-middle">
-                    <div style="margin-left: 0px;" class="hand btn-system" data-toggle="modal"
-                         data-target="#cart-modal">
-                        <div class="fa fa-shopping-cart"></div>
-                        <div class="title-btn-system">Giỏ hàng</div>
-                    </div>
-                    <div class="hand btn-system" style="width: 100px;">
-                        <div class="fa fa-first-order"></div>
-                        <div class="title-btn-system">Kiểm tra đơn hàng</div>
-                    </div>
-                    <div class="hand btn-system">
-                        <div class="fa fa-star"></div>
-                        <div class="title-btn-system">Yêu thích</div>
+                    <div class="col-md-3 col-sm-3 center-middle">
+                        <div style="margin-left: 0px;" class="hand btn-system" data-toggle="modal"
+                             data-target="#cart-modal">
+                            <div class="fa fa-shopping-cart"></div>
+                            <div class="title-btn-system">Giỏ hàng</div>
+                        </div>
+                        <div class="hand btn-system" style="width: 100px;">
+                            <div class="fa fa-first-order"></div>
+                            <div class="title-btn-system">Kiểm tra đơn hàng</div>
+                        </div>
+                        <div class="hand btn-system">
+                            <div class="fa fa-star"></div>
+                            <div class="title-btn-system">Yêu thích</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <ul id="category-bar" class="center-horizontal">
+            <li class="item_menu tab-style">
+                <a href="">
+                    <div class="center-middle">
+                        <div class="item_menu_icon mom-icon"></div>
+                        <div class="item_menu_content">Mẹ&amp;Bé</div>
+                    </div>
+                </a>
+            </li>
+            <li class="item_menu tab-style">
+                <a href="">
+                    <div class="center-middle">
+                        <div class="item_menu_icon beautiful-icon"></div>
+                        <div class="item_menu_content">Làm đẹp</div>
+                    </div>
+                </a>
+            </li>
+            <li class="item_menu tab-style">
+                <a href="">
+                    <div class="center-middle">
+                        <div class="item_menu_icon fashion-icon"></div>
+                        <div class="item_menu_content">Thời trang</div>
+                    </div>
+                </a>
+            </li>
+            <li class="item_menu tab-style">
+                <a href="">
+                    <div class="center-middle">
+                        <div class="item_menu_icon furniture-icon"></div>
+                        <div class="item_menu_content">Gia dụng</div>
+                    </div>
+                </a>
+            </li>
+            <li class="item_menu tab-style">
+                <a href="">
+                    <div class="center-middle">
+                        <div class="item_menu_icon elec-icon"></div>
+                        <div class="item_menu_content">Điện tử</div>
+                    </div>
+                </a>
+            </li>
+            <li class="item_menu tab-style">
+                <a href="">
+                    <div class="center-middle">
+                        <div class="item_menu_icon sport-icon"></div>
+                        <div class="item_menu_content">Thể thao</div>
+                    </div>
+                </a>
+            </li>
+            <li class="item_menu tab-style">
+                <a href="">
+                    <div class="center-middle">
+                        <div class="item_menu_icon shoe-icon"></div>
+                        <div class="item_menu_content">Giày dép</div>
+                    </div>
+                </a>
+            </li>
+            <li class="item_menu tab-style">
+                <a href="">
+                    <div class="center-middle">
+                        <div class="item_menu_icon office-icon"></div>
+                        <div class="item_menu_content">Văn phòng</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
-    <ul id="category-bar" class="center-horizontal">
-        <li class="item_menu tab-style">
-            <a href="">
-                <div class="center-middle">
-                    <div class="item_menu_icon mom-icon"></div>
-                    <div class="item_menu_content">Mẹ&amp;Bé</div>
-                </div>
-            </a>
-        </li>
-        <li class="item_menu tab-style">
-            <a href="">
-                <div class="center-middle">
-                    <div class="item_menu_icon beautiful-icon"></div>
-                    <div class="item_menu_content">Làm đẹp</div>
-                </div>
-            </a>
-        </li>
-        <li class="item_menu tab-style">
-            <a href="">
-                <div class="center-middle">
-                    <div class="item_menu_icon fashion-icon"></div>
-                    <div class="item_menu_content">Thời trang</div>
-                </div>
-            </a>
-        </li>
-        <li class="item_menu tab-style">
-            <a href="">
-                <div class="center-middle">
-                    <div class="item_menu_icon furniture-icon"></div>
-                    <div class="item_menu_content">Gia dụng</div>
-                </div>
-            </a>
-        </li>
-        <li class="item_menu tab-style">
-            <a href="">
-                <div class="center-middle">
-                    <div class="item_menu_icon elec-icon"></div>
-                    <div class="item_menu_content">Điện tử</div>
-                </div>
-            </a>
-        </li>
-        <li class="item_menu tab-style">
-            <a href="">
-                <div class="center-middle">
-                    <div class="item_menu_icon sport-icon"></div>
-                    <div class="item_menu_content">Thể thao</div>
-                </div>
-            </a>
-        </li>
-        <li class="item_menu tab-style">
-            <a href="">
-                <div class="center-middle">
-                    <div class="item_menu_icon shoe-icon"></div>
-                    <div class="item_menu_content">Giày dép</div>
-                </div>
-            </a>
-        </li>
-        <li class="item_menu tab-style">
-            <a href="">
-                <div class="center-middle">
-                    <div class="item_menu_icon office-icon"></div>
-                    <div class="item_menu_content">Văn phòng</div>
-                </div>
-            </a>
-        </li>
-    </ul>
-</div>
 
-
-<div id="header-mobile" class="fixed-top header-accent">
-    <div class="status-bar">
-        <div>
-            <span class="fa fa-phone"></span><span>0907.007.620 - 0166.663.3589</span>
-        </div>
+    <div id="header-mobile" class="header-accent">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <img src="https://cdn.timviecnhanh.com/asset/home/img/logo.png" alt="logo" title="Web ban hang online uy tin"
+                 class="logo-style img-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="hand" data-toggle="modal" data-target="#cart-modal">
+                                        <div class="fa fa-shopping-cart"></div>
+                                        <div class="title-btn-system">Giỏ hàng</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="hand" style="width: 100px;">
+                                        <div class="fa fa-first-order"></div>
+                                        <div class="title-btn-system">Kiểm tra đơn hàng</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="hand">
+                                        <div class="fa fa-star"></div>
+                                        <div class="title-btn-system">Yêu thích</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="search-container-first-child">
+                            <div class="flex-class">
+                                <div class="input-group search-box">
+                                    <input type="text" class="form-control main-input-box"
+                                           placeholder="Tìm kiếm sản phẩm mong muốn...">
+                                </div>
+                                <button type="button" class="hand btn btn-default button-input-box">
+                                    <span class="fa fa-search"></span>
+                                </button>
+                            </div>
+                            <div class="hint-search-box">Nhập sản phẩm bạn muốn tìm. Ví dụ: Quần áo, Nước hoa,...</div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="container-fluid" id="mobile-grid">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mobile-grid-item tab-style">
+                                        <a href="">
+                                            <div>
+                                                <div class="item_menu_icon mom-icon"></div>
+                                                <div class="item_menu_content">Mẹ&amp;Bé</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mobile-grid-item tab-style">
+                                        <a href="">
+                                            <div>
+                                                <div class="item_menu_icon beautiful-icon"></div>
+                                                <div class="item_menu_content">Làm đẹp</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mobile-grid-item tab-style">
+                                        <a href="">
+                                            <div>
+                                                <div class="item_menu_icon fashion-icon"></div>
+                                                <div class="item_menu_content">Thời trang</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mobile-grid-item tab-style">
+                                        <a href="">
+                                            <div>
+                                                <div class="item_menu_icon furniture-icon"></div>
+                                                <div class="item_menu_content">Gia dụng</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mobile-grid-item tab-style">
+                                        <a href="">
+                                            <div>
+                                                <div class="item_menu_icon elec-icon"></div>
+                                                <div class="item_menu_content">Điện tử</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mobile-grid-item tab-style">
+                                        <a href="">
+                                            <div>
+                                                <div class="item_menu_icon sport-icon"></div>
+                                                <div class="item_menu_content">Thể thao</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mobile-grid-item tab-style">
+                                        <a href="">
+                                            <div>
+                                                <div class="item_menu_icon shoe-icon"></div>
+                                                <div class="item_menu_content">Giày dép</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mobile-grid-item tab-style">
+                                        <a href="">
+                                            <div>
+                                                <div class="item_menu_icon office-icon"></div>
+                                                <div class="item_menu_content">Văn phòng</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
-    <nav class="navbar navbar-expand-md navbar-dark">
-        <img src="https://cdn.timviecnhanh.com/asset/home/img/logo.png" alt="logo" title="Web ban hang online uy tin"
-             class="logo-style img-fluid">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="hand" data-toggle="modal" data-target="#cart-modal">
-                                    <div class="fa fa-shopping-cart"></div>
-                                    <div class="title-btn-system">Giỏ hàng</div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="hand" style="width: 100px;">
-                                    <div class="fa fa-first-order"></div>
-                                    <div class="title-btn-system">Kiểm tra đơn hàng</div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="hand">
-                                    <div class="fa fa-star"></div>
-                                    <div class="title-btn-system">Yêu thích</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <div class="search-container-first-child">
-                        <div class="flex-class">
-                            <div class="input-group search-box">
-                                <input type="text" class="form-control main-input-box"
-                                       placeholder="Tìm kiếm sản phẩm mong muốn...">
-                            </div>
-                            <button type="button" class="hand btn btn-default button-input-box">
-                                <span class="fa fa-search"></span>
-                            </button>
-                        </div>
-                        <div class="hint-search-box">Nhập sản phẩm bạn muốn tìm. Ví dụ: Quần áo, Nước hoa,...</div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <div class="container-fluid" id="mobile-grid">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="mobile-grid-item tab-style">
-                                    <a href="">
-                                        <div>
-                                            <div class="item_menu_icon mom-icon"></div>
-                                            <div class="item_menu_content">Mẹ&amp;Bé</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="mobile-grid-item tab-style">
-                                    <a href="">
-                                        <div>
-                                            <div class="item_menu_icon beautiful-icon"></div>
-                                            <div class="item_menu_content">Làm đẹp</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="mobile-grid-item tab-style">
-                                    <a href="">
-                                        <div>
-                                            <div class="item_menu_icon fashion-icon"></div>
-                                            <div class="item_menu_content">Thời trang</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="mobile-grid-item tab-style">
-                                    <a href="">
-                                        <div>
-                                            <div class="item_menu_icon furniture-icon"></div>
-                                            <div class="item_menu_content">Gia dụng</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="mobile-grid-item tab-style">
-                                    <a href="">
-                                        <div>
-                                            <div class="item_menu_icon elec-icon"></div>
-                                            <div class="item_menu_content">Điện tử</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="mobile-grid-item tab-style">
-                                    <a href="">
-                                        <div>
-                                            <div class="item_menu_icon sport-icon"></div>
-                                            <div class="item_menu_content">Thể thao</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="mobile-grid-item tab-style">
-                                    <a href="">
-                                        <div>
-                                            <div class="item_menu_icon shoe-icon"></div>
-                                            <div class="item_menu_content">Giày dép</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="mobile-grid-item tab-style">
-                                    <a href="">
-                                        <div>
-                                            <div class="item_menu_icon office-icon"></div>
-                                            <div class="item_menu_content">Văn phòng</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
 </div>
 <!-- header stop -->
 

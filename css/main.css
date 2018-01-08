@@ -177,29 +177,21 @@ body {
 	color: #ff6262 !important;
 }
 
-.status-bar {
+#status-bar {
 	background-color: #F7F8FA;
+	height: 25px;
 }
 
-#header-desktop .status-bar {
-	padding: 2px 10% 2px 0px;
-	text-align: right;
+#status-bar > div > div > a:first-child {
+	margin-left: 0;
 }
 
-#header-mobile .status-bar {
-	padding: 2px 0px;
-	text-align: center;
-}
-
-#header-desktop .status-bar div span:first-child, #header-mobile .status-bar div span:first-child {
-	font-weight: bold;
-	font-size: 18px;
-}
-
-#header-desktop .status-bar div span:last-child, #header-mobile .status-bar div span:last-child {
-	margin-left: 5px;
-	font-weight: bold;
-	font-size: 15px;
+#status-bar > div > div > a {
+	color: #2674aa;
+	font-size: 14px;
+	text-decoration: none;
+	font-weight: 500;
+	margin-left: 50px;
 }
 
 .header-accent {
