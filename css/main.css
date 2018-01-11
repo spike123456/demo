@@ -73,6 +73,10 @@ body {
 	border-top-width: 0;
 }
 
+#input-order {
+	width: 150px;
+}
+
 @media only screen and (max-width: 700px) {
 	#header-desktop {
 		display: none;
@@ -121,6 +125,10 @@ body {
 	#cart-payment-third {
 		overflow-y: auto;
 		height: 275px;
+	}
+
+	#input-order {
+		width: 100px;
 	}
 }
 
@@ -560,7 +568,7 @@ body {
 	border:none !important;
 }
 
-#header-cart {
+.header-modal {
 	background-color: #039be5;
 	border-top-left-radius: .3rem;
 	border-top-right-radius: .3rem;
@@ -599,7 +607,7 @@ body {
 	color: #039be5;
 }
 
-#header-cart > div > div {
+.header-modal > .container-fluid > div {
 	margin-top: 5px;
 }
 
@@ -980,4 +988,92 @@ textarea {
 	color: #837878;
 	font-size: 12px;
 	font-weight: 400;
+}
+
+.title-modal {
+	font-size: 16px;
+	color: white;
+	font-weight: 500;
+	padding-left: 30px;
+}
+
+#order-modal > div > div > table {
+	margin: 30px auto 0;
+}
+
+#label-input-order {
+	font-size: 14px;
+	color: black;
+	padding-right: 10px;
+}
+
+#input-order > input {
+	font-size: 13px;
+}
+
+#button-order-group {
+	padding-left: 10px;
+}
+
+#button-order-group > div {
+	background-color: #1fc342;
+	border-radius: 3px;
+	cursor: pointer;
+	color: white;
+	padding: 5px 10px;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+#hint-order {
+	text-align: center;
+	font-size: 11px;
+	color: #838383;
+	font-weight: 300;
+	margin: 2px 0 30px;
+}
+
+#result-order-search {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#result-order-search > div:first-child {
+	color: #6048c1;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+#summary-result {
+	color: black;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+#table-result {
+	margin: 20px auto 0;
+	font-size: 14px;
+}
+
+#table-result > tbody > tr:first-child {
+	font-weight: bold;
+}
+
+#table-result > tbody > tr:last-child {
+	color: #ad4141;
+}
+
+#table-result > tbody > tr > td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#table-result > tbody > tr:first-child > td {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#table-result > tbody > tr:first-child > td:nth-child(2) {
+	padding-left: 10px;
+	padding-right: 10px;
 }
