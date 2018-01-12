@@ -1077,3 +1077,16 @@ textarea {
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
+.favorite-item {
+	width: 230px;
+	display: inline-block;
+}
+
+#favorite-content {
+	overflow-x: scroll;
+}
+
+#favorite-content > div {
+	width: max-content;
+}

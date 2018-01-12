@@ -22,6 +22,7 @@ function goNextStep(e) {
     var main=$("#main-address");
     var note=$("#note-address");
     var option=$("#cart-address-option");
+    var email=$("#email-address");
 
     switch (cartStep) {
         case 1:
@@ -34,6 +35,7 @@ function goNextStep(e) {
             option.css("color","#81888f");
             option.val("");
             main.val("");
+            email.val("");
             note.val("");
             break;
         case 2:
@@ -44,6 +46,11 @@ function goNextStep(e) {
 
             if (!phone.val() || !isNumeric(phone.val())) {
                 showToast("error","Lỗi","Số điện thoại không hợp lệ");
+                return;
+            }
+
+            if (!validateEmail(email.val())) {
+                showToast("error","Lỗi","Email không hợp lệ");
                 return;
             }
 
@@ -91,6 +98,11 @@ function goNextStep(e) {
     cartStep++;
     goToStep();
     e.innerHTML=cartStep===3?"THANH TOÁN":"TIẾP TỤC";
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email.toLowerCase());
 }
 
 $('input[name=payment-option]').change(function() {

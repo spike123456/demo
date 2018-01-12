@@ -40,7 +40,7 @@
 <div class="fixed-top">
     <div id="status-bar" class="marquee">
         <a href="">Không công bố giá xăng RON 95, người dùng có quyền nghi ngờ</a>
-        <a href="http://www.bongda.com.vn/sanchez-nhan-tien-lot-tay-khung-neu-den-man-city-d430455.html">Sacombank xử lý hơn 19.000 tỷ đồng nợ xấu trong một năm</a>
+        <a href="">Sacombank xử lý hơn 19.000 tỷ đồng nợ xấu trong một năm</a>
         <a href="">‘Tia chớp đen’ Usain Bolt thử việc tại Dortmund</a>
         <a href="">Coutinho mới đến Barca, vắng mặt 3 tuần do chấn thương</a>
         <a href="">Như Quỳnh vui mừng hội ngộ Ngọc Sơn khi ghi hình Thần tượng Bolero</a>
@@ -78,7 +78,7 @@
                             <div class="fa fa-first-order"></div>
                             <div class="title-btn-system">Kiểm tra đơn hàng</div>
                         </div>
-                        <div class="hand btn-system">
+                        <div class="hand btn-system" data-toggle="modal" data-target="#favorite-modal">
                             <div class="fa fa-star"></div>
                             <div class="title-btn-system">Yêu thích</div>
                         </div>
@@ -179,7 +179,7 @@
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="hand">
+                                    <div class="hand" data-toggle="modal" data-target="#favorite-modal">
                                         <div class="fa fa-star"></div>
                                         <div class="title-btn-system">Yêu thích</div>
                                     </div>
@@ -783,6 +783,9 @@
                                 <input type="text" class="form-control normal-form-control" id="phone-address" placeholder="Điện thoại di động">
                             </div>
                             <div class="col-lg-6 col-xl-6">
+                                <input type="text" class="form-control normal-form-control" id="email-address" placeholder="Email">
+                            </div>
+                            <div class="col-lg-6 col-xl-6">
                                 <select class="custom-select" id="cart-city-address-option" onchange="onUpdateCartOption(this)">
                                     <option value="" disabled selected>Tỉnh/Thành phố</option>
                                     <option value="294">Hồ Chí Minh</option>
@@ -863,7 +866,7 @@
                                     <option value="1">Công ty</option>
                                 </select>
                             </div>
-                            <div class="col-lg-12 col-xl-12">
+                            <div class="col-lg-6 col-xl-6">
                                 <input type="text" class="form-control normal-form-control" id="main-address" placeholder="Địa chỉ (Số nhà, Đường,...)">
                             </div>
                             <div class="col-lg-12 col-xl-12">
@@ -887,6 +890,7 @@
                             <div class="review-content review-info">
                                 <b>Họ và tên: </b>Nguyễn Văn A<br>
                                 <b>Điện thoại di động: </b>0907007620<br>
+                                <b>Email: </b>abc@gmail.com<br>
                                 <b>Tỉnh/Thành phố: </b>Hồ Chí Minh<br>
                                 <b>Quận/Huyện: </b>Tân Bình<br>
                                 <b>Phường/Xã: </b>8<br>
@@ -1022,6 +1026,117 @@
                         <td>Đã đặt hàng</td>
                     </tr>
                 </table>
+            </div>
+            <div class="footer-modal">
+                <div class="cancel-modal" data-dismiss="modal">HUỶ BỎ</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- order stop -->
+
+
+<!-- order start -->
+<div class="modal fade" id="favorite-modal" tabindex="1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="header-modal">
+                <div class="title-modal">DANH SÁCH YÊU THÍCH</div>
+            </div>
+            <div id="favorite-content">
+                <div>
+                    <div class="main-item-product favorite-item">
+                        <a href="">
+                            <div class="card">
+                                <div class="card-img-top main-img-product"
+                                     style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
+                                    <span class="fa fa-star favorite-btn"></span>
+                                    <span class="float-right discount-product">-40%</span>
+                                </div>
+                                <div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
+                                <div class="price-product">50,000<sup>đ</sup></div>
+                                <div class="content-product">
+                                    <span class="real-price">500,000<sup>đ</sup></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div><div class="main-item-product favorite-item">
+                    <a href="">
+                        <div class="card">
+                            <div class="card-img-top main-img-product"
+                                 style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
+                                <span class="fa fa-star favorite-btn"></span>
+                                <span class="float-right discount-product">-40%</span>
+                            </div>
+                            <div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
+                            <div class="price-product">50,000<sup>đ</sup></div>
+                            <div class="content-product">
+                                <span class="real-price">500,000<sup>đ</sup></span>
+                            </div>
+                        </div>
+                    </a>
+                </div><div class="main-item-product favorite-item">
+                    <a href="">
+                        <div class="card">
+                            <div class="card-img-top main-img-product"
+                                 style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
+                                <span class="fa fa-star favorite-btn"></span>
+                                <span class="float-right discount-product">-40%</span>
+                            </div>
+                            <div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
+                            <div class="price-product">50,000<sup>đ</sup></div>
+                            <div class="content-product">
+                                <span class="real-price">500,000<sup>đ</sup></span>
+                            </div>
+                        </div>
+                    </a>
+                </div><div class="main-item-product favorite-item">
+                    <a href="">
+                        <div class="card">
+                            <div class="card-img-top main-img-product"
+                                 style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
+                                <span class="fa fa-star favorite-btn"></span>
+                                <span class="float-right discount-product">-40%</span>
+                            </div>
+                            <div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
+                            <div class="price-product">50,000<sup>đ</sup></div>
+                            <div class="content-product">
+                                <span class="real-price">500,000<sup>đ</sup></span>
+                            </div>
+                        </div>
+                    </a>
+                </div><div class="main-item-product favorite-item">
+                    <a href="">
+                        <div class="card">
+                            <div class="card-img-top main-img-product"
+                                 style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
+                                <span class="fa fa-star favorite-btn"></span>
+                                <span class="float-right discount-product">-40%</span>
+                            </div>
+                            <div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
+                            <div class="price-product">50,000<sup>đ</sup></div>
+                            <div class="content-product">
+                                <span class="real-price">500,000<sup>đ</sup></span>
+                            </div>
+                        </div>
+                    </a>
+                </div><div class="main-item-product favorite-item">
+                    <a href="">
+                        <div class="card">
+                            <div class="card-img-top main-img-product"
+                                 style="background-image: url('https://vcdn.tikicdn.com/cache/550x550/media/catalog/product/s/a/samsung%20galaxy%20j7_gold_1.u504.d20160907.t171318.752196.jpg');">
+                                <span class="fa fa-star favorite-btn"></span>
+                                <span class="float-right discount-product">-40%</span>
+                            </div>
+                            <div class="title-product">Loa Di Động Harman Kardon Onyx Studio 3</div>
+                            <div class="price-product">50,000<sup>đ</sup></div>
+                            <div class="content-product">
+                                <span class="real-price">500,000<sup>đ</sup></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                </div>
             </div>
             <div class="footer-modal">
                 <div class="cancel-modal" data-dismiss="modal">HUỶ BỎ</div>
