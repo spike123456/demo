@@ -28,14 +28,13 @@
 <body ng-app="SinglePage">
 <div id="fb-root"></div>
 <script>
-    window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '295434974194630',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v2.11'
-    });
-  };
+ FB.init({
+    appId            : '295434974194630',
+    autoLogAppEvents : true,
+    status           : true,
+    xfbml            : true,
+    version          : 'v2.11' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
+  });
 
     (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -72,7 +71,7 @@
                                     <input type="text" class="form-control main-input-box"
                                            placeholder="Tìm kiếm sản phẩm mong muốn...">
                                 </div>
-                                <button type="button" class="hand btn btn-default button-input-box" onclick="test()">
+                                <button type="button" class="hand btn btn-default button-input-box">
                                     <span class="fa fa-search"></span>
                                 </button>
                             </div>
@@ -1193,13 +1192,9 @@
 <!-- footer stop -->
 
 <script type="text/javascript">
-    function test() {
-        FB.ui({
-  method: 'share',
-  href: 'http://ui.minchang.xyz/',
-}, function(response){});
-
-    }
+    FB.Event.subscribe('comment.create', function(response) {
+        console.log('add detected');
+    });
 </script>
 <script src="js/detail.js"></script>
 <script src="js/main.js"></script>

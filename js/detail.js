@@ -4,7 +4,7 @@ app.controller('thumbnailController', function($scope) {
     $scope.currentGallery=0;
 
     $scope.thumbnailArr=[
-    	"http://lotteshop.vn/wp-content/uploads/2015/09/Natural-Esences-Mask-9-600x600.jpg",
+    	"https://i.imgur.com/wZJ0DwP.jpg",
     	"http://myphambo.com/wp-content/uploads/2014/11/ep-mt-n-3D-natural-esences-Foodaholic.jpg",
     	"http://xinhcangay.com/content/images/thumbs/0011966.jpg",
     	"https://thefaceshop360.com/wp-content/uploads/kem-chong-nang-natural-sun-eco-super-perfect-sun-cream-spf50-pa-the-face-shop.jpg",
