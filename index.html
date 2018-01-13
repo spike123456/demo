@@ -28,13 +28,15 @@
 <body ng-app="SinglePage">
 <div id="fb-root"></div>
 <script>
- FB.init({
+    window.fbAsyncInit = function() {
+        FB.init({
     appId            : '295434974194630',
     autoLogAppEvents : true,
     status           : true,
     xfbml            : true,
     version          : 'v2.11' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
   });
+    };
 
     (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
