@@ -32,10 +32,13 @@
         FB.init({
     appId            : '295434974194630',
     autoLogAppEvents : true,
-    status           : true,
-    xfbml            : true,
+      xfbml            : true,
     version          : 'v2.11' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
   });
+
+        FB.Event.subscribe('comment.create', function(response) {
+        console.log('add detected');
+    });
     };
 
     (function (d, s, id) {
@@ -1194,9 +1197,7 @@
 <!-- footer stop -->
 
 <script type="text/javascript">
-    FB.Event.subscribe('comment.create', function(response) {
-        console.log('add detected');
-    });
+    
 </script>
 <script src="js/detail.js"></script>
 <script src="js/main.js"></script>
