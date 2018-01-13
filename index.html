@@ -39,6 +39,10 @@
         FB.Event.subscribe('comment.create', function(response) {
         console.log('add detected');
     });
+
+        FB.Event.subscribe('comment.remove', function(response) {
+        console.log('remove detected');
+    });
     };
 
     (function (d, s, id) {
