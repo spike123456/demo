@@ -62,7 +62,7 @@
                                     <input type="text" class="form-control main-input-box"
                                            placeholder="Tìm kiếm sản phẩm mong muốn...">
                                 </div>
-                                <button type="button" class="hand btn btn-default button-input-box">
+                                <button type="button" class="hand btn btn-default button-input-box" onclick="test()">
                                     <span class="fa fa-search"></span>
                                 </button>
                             </div>
@@ -1182,7 +1182,15 @@
 </div>
 <!-- footer stop -->
 
+<script type="text/javascript">
+    function test() {
+        FB.ui({
+  method: 'share',
+  href: 'https://developers.facebook.com/docs/',
+}, function(response){});
 
+    }
+</script>
 <script src="js/detail.js"></script>
 <script src="js/main.js"></script>
 </body>
