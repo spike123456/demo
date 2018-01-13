@@ -27,7 +27,17 @@
 </head>
 <body ng-app="SinglePage">
 <div id="fb-root"></div>
-<script>(function (d, s, id) {
+<script>
+    window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '295434974194630',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.11'
+    });
+  };
+
+    (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s);
@@ -1186,7 +1196,6 @@
     function test() {
         FB.ui({
   method: 'share',
-  app_id: '295434974194630',
   href: 'http://ui.minchang.xyz/',
 }, function(response){});
 
