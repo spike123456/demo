@@ -47,6 +47,11 @@ body {
     display: none;
 }
 
+.content-full {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
 #cart-content-address {
 	overflow-y: auto;
 	height: 314px;
@@ -78,6 +83,11 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
+	.content-full {
+		margin-left: 3px;
+		margin-right: 3px;
+	}
+
 	#header-desktop {
 		display: none;
 	}
@@ -1080,7 +1090,6 @@ textarea {
 
 .favorite-item {
 	width: 230px;
-	display: inline-block;
 }
 
 #favorite-content {
@@ -1088,5 +1097,5 @@ textarea {
 }
 
 #favorite-content > div {
-	width: max-content;
+	display: -webkit-box;
 }
