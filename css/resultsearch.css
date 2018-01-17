@@ -2,10 +2,6 @@
     padding-left: 2%;
 }
 
-.main-page-content {
-    padding: 0px 5px;
-}
-
 #main-panel {
     padding: 0px 4%;
 }
@@ -26,10 +22,6 @@
 
     .panel-title:first-child {
         margin-top: 0px;
-    }
-
-    .main-page-content {
-        padding: 0px;
     }
 }
 
@@ -215,14 +207,6 @@ input[type="checkbox"] {
 #right-panel > div:first-child {
     font-size: 15px;
     color: #717171;
-}
-
-.custom-pagination {
-    margin: 25px 0px 50px;
-}
-
-.custom-pagination > ul > li {
-    cursor: pointer;
 }
 
 #sort-label {

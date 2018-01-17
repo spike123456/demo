@@ -229,6 +229,52 @@ app.controller('cartController', function($scope) {
     $scope.quantity=arr;
 });
 
+function generatePagingArr(totalPages,currentPage) {
+    var arr=[];
+    if (totalPages<=5) {
+        for (var i = 1; i <=totalPages; i++) {
+            arr.push(i);
+        }
+    }
+    else if (totalPages-currentPage<=1) {
+        for (var i = totalPages-4; i <=totalPages; i++) {
+            arr.push(i);
+        }
+    }
+    else {
+        var startIndex=currentPage-2<=0?1:currentPage-2;
+        for (var i = startIndex; i <=startIndex+4; i++) {
+            arr.push(i);
+        }
+    }
+
+    return arr;
+}
+
+app.controller('pagingController', function($scope) {
+    // init paging list
+    $scope.totalPages=10;
+    $scope.currentPage=1;
+    $scope.pagingArr=generatePagingArr($scope.totalPages,$scope.currentPage);
+
+    $scope.updatePaging = function(currentPage) {
+        $scope.currentPage=currentPage;
+        $scope.pagingArr=generatePagingArr($scope.totalPages,$scope.currentPage);
+    };
+
+    $scope.back = function() {
+        if ($scope.currentPage!=1) {
+            $scope.updatePaging($scope.currentPage-1);
+        }
+    };
+
+    $scope.next = function() {
+        if ($scope.currentPage!=$scope.totalPages) {
+            $scope.updatePaging($scope.currentPage+1);
+        }
+    };
+});
+
 $('.marquee').marquee({
     //duration in milliseconds of the marquee
     duration: 30000,

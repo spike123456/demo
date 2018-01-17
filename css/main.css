@@ -11,6 +11,10 @@ body {
 	padding: 10px !important;
 }
 
+.main-page-content {
+	padding: 0px 5px;
+}
+
 .common-padding {
 	padding: 0px 5%;
 }
@@ -139,6 +143,10 @@ body {
 
 	#input-order {
 		width: 100px;
+	}
+
+	.main-page-content {
+		padding: 0px;
 	}
 }
 
@@ -1098,4 +1106,12 @@ textarea {
 
 #favorite-content > div {
 	display: -webkit-box;
+}
+
+.custom-pagination {
+	margin: 25px 0px 50px;
+}
+
+.custom-pagination > ul > li {
+	cursor: pointer;
 }
