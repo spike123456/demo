@@ -28,3 +28,7 @@
 #share-btn:active {
     background: #577fbc;
 }
+
+.fb-like > span {
+    vertical-align: sub;
+}
