@@ -30,5 +30,5 @@
 }
 
 .fb-like > span {
-    vertical-align: sub;
+    vertical-align: sub !important;
 }
