@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="fb:app_id" content="295434974194630"/>
-    <link rel="stylesheet" href="css/articlelist.css">
+    <link rel="stylesheet" href="css/articledetail.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
 
     <!--general start-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -291,88 +292,53 @@
 <!-- header stop -->
 
 
-<!--list start-->
-<div class="content-margin" id="content-full-article">
+<!--article start-->
+<div id="content-full-article">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-8 col-xl-8" ng-controller="articleController">
-                <div id="label-line-article"></div>
-                <div id="label-article">BÀI VIẾT MỚI NHẤT</div>
-                <div ng-repeat="item in listArticle">
-                    <div class="divider-article"></div>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-4 col-xl-4 item-article">
-                                <a href="">
-                                    <img src="img/mypic.jpg" alt="hinh anh bai viet" title="Châu Nhuận Phát mặc quần short thăm mỹ nhân 'Bến Thượng Hải'" width="100%">
-                                </a>
+            <div class="col-md-10 col-lg-10 col-xl-10 order-md-2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-9 col-xl-9">
+                            <h5 style="font-family: 'Noto Serif';font-weight: bold;font-size: 30px;">Châu Nhuận Phát mặc quần short thăm mỹ nhân 'Bến Thượng Hải'</h5>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-xl-6" style="display: flex;align-items: center;">
+                                        <div style="font-size: 11px;color: #999;font-weight: 400;">12:07 02/12/2017  -  45 lượt xem</div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <table>
+                                            <tr>
+                                                <td><div class="fb-like" data-href="http://ui.minchang.xyz/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div></td>
+                                                <td>
+                                                    <table id="share-btn">
+                                                        <tr>
+                                                            <td><div style="width: 16px;height: 16px;background-image: url(svg/fb.svg);"></div></td>
+                                                            <td style="padding:0 4px;font-weight: 500;font-size: 11px;">Chia sẻ</td>
+                                                            <td style="padding-right: 4px;font-weight: 200;font-size: 10px;line-height: 20px;">46</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-8 col-xl-8 item-article right-info-article">
-                                <h3>
-                                    <a href="" title="Châu Nhuận Phát mặc quần short thăm mỹ nhân 'Bến Thượng Hải'">Châu Nhuận Phát mặc quần short thăm mỹ nhân 'Bến Thượng Hải'</a>
-                                </h3>
-                                <table>
-                                    <tr>
-                                        <td class="icon-info-article" style="width: 18px;"><div style="width: 18px;-webkit-mask-image: url(svg/views.svg);"></div></td>
-                                        <td class="icon-info-article">1534</td>
-                                        <td class="icon-info-article" style="width: 13px;"><div style="width: 13px;-webkit-mask-image: url(svg/likes.svg);"></div></td>
-                                        <td class="icon-info-article">346</td>
-                                        <td class="icon-info-article" style="width: 13px;"><div style="width: 13px;-webkit-mask-image: url(svg/comments.svg);"></div></td>
-                                        <td class="icon-info-article">22</td>
-                                        <td class="icon-info-article" style="width: 12px;"><div style="width: 12px;-webkit-mask-image: url(svg/shares.svg);"></div></td>
-                                        <td class="icon-info-article">22</td>
-                                    </tr>
-                                </table>
-                                <div class="time">15 giờ trước</div>
-                                <h1 class="short-info">Siêu phẩm ấn định chiến thắng 4-2 cho Barcelona trước Real Sociedad giúp Lionel Messi tiếp tục phá vỡ kỷ lục ghi bàn của huyền thoại Gerd Mueller ở 5 giải đấu hàng đầu châu Âu.
-                                    Siêu phẩm ấn định chiến thắng 4-2 cho...</h1>
-                            </div>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3">
+
                         </div>
                     </div>
                 </div>
-                <div class="divider-article"></div>
-                <nav class="main-page-content custom-pagination" ng-controller="pagingController">
-                    <ul class="pagination pagination-sm justify-content-center">
-                        <li class="page-item{{currentPage==1?' disabled':''}}" ng-click="back()">
-                            <div class="page-link" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </div>
-                        </li>
-                        <li ng-repeat="item in pagingArr" class="page-item{{currentPage==item?' active':''}}" ng-click="updatePaging(item)"><div class="page-link">{{item}}</div></li>
-                        <li class="page-item{{currentPage==totalPages?' disabled':''}}" ng-click="next()">
-                            <div class="page-link" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
             </div>
-            <div class="col-lg-4 col-xl-4" id="right-article-list-column" ng-controller="rankController">
-                <div class="full-box-rank" ng-repeat="item in rankList">
-                    <div class="label-box-rank">{{item.titleGroup}}</div>
-                    <div class="main-line-box-rank"></div>
-                    <table width="100%" class="content-box-rank">
-                        <tbody ng-repeat="article in item.articles">
-                        <tr>
-                            <td width="37%">
-                                <a href=""><img src="{{article.image}}" alt="hinh anh bai viet" title="{{article.title}}" width="100%"></a>
-                            </td>
-                            <td width="63%" style="padding-left: 0;">
-                                <div class="title-box-rank"><a href="">{{article.title}}</a></div>
-                                <div class="count-rank">{{article.count}}</div>
-                            </td>
-                        </tr>
-                        <tr style="display: {{$last?'none':'table-row'}};"><td colspan="2"><div class="divider-box-rank"></div></td></tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 order-md-1">
+                <a href=""><img src="img/banner.jpg" width="90%"></a>
             </div>
         </div>
     </div>
 </div>
-<!--list stop-->
+<!--article stop-->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 <!-- cart start -->
@@ -866,7 +832,7 @@
 <!-- footer stop -->
 
 
-<script src="js/articlelist.js"></script>
+<script src="js/articledetail.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
