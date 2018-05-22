@@ -5,7 +5,7 @@ Twitter: https://twitter.com/probootstrap
 Facebook: https://facebook.com/probootstrap
 
 
-CREDITS:
+CREDITS
 
 Bootstrap
 http://getbootstrap.com/
