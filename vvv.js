@@ -257,7 +257,11 @@ app.controller('cartController', function($scope,$http) {
 	$scope.expressFee=0;
 	$scope.normalFee=0;
 
-	$('#cart-modal').on('show.bs.modal', function (e) {
+	$(".cartBtn").click(function() {
+		if (localStorage.currentPriceVersion && localStorage.currentPriceVersion!=versionAsset.general.price) {
+     		showToast("error","Lỗi","Chúng tôi đang cập nhật lại dữ liệu. Xin vui lòng thử lại trong giây lát");
+     		return;
+		}
 		cartStep=0;
 		var itemIDs=localStorage.CartList;
 		var ids=[];
@@ -279,6 +283,8 @@ app.controller('cartController', function($scope,$http) {
 		goNextStep(document.getElementsByClassName("confirm-modal")[0]);
 		$("#main-footer-modal").css("display","block");
 		$("#processing").css("display","none");
+
+		$('#cart-modal').modal('show');
 	});
 
 	$scope.formatPrice = function(num) {
@@ -588,6 +594,67 @@ app.controller('statusController', function($scope,$http) {
             pauseOnHover:true
         });
 	});
+
+	//check price version
+	var serverPriceVersion=versionAsset.general.price;
+	if (localStorage.currentPriceVersion) {
+		if (localStorage.currentPriceVersion!=serverPriceVersion) {
+			$http({
+				method: 'GET',
+				url: "https://data.doraeshop.vn/api/v1/product"+serverPriceVersion+".json",
+				headers: {
+					'Content-Type': 'application/json; charset=utf-8'
+				}})
+			.then(function(response) {
+				var data=response.data.data;
+
+				// cart
+				var itemIDs=localStorage.CartList;
+				var ids=[];
+				if (itemIDs!=null) {
+					ids=itemIDs.split(",");
+				}
+
+				for (var i = 0; i <ids.length; i++) {
+					var item=JSON.parse(localStorage.getItem("Cart"+ids[i]));
+					if (data.hasOwnProperty(item.detailId.toString())) {
+						var newItem=data[item.detailId.toString()];
+						if (item.cacheOption) {
+							item.price=newItem.optionPrice[item.cacheOption].price;
+						}
+						else {
+							item.price=newItem.price;
+						}
+					}
+
+					localStorage.setItem("Cart"+ids[i], JSON.stringify(item));
+				}
+
+				// favorite
+				itemIDs=localStorage.FavoriteList;
+				ids=[];
+				if (itemIDs!=null) {
+					ids=itemIDs.split(",");
+				}
+
+				for (var i = 0; i <ids.length; i++) {
+					if (data.hasOwnProperty(ids[i])) {
+						var item=JSON.parse(localStorage.getItem("Favorite"+ids[i]));
+						var newItem=data[ids[i]];
+						item.price=newItem.price;
+						item.realPrice=newItem.realPrice;
+						item.discountPercent=newItem.discountPercent;
+						localStorage.setItem("Favorite"+ids[i], JSON.stringify(item));
+					}
+				}
+
+				localStorage.setItem('currentPriceVersion',serverPriceVersion);
+			});
+		}
+	}
+	else {
+		localStorage.setItem('currentPriceVersion',serverPriceVersion);
+	}
 });
 
 
@@ -859,7 +926,12 @@ $('#order-modal').on('show.bs.modal', function (e) {
 app.controller('favoriteController', function($scope) {
 	$scope.favoriteList=[];
 
-	$('#favorite-modal').on('show.bs.modal', function (e) {
+	$(".favoriteBtn").click(function() {
+		if (localStorage.currentPriceVersion && localStorage.currentPriceVersion!=versionAsset.general.price) {
+     		showToast("error","Lỗi","Chúng tôi đang cập nhật lại dữ liệu. Xin vui lòng thử lại trong giây lát");
+     		return;
+		}
+
 		customGA('Header', 'Favorite', 'View');
 		var itemIDs=localStorage.FavoriteList;
 		var ids=[];
@@ -882,6 +954,8 @@ app.controller('favoriteController', function($scope) {
 			$("#favorite-empty").css("display","none");
 			$("#favorite-content").css("display","block");
 		}
+
+		$('#favorite-modal').modal('show');
 	});
 
 	$scope.formatPrice = function(num) {
