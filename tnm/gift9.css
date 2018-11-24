@@ -42,6 +42,12 @@
     margin-top: 3px;
 }
 
+.vnmobile {
+    height: 42px;
+    background-position-y: -60px;
+    margin-top: 3px;
+}
+
 .logo-item {
     width: 90px;
     height: 50px;
@@ -67,4 +73,8 @@
     background-size: cover;
     margin-left: 10px;
     background-position-x: 0;
+}
+
+#content-table > table > tbody > tr:not(:first-child) {
+    border-top: 1px #845e197d solid;
 }
