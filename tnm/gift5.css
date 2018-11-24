@@ -20,7 +20,7 @@
     font-weight: 700;
 }
 
-#content-table {
+.content-table {
     border: 1px #ffb1b1 solid;
     border-top: none;
     background-color: white;
@@ -36,4 +36,17 @@
     background-image: url('https://spike123456.github.io/demo/tnm/celculartest.jpg');
     background-position: 0 0;
     background-size: cover;
+}
+
+.content-item {
+    padding: 5px;
+}
+
+.logo-item {
+    width: 100px;
+    height: 60px;
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px #4481a5 solid;
+    border-radius: 10px;
 }
