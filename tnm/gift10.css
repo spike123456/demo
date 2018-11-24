@@ -48,6 +48,18 @@
     margin-top: 3px;
 }
 
+.gmobile {
+    height: 24px;
+    background-position-y: -102px;
+    margin-top: 12px;
+}
+
+.mobifone {
+    height: 16px;
+    background-position-y: -126px;
+    margin-top: 15px;
+}
+
 .logo-item {
     width: 90px;
     height: 50px;
