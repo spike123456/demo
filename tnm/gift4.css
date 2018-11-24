@@ -1,0 +1,39 @@
+#gift-content {
+    min-height: 100vh;
+    padding-top: 150px;
+    background-color: #b14141;
+}
+
+#right-content {
+    padding-left: 20px;
+}
+
+#latest-table {
+    height: 40px;
+    background-color: #ffb1b1;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    text-align: center;
+    line-height: 40px;
+    color: #5d0303;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#content-table {
+    border: 1px #ffb1b1 solid;
+    border-top: none;
+    background-color: white;
+    height: 450px;
+    overflow-y: auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.vinaphone {
+    width: 100px;
+    height: 26px;
+    background-image: url('https://spike123456.github.io/demo/tnm/celculartest.jpg');
+    background-position: 0 0;
+    background-size: cover;
+}
