@@ -90,3 +90,7 @@
 #content-table > table > tbody > tr:not(:first-child) {
     border-top: 1px #845e197d solid;
 }
+
+#history-gift {
+    margin: 175px auto 0 auto;
+}
