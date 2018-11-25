@@ -105,3 +105,25 @@
     background-color: white;
     margin: 100px auto 0;
 }
+
+#phone-gift {
+    text-align: center;
+    color: #ece1e1;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+#phone-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#phone-input {
+    border: none;
+    text-align: center;
+    border-radius: 26px;
+    font-size: 20px;
+    outline: none;
+    padding: 5px;
+    font-weight: 600;
+}
