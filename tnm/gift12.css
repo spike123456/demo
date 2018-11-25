@@ -92,5 +92,16 @@
 }
 
 #history-gift {
-    margin: 175px auto 0 auto;
+    margin: 175px auto 0;
+}
+
+#main-gift-loading {
+    width: 100px;
+    height: 100px;
+    -webkit-mask-image: url('https://asset.doraeshop.vn/svg/general-loading.svg');
+    -webkit-mask-size: 100px 100px;
+    mask-image: url('https://asset.doraeshop.vn/svg/general-loading.svg');
+    mask-size: 100px 100px;
+    background-color: white;
+    margin: 100px auto 0;
 }
