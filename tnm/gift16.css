@@ -150,3 +150,7 @@
 #verify-btn:active {
     box-shadow: inset 0 2px 5px #2370FE;
 }
+
+#grid-content {
+    padding: 0 30px;
+}
