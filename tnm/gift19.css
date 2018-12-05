@@ -168,7 +168,7 @@
 }
 
 .top-left-card {
-    background-image: url(https://spike123456.github.io/demo/tnm/g1.png);
+    background-image: url(https://spike123456.github.io/demo/tnm/corner-top.svg);
     width: 34px;
     height: 34px;
     position: absolute;
@@ -176,16 +176,22 @@
 }
 
 .top-right-card {
-    background-image: url(https://spike123456.github.io/demo/tnm/g2.png);
+    background-image: url(https://spike123456.github.io/demo/tnm/corner-top.svg);
     width: 34px;
     height: 34px;
     position: absolute;
     top: 20px;
     right: 20px;
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph;
+    filter: fliph;
 }
 
 .bottom-left-card {
-    background-image: url(https://spike123456.github.io/demo/tnm/g3.png);
+    background-image: url(https://spike123456.github.io/demo/tnm/corner-bottom.svg);
     width: 43px;
     height: 42px;
     position: absolute;
@@ -193,10 +199,16 @@
 }
 
 .bottom-right-card {
-    background-image: url(https://spike123456.github.io/demo/tnm/g4.png);
+    background-image: url(https://spike123456.github.io/demo/tnm/corner-bottom.svg);
     width: 43px;
     height: 42px;
     position: absolute;
     bottom: 20px;
     right: 20px;
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph;
+    filter: fliph;
 }
