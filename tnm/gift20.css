@@ -212,3 +212,7 @@
     -ms-filter: fliph;
     filter: fliph;
 }
+
+.gift-icon {
+    background-image: url(https://spike123456.github.io/demo/tnm/gift.svg);
+}
