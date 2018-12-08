@@ -167,15 +167,17 @@
     padding-top: 34px;
 }
 
-.top-left-card {
-    background-image: url(https://spike123456.github.io/demo/tnm/corner-top.svg);
+.top-left-card, .bottom-left-card {
     width: 34px;
     height: 34px;
     position: absolute;
 }
 
-.top-right-card {
+.top-left-card {
     background-image: url(https://spike123456.github.io/demo/tnm/corner-top.svg);
+}
+
+.top-right-card, .bottom-right-card {
     width: 34px;
     height: 34px;
     position: absolute;
@@ -185,6 +187,10 @@
     transform: scaleX(-1);
     -ms-filter: fliph;
     filter: fliph;
+}
+
+.top-right-card {
+    background-image: url(https://spike123456.github.io/demo/tnm/corner-top.svg);
 }
 
 .top-corner-disabled {
@@ -193,22 +199,10 @@
 
 .bottom-left-card {
     background-image: url(https://spike123456.github.io/demo/tnm/corner-bottom.svg);
-    width: 43px;
-    height: 42px;
-    position: absolute;
 }
 
 .bottom-right-card {
     background-image: url(https://spike123456.github.io/demo/tnm/corner-bottom.svg);
-    width: 43px;
-    height: 42px;
-    position: absolute;
-    -moz-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
-    -ms-filter: fliph;
-    filter: fliph;
 }
 
 .bottom-corner-disabled {
@@ -230,7 +224,7 @@
     font-weight: 700;
 }
 
-.use-now-btn-disabled {
+.use-now-btn-disabled, .use-now-btn {
     width: calc(100% - 86px);
     height: 30px;
     background-color: #f9b92a;
@@ -245,19 +239,11 @@
     font-size: 12px;
 }
 
+.use-now-btn-disabled {
+    cursor: default;
+}
+
 .use-now-btn {
-    width: calc(100% - 86px);
-    height: 30px;
-    background-color: #f9b92a;
-    margin: 10px auto 0;
-    border: 1px solid rgba(0,0,0,0.21);
-    border-bottom-color: rgba(0,0,0,0.34);
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 0 2px 0 -1px rgba(0,0,0,0.13), 0 3px 0 -1px rgba(0,0,0,0.08), 0 3px 13px -1px rgba(0,0,0,0.21);
-    text-align: center;
-    line-height: 30px;
-    color: #0b8273;
-    font-size: 12px;
     cursor: pointer;
 }
 
