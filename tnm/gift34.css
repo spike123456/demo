@@ -187,6 +187,10 @@
     filter: fliph;
 }
 
+.top-corner-disabled {
+    background-image: url(https://spike123456.github.io/demo/tnm/corner-top-disabled.svg);
+}
+
 .bottom-left-card {
     background-image: url(https://spike123456.github.io/demo/tnm/corner-bottom.svg);
     width: 43px;
@@ -205,6 +209,10 @@
     transform: scaleX(-1);
     -ms-filter: fliph;
     filter: fliph;
+}
+
+.bottom-corner-disabled {
+    background-image: url(https://spike123456.github.io/demo/tnm/corner-bottom-disabled.svg);
 }
 
 .gift-icon {
