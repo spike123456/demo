@@ -172,7 +172,6 @@
     width: 34px;
     height: 34px;
     position: absolute;
-    top: 20px;
 }
 
 .top-right-card {
@@ -180,8 +179,6 @@
     width: 34px;
     height: 34px;
     position: absolute;
-    top: 20px;
-    right: 20px;
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -195,7 +192,6 @@
     width: 43px;
     height: 42px;
     position: absolute;
-    bottom: 20px;
 }
 
 .bottom-right-card {
@@ -203,8 +199,6 @@
     width: 43px;
     height: 42px;
     position: absolute;
-    bottom: 20px;
-    right: 20px;
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -253,4 +247,34 @@
 
 .card-padding {
     padding: 20px;
+}
+
+.top-padding-card {
+    top: 20px;
+}
+
+.right-padding-card {
+    right: 20px;
+}
+
+.bottom-padding-card {
+    bottom: 20px;
+}
+
+@media only screen and (max-width: 1080px) and (min-width: 991px) {
+    .card-padding {
+        padding: 15px;
+    }
+
+    .top-padding-card {
+        top: 15px;
+    }
+
+    .right-padding-card {
+        right: 15px;
+    }
+
+    .bottom-padding-card {
+        bottom: 15px;
+    }
 }
