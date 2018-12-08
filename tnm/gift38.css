@@ -392,3 +392,17 @@
     -ms-filter: grayscale(100%);
     filter: grayscale(100%);
 }
+
+#phone-title {
+    color: #c1ffd8;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#logout-phone {
+    color: #9596ff;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
