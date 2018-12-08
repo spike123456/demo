@@ -296,3 +296,21 @@
         bottom: 10px;
     }
 }
+
+@media only screen and (max-width: 810px) and (min-width: 768px) {
+    .card-padding {
+        padding: 10px;
+    }
+
+    .top-padding-card {
+        top: 10px;
+    }
+
+    .right-padding-card {
+        right: 10px;
+    }
+
+    .bottom-padding-card {
+        bottom: 10px;
+    }
+}
