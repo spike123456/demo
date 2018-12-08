@@ -263,18 +263,18 @@
 
 @media only screen and (max-width: 1080px) and (min-width: 991px) {
     .card-padding {
-        padding: 15px;
+        padding: 10px;
     }
 
     .top-padding-card {
-        top: 15px;
+        top: 10px;
     }
 
     .right-padding-card {
-        right: 15px;
+        right: 10px;
     }
 
     .bottom-padding-card {
-        bottom: 15px;
+        bottom: 10px;
     }
 }
