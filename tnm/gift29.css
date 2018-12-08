@@ -262,6 +262,10 @@
 }
 
 @media only screen and (max-width: 1350px) and (min-width: 1200px) {
+    #grid-content {
+        padding: 0 80px;
+    }
+
     .card-padding {
         padding: 10px;
     }
@@ -280,6 +284,10 @@
 }
 
 @media only screen and (max-width: 1080px) and (min-width: 991px) {
+    #grid-content {
+        padding: 0 50px;
+    }
+
     .card-padding {
         padding: 10px;
     }
@@ -298,6 +306,10 @@
 }
 
 @media only screen and (max-width: 810px) and (min-width: 768px) {
+    #grid-content {
+        padding: 0 20px;
+    }
+
     .card-padding {
         padding: 10px;
     }
@@ -312,5 +324,11 @@
 
     .bottom-padding-card {
         bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #grid-content {
+        padding: 0;
     }
 }
