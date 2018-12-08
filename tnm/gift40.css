@@ -419,3 +419,19 @@
     bottom: 0;
     right: 0;
 }
+
+.top-bottom-wheel-wrapper {
+    height: 1%;
+}
+
+#full-wheel-wrapper {
+    height: 100%;
+}
+
+#key-detail {
+    padding: 20px;
+    text-align: center;
+    color: #bff2ff;
+    font-size: 40px;
+    font-weight: 600;
+}
