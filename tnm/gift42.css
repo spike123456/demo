@@ -442,8 +442,13 @@
 }
 
 #random-wheel {
-    color: white;
     background-color: #F32C52;
+    margin-left: auto;
+}
+
+.wheel-btn {
+    width: 100px;
+    color: white;
     display: flex;
     overflow: hidden;
     margin: 10px;
@@ -480,4 +485,8 @@
 .wheel-btn:active {
     transition: all 150ms linear;
     opacity: .75;
+}
+
+#cancel-wheel {
+    background-color: #161616;
 }
