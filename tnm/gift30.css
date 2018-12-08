@@ -327,8 +327,46 @@
     }
 }
 
+@media only screen and (max-width: 767px) and (min-width: 577px) {
+    #grid-content {
+        padding: 0 20px;
+    }
+
+    .card-padding {
+        padding: 10px;
+    }
+
+    .top-padding-card {
+        top: 10px;
+    }
+
+    .right-padding-card {
+        right: 10px;
+    }
+
+    .bottom-padding-card {
+        bottom: 10px;
+    }
+}
+
 @media only screen and (max-width: 576px) {
     #grid-content {
         padding: 0;
+    }
+
+    .card-padding {
+        padding: 10px;
+    }
+
+    .top-padding-card {
+        top: 10px;
+    }
+
+    .right-padding-card {
+        right: 10px;
+    }
+
+    .bottom-padding-card {
+        bottom: 10px;
     }
 }
