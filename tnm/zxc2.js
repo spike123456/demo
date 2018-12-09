@@ -22,4 +22,8 @@ var theWheel = new Winwheel({
         }
 });
 
+function alertPrize(indicatedSegment) {
+	
+}
+
 var app = angular.module('SinglePage', []);
