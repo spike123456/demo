@@ -497,3 +497,11 @@ canvas {
     max-width: 100%;
     height: auto;
 }
+
+#main-wheel-wrapper {
+    text-align: center;
+}
+
+#arrow {
+    background-image: url(https://spike123456.github.io/demo/tnm/arrow-wheel.svg);
+}
