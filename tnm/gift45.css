@@ -411,7 +411,7 @@
     width: 100%;
     height: 100vh;
     z-index: 2000000001;
-    background-color: #0000008c;
+    background-color: #000000b8;
     position: fixed;
     top: 0;
     left: 0;
@@ -440,7 +440,7 @@
 .bottom-padding {
     width: 50%;
     padding: 20px;
-    padding-bottom: 0;
+    padding-top: 0;
 }
 
 #random-wheel {
@@ -491,4 +491,9 @@
 
 #cancel-wheel {
     background-color: #161616;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
 }
