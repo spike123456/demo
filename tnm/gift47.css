@@ -504,4 +504,7 @@ canvas {
 
 #arrow {
     background-image: url(https://spike123456.github.io/demo/tnm/arrow-wheel.svg);
+    width: 55px;
+    height: 96px;
+    margin: 0 auto;
 }
