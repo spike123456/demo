@@ -434,11 +434,13 @@
     color: #bff2ff;
     font-size: 40px;
     font-weight: 600;
+    padding-bottom: 0;
 }
 
 .bottom-padding {
     width: 50%;
     padding: 20px;
+    padding-bottom: 0;
 }
 
 #random-wheel {
