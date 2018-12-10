@@ -24,11 +24,12 @@ var theWheel = new Winwheel({
         }
 });
 
+var wheelSpinning = false;
+
 function alertPrize(indicatedSegment) {
-	
+    wheelSpinning=false;
 }
 
-var wheelSpinning = false;
 function startSpin()
 {
     if (!wheelSpinning)
