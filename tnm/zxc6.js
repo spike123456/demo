@@ -28,4 +28,15 @@ function alertPrize(indicatedSegment) {
 	
 }
 
+var wheelSpinning = false;
+function startSpin()
+{
+    if (!wheelSpinning)
+    {
+        theWheel.animation.spins = 3;
+        theWheel.startAnimation();
+        wheelSpinning = true;
+    }
+}
+
 var app = angular.module('SinglePage', []);
