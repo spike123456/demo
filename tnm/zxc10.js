@@ -44,7 +44,7 @@ function startSpin()
 }
 
 function reset() {
-    var oldAngle=currentAngle;
+    var oldAngle=-currentAngle;
     currentAngle=Math.floor(Math.random() * 44) + 1;
     theWheel = new Winwheel({
         'rotationAngle': oldAngle,
