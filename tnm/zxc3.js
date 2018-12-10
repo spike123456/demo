@@ -4,14 +4,14 @@ var theWheel = new Winwheel({
     'textFontSize' : 28,    // Set font size as desired.
     'segments'     :        // Define segments including colour and text.
         [
-            {'fillStyle' : '#eae56f', 'text' : 'Prize 1'},
-            {'fillStyle' : '#89f26e', 'text' : 'Prize 2'},
-            {'fillStyle' : '#7de6ef', 'text' : 'Prize 3'},
-            {'fillStyle' : '#e7706f', 'text' : 'Prize 4'},
-            {'fillStyle' : '#eae56f', 'text' : 'Prize 5'},
-            {'fillStyle' : '#89f26e', 'text' : 'Prize 6'},
-            {'fillStyle' : '#7de6ef', 'text' : 'Prize 7'},
-            {'fillStyle' : '#e7706f', 'text' : 'Prize 8'}
+            {'fillStyle' : '#ff834e', 'text' : '10.000 VND'},
+            {'fillStyle' : '#aaff3e', 'text' : '20.000 VND'},
+            {'fillStyle' : '#fcffb6', 'text' : '30.000 VND'},
+            {'fillStyle' : '#ff90a9', 'text' : '50.000 VND'},
+            {'fillStyle' : '#97a5ff', 'text' : '100.000 VND'},
+            {'fillStyle' : '#53fff6', 'text' : '200.000 VND'},
+            {'fillStyle' : '#b559ff', 'text' : '300.000 VND'},
+            {'fillStyle' : '#b1ff11', 'text' : '500.000 VND'}
         ],
     'animation' :           // Specify the animation to use.
         {
