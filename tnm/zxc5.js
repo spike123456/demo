@@ -1,7 +1,5 @@
-var defaultAngle=Math.floor(Math.random() * 359);
-
 var theWheel = new Winwheel({
-    'rotationAngle': defaultAngle,
+    'rotationAngle': Math.floor(Math.random() * 359),
     'numSegments'  : 8,     // Specify number of segments.
     'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
     'textFontSize' : 28,    // Set font size as desired.
@@ -18,6 +16,7 @@ var theWheel = new Winwheel({
         ],
     'animation' :           // Specify the animation to use.
         {
+            'stopAngle': Math.floor(Math.random() * 44) + 1,
             'type'     : 'spinToStop',
             'duration' : 5,     // Duration in seconds.
             'spins'    : 8,     // Number of complete spins.
