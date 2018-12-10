@@ -28,22 +28,8 @@ var theWheel = new Winwheel({
 var wheelSpinning = false;
 
 function alertPrize(indicatedSegment) {
-    theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
-    theWheel.draw();                // Call draw to render changes to the wheel.
     wheelSpinning=false;
-}
 
-function startSpin()
-{
-    if (!wheelSpinning)
-    {
-        theWheel.animation.spins = 3;
-        theWheel.startAnimation();
-        wheelSpinning = true;
-    }
-}
-
-function reset() {
     var oldAngle=-currentAngle;
     currentAngle=Math.floor(Math.random() * 44) + 1;
     theWheel = new Winwheel({
@@ -71,6 +57,16 @@ function reset() {
                 'callbackFinished' : alertPrize
             }
     });
+}
+
+function startSpin()
+{
+    if (!wheelSpinning)
+    {
+        theWheel.animation.spins = 3;
+        theWheel.startAnimation();
+        wheelSpinning = true;
+    }
 }
 
 var app = angular.module('SinglePage', []);
