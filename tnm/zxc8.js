@@ -27,6 +27,8 @@ var theWheel = new Winwheel({
 var wheelSpinning = false;
 
 function alertPrize(indicatedSegment) {
+    theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
+    theWheel.draw();                // Call draw to render changes to the wheel.
     wheelSpinning=false;
 }
 
