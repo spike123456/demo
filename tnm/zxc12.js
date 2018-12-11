@@ -21,9 +21,14 @@ var theWheel = new Winwheel({
             'type'     : 'spinToStop',
             'duration' : 5,     // Duration in seconds.
             'spins'    : 8,     // Number of complete spins.
-            'callbackFinished' : alertPrize
+            'callbackFinished' : alertPrize,
+            'callbackSound': segmentChanged
         }
 });
+
+function segmentChanged() {
+    console.log(theWheel.getIndicatedSegmentNumber());
+}
 
 var wheelSpinning = false;
 
