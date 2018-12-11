@@ -29,7 +29,7 @@ var theWheel = new Winwheel({
 });
 
 function segmentChanged() {
-    $('#result-gift').text("Giải thưởng của bạn: "+segments[theWheel.getIndicatedSegmentNumber()].text);
+    $('#result-gift').text("Giải thưởng của bạn: "+segments[theWheel.getIndicatedSegmentNumber()-1].text);
 }
 
 var wheelSpinning = false;
