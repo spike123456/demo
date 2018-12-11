@@ -437,15 +437,9 @@
     padding-bottom: 0;
 }
 
-.bottom-padding {
-    width: 50%;
-    padding: 20px;
-    padding-top: 0;
-}
-
 #random-wheel {
     background-color: #F32C52;
-    margin-left: auto;
+    margin: 0 auto;
 }
 
 .wheel-btn {
@@ -491,6 +485,7 @@
 
 #cancel-wheel {
     background-color: #161616;
+    margin: 0 auto;
 }
 
 canvas {
@@ -513,4 +508,15 @@ canvas {
     color: #ecf15a;
     font-size: 20px;
     text-align: right;
+    margin: 0 auto;
+}
+
+#spin-padding {
+    padding: 10px;
+    padding-top: 0;
+}
+
+#bottom-padding {
+    padding: 20px;
+    padding-top: 0;
 }
