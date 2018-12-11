@@ -70,6 +70,8 @@ function startSpin()
 {
     if (!wheelSpinning)
     {
+        $('#random-wheel').css('display',"none");
+        $('#result-gift').css('display',"block");
         theWheel.animation.spins = 3;
         theWheel.startAnimation();
         wheelSpinning = true;
