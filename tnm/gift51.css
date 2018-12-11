@@ -507,8 +507,7 @@ canvas {
 #result-gift {
     color: #ecf15a;
     font-size: 20px;
-    text-align: right;
-    margin: 0 auto;
+    text-align: center;
 }
 
 #spin-padding {
