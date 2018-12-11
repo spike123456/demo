@@ -508,3 +508,9 @@ canvas {
     height: 96px;
     margin: 0 auto;
 }
+
+#result-gift {
+    color: #ecf15a;
+    font-size: 20px;
+    text-align: right;
+}

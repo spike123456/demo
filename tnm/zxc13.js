@@ -1,20 +1,22 @@
 var currentAngle=Math.floor(Math.random() * 44) + 1;
+
+var segments=[
+    {'fillStyle' : '#ff834e', 'text' : '10.000 VND'},
+    {'fillStyle' : '#aaff3e', 'text' : '300.000 VND'},
+    {'fillStyle' : '#fcffb6', 'text' : '30.000 VND'},
+    {'fillStyle' : '#ff90a9', 'text' : '500.000 VND'},
+    {'fillStyle' : '#97a5ff', 'text' : '100.000 VND'},
+    {'fillStyle' : '#53fff6', 'text' : '50.000 VND'},
+    {'fillStyle' : '#b559ff', 'text' : '20.000 VND'},
+    {'fillStyle' : '#b1ff11', 'text' : '200.000 VND'}
+];
+
 var theWheel = new Winwheel({
     'rotationAngle': Math.floor(Math.random() * 359),
     'numSegments'  : 8,     // Specify number of segments.
     'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
     'textFontSize' : 28,    // Set font size as desired.
-    'segments'     :        // Define segments including colour and text.
-        [
-            {'fillStyle' : '#ff834e', 'text' : '10.000 VND'},
-            {'fillStyle' : '#aaff3e', 'text' : '300.000 VND'},
-            {'fillStyle' : '#fcffb6', 'text' : '30.000 VND'},
-            {'fillStyle' : '#ff90a9', 'text' : '500.000 VND'},
-            {'fillStyle' : '#97a5ff', 'text' : '100.000 VND'},
-            {'fillStyle' : '#53fff6', 'text' : '50.000 VND'},
-            {'fillStyle' : '#b559ff', 'text' : '20.000 VND'},
-            {'fillStyle' : '#b1ff11', 'text' : '200.000 VND'}
-        ],
+    'segments'     : segments,        // Define segments including colour and text.
     'animation' :           // Specify the animation to use.
         {
             'stopAngle': currentAngle,
@@ -27,7 +29,7 @@ var theWheel = new Winwheel({
 });
 
 function segmentChanged() {
-    console.log(theWheel.getIndicatedSegmentNumber());
+    $('#result-gift').text("Giải thưởng của bạn: "+segments[theWheel.getIndicatedSegmentNumber()].text);
 }
 
 var wheelSpinning = false;
