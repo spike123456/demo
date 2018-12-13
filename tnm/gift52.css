@@ -421,11 +421,11 @@
 }
 
 .top-bottom-wheel-wrapper {
-    height: 1vh;
+    height: 1%;
 }
 
 #full-wheel-wrapper {
-    height: 100vh;
+    height: 100%;
 }
 
 #key-detail {
