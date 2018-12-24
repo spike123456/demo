@@ -13,6 +13,7 @@ var segments=[
 
 var theWheel = new Winwheel({
     'drawMode'     : 'image',
+    'imageOverlay' : true,
     'rotationAngle': Math.floor(Math.random() * 359),
     'numSegments'  : 8,     // Specify number of segments.
     'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
