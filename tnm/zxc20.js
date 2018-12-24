@@ -1,5 +1,15 @@
 var currentAngle=Math.floor(Math.random() * 44) + 1;
 
+AccountKit_OnInteractive = function(){
+    AccountKit.init(
+        {
+            appId:"1999638293635187",
+            version:"v1.0",
+            fbAppEventsEnabled:true
+        }
+    );
+};
+
 var segments=[
     {'fillStyle' : '#ff834e', 'text' : '10.000 VND'},
     {'fillStyle' : '#aaff3e', 'text' : '300.000 VND'},
@@ -77,6 +87,30 @@ function startSpin()
         theWheel.startAnimation();
         wheelSpinning = true;
     }
+}
+
+function loginCallback(res) {
+    if (response.status === "PARTIALLY_AUTHENTICATED") {
+        var code = response.code;
+        var csrf = response.state;
+        console.log('success');
+        console.log(code);
+        console.log(csrf);
+    }
+    else if (response.status === "NOT_AUTHENTICATED") {
+        console.log('NOT_AUTHENTICATED');
+    }
+    else if (response.status === "BAD_PARAMS") {
+        console.log('BAD_PARAMS');
+    }
+}
+
+function verifyPhone() {
+    AccountKit.login(
+        'PHONE',
+        {countryCode: "+84", phoneNumber: "0907007620"}, // will use default values if not specified
+        loginCallback
+    );
 }
 
 var app = angular.module('SinglePage', []);
