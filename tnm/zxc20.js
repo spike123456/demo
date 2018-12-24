@@ -89,7 +89,7 @@ function startSpin()
     }
 }
 
-function loginCallback(res) {
+function loginCallback(response) {
     if (response.status === "PARTIALLY_AUTHENTICATED") {
         var code = response.code;
         var csrf = response.state;
