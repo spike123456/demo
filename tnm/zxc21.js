@@ -4,6 +4,7 @@ AccountKit_OnInteractive = function(){
     AccountKit.init(
         {
             appId:"1999638293635187",
+            state:"gwegw222",
             version:"v1.0",
             fbAppEventsEnabled:true
         }
