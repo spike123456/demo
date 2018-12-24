@@ -12,8 +12,7 @@ var segments=[
 ];
 
 var theWheel = new Winwheel({
-    'drawMode'     : 'image',
-    'imageOverlay' : true,
+    'clearTheCanvas' : false,
     'rotationAngle': Math.floor(Math.random() * 359),
     'numSegments'  : 8,     // Specify number of segments.
     'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
@@ -30,17 +29,17 @@ var theWheel = new Winwheel({
         }
 });
 
-var loadedImg = new Image();
-
-// Create callback to execute once the image has finished loading.
-loadedImg.onload = function()
-{
-    theWheel.wheelImage = loadedImg;    // Make wheelImage equal the loaded image object.
-    theWheel.draw();                    // Also call draw function to render the wheel.
-}
-
-// Set the image source, once complete this will trigger the onLoad callback (above).
-loadedImg.src = "https://spike123456.github.io/demo/tnm/ahihi.png";
+// var loadedImg = new Image();
+//
+// // Create callback to execute once the image has finished loading.
+// loadedImg.onload = function()
+// {
+//     theWheel.wheelImage = loadedImg;    // Make wheelImage equal the loaded image object.
+//     theWheel.draw();                    // Also call draw function to render the wheel.
+// }
+//
+// // Set the image source, once complete this will trigger the onLoad callback (above).
+// loadedImg.src = "https://spike123456.github.io/demo/tnm/ahihi.png";
 
 
 function segmentChanged() {
