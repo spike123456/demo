@@ -5,6 +5,7 @@ AccountKit_OnInteractive = function(){
         {
             appId:"1999638293635187",
             version:"v1.0",
+            state:"gwegw222",
             fbAppEventsEnabled:true
         }
     );
