@@ -5,8 +5,7 @@ AccountKit_OnInteractive = function(){
         {
             appId:"1999638293635187",
             version:"v1.0",
-            fbAppEventsEnabled:true,
-            debug:true
+            fbAppEventsEnabled:true
         }
     );
 };
@@ -109,7 +108,7 @@ function loginCallback(response) {
 function verifyPhone() {
     AccountKit.login(
         'PHONE',
-        {countryCode: "+84", phoneNumber: "0907007620"}, // will use default values if not specified
+        {countryCode: "+84", phoneNumber: $('#phone-input').val()}, // will use default values if not specified
         loginCallback
     );
 }
