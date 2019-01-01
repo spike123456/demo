@@ -126,7 +126,9 @@ app.controller('giftController', function($scope,$http) {
             }
         })
             .then(function (response) {
-                console.log(response.status);
+                console.log('1');
+            }, function (err) {
+                console.log('2');
             });
     // }
     // else {
