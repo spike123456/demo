@@ -122,34 +122,40 @@ function updateGiftList(data) {
 }
 
 app.controller('giftController', function($scope,$http) {
-    var token=localStorage.giftToken;
-    if (token) {
-        $http({
-            method: 'GET',
-            url: "https://api.doraeshop.vn/v1/gift-of-phone",
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8',
-                'Authorization': token
-            }
-        })
-            .then(function (response) {
-                $scope.orders=updateGiftList(response.data.data);
-            }, function (err) {
-                updateGiftList(null);
-            });
-    }
-    else {
-        updateGiftList(null);
-    }
+    $scope.reload = function() {
+        var token=localStorage.giftToken;
+        if (token) {
+            $('#main-gift-loading').css('display','block');
+            $('#phone-input-form').css('display','none');
+            $('#grid-content').css('display','none');
+            $http({
+                method: 'GET',
+                url: "https://api.doraeshop.vn/v1/gift-of-phone",
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Authorization': token
+                }
+            })
+                .then(function (response) {
+                    $scope.orders=updateGiftList(response.data.data);
+                }, function (err) {
+                    updateGiftList(null);
+                });
+        }
+        else {
+            updateGiftList(null);
+        }
+    };
 
     $scope.logout = function() {
+        var token=localStorage.giftToken;
         updateGiftList(null);
         $http({
             method: 'POST',
             url: "https://api.doraeshop.vn/v1/use-other-phone",
             headers: {
                 'Content-Type': 'application/json; charset=utf-8',
-                'Authorization': localStorage.giftToken
+                'Authorization': token
             }
         })
             .then(function (response) {
@@ -199,14 +205,16 @@ app.controller('giftController', function($scope,$http) {
             showToast("error","Lỗi","Vui lòng điền số điện thoại của bạn");
         }
     };
+
+    $scope.reload();
 });
 
-function asd(ev)
+function eventGift(ev)
 {
-    console.log('1 '+ev.originalEvent.key);
     if (ev.originalEvent.key=='giftToken') {
-        console.log('2 '+ev.originalEvent.newValue);
+        var scope = angular.element(document.getElementById('gift-content-controller')).scope();
+        scope.reload();
     }
 }
 
-$(window).on('storage', asd);
+$(window).on('storage', eventGift);
