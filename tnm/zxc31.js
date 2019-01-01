@@ -79,8 +79,7 @@ function alertPrize(indicatedSegment) {
     });
 }
 
-function startSpin()
-{
+function startSpin() {
     if (!wheelSpinning)
     {
         $('#random-wheel').css('display',"none");
@@ -91,47 +90,85 @@ function startSpin()
     }
 }
 
-function loginCallback(response) {
-    if (response.status === "PARTIALLY_AUTHENTICATED") {
-        var code = response.code;
-        var csrf = response.state;
-        console.log('success');
-        console.log(code);
-        console.log(csrf);
-    }
-    else if (response.status === "NOT_AUTHENTICATED") {
-        console.log('NOT_AUTHENTICATED');
-    }
-    else if (response.status === "BAD_PARAMS") {
-        console.log('BAD_PARAMS');
-    }
+function reorder(list) {
+    var left=list.filter(item => item.used===false).sort(function(a, b){return a.time > b.time });
+    var right=list.filter(item => item.used===true).sort(function(a, b){return a.time > b.time });
+    return left.concat(right);
 }
 
-function verifyPhone() {
-    AccountKit.login(
-        'PHONE',
-        {countryCode: "+84", phoneNumber: $('#phone-input').val()},
-        loginCallback
-    );
+function updateGiftList(data) {
+    $('#main-gift-loading').css('display','none');
+    if (data) {
+        $('#phone-input-form').css('display','none');
+        $('#grid-content').css('display','block');
+        $('#phone-title').text(data.phoneNumber);
+        if (data.orders.length==0) {
+            $('#gift-list').css('display','none');
+            $('#empty-order').css('display','block');
+        }
+        else {
+            $('#gift-list').css('display','block');
+            $('#empty-order').css('display','none');
+            return reorder(data.orders);
+        }
+    }
+    else {
+        $('#phone-input-form').css('display','block');
+        $('#grid-content').css('display','none');
+        localStorage.removeItem("giftToken");
+    }
+
+    return [];
 }
 
 app.controller('giftController', function($scope,$http) {
-    // var token=localStorage.giftToken;
-    // if (token) {
+    var token=localStorage.giftToken;
+    if (token) {
         $http({
             method: 'GET',
             url: "https://api.doraeshop.vn/v1/gift-of-phone",
             headers: {
-                'Content-Type': 'application/json; charset=utf-8'
+                'Content-Type': 'application/json; charset=utf-8',
+                'Authorization': token
             }
         })
             .then(function (response) {
-
+                $scope.orders=updateGiftList(response.data.data);
             }, function (err) {
-                console.log(err);
+                updateGiftList(null);
             });
-    // }
-    // else {
-    //
-    // }
+    }
+    else {
+        updateGiftList(null);
+    }
+
+    $scope.verifyPhone = function() {
+        AccountKit.login(
+            'PHONE',
+            {countryCode: "+84", phoneNumber: $('#phone-input').val()},
+            function (response) {
+                if (response.status === "PARTIALLY_AUTHENTICATED") {
+                    $http({
+                        method: 'POST',
+                        url: "https://api.doraeshop.vn/v1/phone-authenticate",
+                        data: {
+                            code: response.code
+                        }
+                        headers: {
+                            'Content-Type': 'text/plain; charset=utf-8'
+                        }
+                    })
+                        .then(function (response) {
+                            if (response.data.code==200) {
+                                localStorage.giftToken=response.data.data.token;
+                                $scope.orders=updateGiftList(response.data.data.gift);
+                            }
+                            else {
+                                showToast("error","Lỗi","Xác thực thất bại");
+                            }
+                        });
+                }
+            }
+        );
+    };
 });
