@@ -143,32 +143,38 @@ app.controller('giftController', function($scope,$http) {
     }
 
     $scope.verifyPhone = function() {
-        AccountKit.login(
-            'PHONE',
-            {countryCode: "+84", phoneNumber: $('#phone-input').val()},
-            function (response) {
-                if (response.status === "PARTIALLY_AUTHENTICATED") {
-                    $http({
-                        method: 'POST',
-                        url: "https://api.doraeshop.vn/v1/phone-authenticate",
-                        data: {
-                            code: response.code
-                        },
-                        headers: {
-                            'Content-Type': 'text/plain; charset=utf-8'
-                        }
-                    })
-                        .then(function (response) {
-                            if (response.data.code==200) {
-                                localStorage.giftToken=response.data.data.token;
-                                $scope.orders=updateGiftList(response.data.data.gift);
+        var phone=$('#phone-input').val();
+        if (phone) {
+            AccountKit.login(
+                'PHONE',
+                { countryCode: "+84", phoneNumber: phone },
+                function (response) {
+                    if (response.status === "PARTIALLY_AUTHENTICATED") {
+                        $http({
+                            method: 'POST',
+                            url: "https://api.doraeshop.vn/v1/phone-authenticate",
+                            data: {
+                                code: response.code
+                            },
+                            headers: {
+                                'Content-Type': 'text/plain; charset=utf-8'
                             }
-                            else {
-                                showToast("error","Lỗi","Xác thực thất bại");
-                            }
-                        });
+                        })
+                            .then(function (response) {
+                                if (response.data.code==200) {
+                                    localStorage.giftToken=response.data.data.token;
+                                    $scope.orders=updateGiftList(response.data.data.gift);
+                                }
+                                else {
+                                    showToast("error","Lỗi","Xác thực thất bại");
+                                }
+                            });
+                    }
                 }
-            }
-        );
+            );
+        }
+        else {
+            showToast("error","Lỗi","Vui lòng điền số điện thạoi của bạn");
+        }
     };
 });
