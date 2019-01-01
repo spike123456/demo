@@ -142,39 +142,71 @@ app.controller('giftController', function($scope,$http) {
         updateGiftList(null);
     }
 
+    $scope.logout = function() {
+        updateGiftList(null);
+        $http({
+            method: 'POST',
+            url: "https://api.doraeshop.vn/v1/use-other-phone",
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Authorization': localStorage.giftToken
+            }
+        })
+            .then(function (response) {
+
+            }, function (err) {
+
+            });
+    };
+
     $scope.verifyPhone = function() {
         var phone=$('#phone-input').val();
         if (phone) {
-            AccountKit.login(
-                'PHONE',
-                { countryCode: "+84", phoneNumber: phone },
-                function (response) {
-                    if (response.status === "PARTIALLY_AUTHENTICATED") {
-                        $http({
-                            method: 'POST',
-                            url: "https://api.doraeshop.vn/v1/phone-authenticate",
-                            data: {
-                                code: response.code
-                            },
-                            headers: {
-                                'Content-Type': 'text/plain; charset=utf-8'
-                            }
-                        })
-                            .then(function (response) {
-                                if (response.data.code==200) {
-                                    localStorage.giftToken=response.data.data.token;
-                                    $scope.orders=updateGiftList(response.data.data.gift);
+            if (AccountKit) {
+                AccountKit.login(
+                    'PHONE',
+                    { countryCode: "+84", phoneNumber: phone },
+                    function (response) {
+                        if (response.status === "PARTIALLY_AUTHENTICATED") {
+                            $http({
+                                method: 'POST',
+                                url: "https://api.doraeshop.vn/v1/phone-authenticate",
+                                data: {
+                                    code: response.code
+                                },
+                                headers: {
+                                    'Content-Type': 'text/plain; charset=utf-8'
                                 }
-                                else {
-                                    showToast("error","Lỗi","Xác thực thất bại");
-                                }
-                            });
+                            })
+                                .then(function (response) {
+                                    if (response.data.code==200) {
+                                        localStorage.giftToken=response.data.data.token;
+                                        $scope.orders=updateGiftList(response.data.data.gift);
+                                    }
+                                    else {
+                                        showToast("error","Lỗi","Xác thực thất bại");
+                                    }
+                                });
+                        }
                     }
-                }
-            );
+                );
+            }
+            else {
+                showToast("error","Lỗi","Vui lòng tải lại trang web này hoặc bấm F5");
+            }
         }
         else {
-            showToast("error","Lỗi","Vui lòng điền số điện thạoi của bạn");
+            showToast("error","Lỗi","Vui lòng điền số điện thoại của bạn");
         }
     };
 });
+
+function asd(ev)
+{
+    console.log('1 '+ev.originalEvent.key);
+    if (ev.originalEvent.key=='giftToken') {
+        console.log('2 '+ev.originalEvent.newValue);
+    }
+}
+
+$(window).on('storage', asd);
