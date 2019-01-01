@@ -1,3 +1,4 @@
+var app = angular.module('SinglePage', []);
 var currentAngle=Math.floor(Math.random() * 44) + 1;
 
 AccountKit_OnInteractive = function(){
@@ -109,9 +110,26 @@ function loginCallback(response) {
 function verifyPhone() {
     AccountKit.login(
         'PHONE',
-        {countryCode: "+84", phoneNumber: $('#phone-input').val()}, // will use default values if not specified
+        {countryCode: "+84", phoneNumber: $('#phone-input').val()},
         loginCallback
     );
 }
 
-var app = angular.module('SinglePage', []);
+app.controller('giftController', function($scope,$http) {
+    // var token=localStorage.giftToken;
+    // if (token) {
+        $http({
+            method: 'GET',
+            url: "https://api.doraeshop.vn/v1/gift-of-phone",
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            }
+        })
+            .then(function (response) {
+                console.log(response);
+            });
+    // }
+    // else {
+    //
+    // }
+});

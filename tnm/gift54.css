@@ -153,6 +153,7 @@
 }
 
 #grid-content {
+    display: none;
     padding: 0 100px;
 }
 
@@ -526,4 +527,8 @@ canvas {
     font-size: 30px;
     font-weight: 300;
     margin-top: 90px;
+}
+
+#phone-input-form {
+    display: none;
 }
