@@ -153,7 +153,7 @@ app.controller('giftController', function($scope,$http) {
                         url: "https://api.doraeshop.vn/v1/phone-authenticate",
                         data: {
                             code: response.code
-                        }
+                        },
                         headers: {
                             'Content-Type': 'text/plain; charset=utf-8'
                         }
