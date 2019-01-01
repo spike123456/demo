@@ -174,6 +174,9 @@ app.controller('giftController', function($scope,$http) {
                     { countryCode: "+84", phoneNumber: phone },
                     function (response) {
                         if (response.status === "PARTIALLY_AUTHENTICATED") {
+                            $('#main-gift-loading').css('display','block');
+                            $('#phone-input-form').css('display','none');
+                            $('#grid-content').css('display','none');
                             $http({
                                 method: 'POST',
                                 url: "https://api.doraeshop.vn/v1/phone-authenticate",
