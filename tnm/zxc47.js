@@ -183,6 +183,7 @@ app.controller('giftController', function($scope,$http) {
     };
 
     $scope.notifyRandomDone = function() {
+        var id=$("#key-detail").text();
         var orders=$scope.orders;
         for (i=0;i<orders.length;i++) {
             var order=orders[i];
