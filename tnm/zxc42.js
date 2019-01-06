@@ -1,7 +1,5 @@
 var app = angular.module('SinglePage', []);
-var currentAngle=Math.floor(Math.random() * 44) + 1;
-
-var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+var currentAngle=0;
 
 function preventDefault(e) {
     e = e || window.event;
@@ -11,7 +9,7 @@ function preventDefault(e) {
 }
 
 function preventDefaultForScrollKeys(e) {
-    if (keys[e.keyCode]) {
+    if (e.keyCode>36 && e.keyCode<41) {
         preventDefault(e);
         return false;
     }
@@ -49,34 +47,36 @@ AccountKit_OnInteractive = function(){
     );
 };
 
-var segments=[
-    {'fillStyle' : '#ff834e', 'text' : '10.000 VND'},
-    {'fillStyle' : '#aaff3e', 'text' : '300.000 VND'},
-    {'fillStyle' : '#fcffb6', 'text' : '30.000 VND'},
-    {'fillStyle' : '#ff90a9', 'text' : '500.000 VND'},
-    {'fillStyle' : '#97a5ff', 'text' : '100.000 VND'},
-    {'fillStyle' : '#53fff6', 'text' : '50.000 VND'},
-    {'fillStyle' : '#b559ff', 'text' : '20.000 VND'},
-    {'fillStyle' : '#b1ff11', 'text' : '200.000 VND'}
-];
+var theWheel = createWheel(Math.floor(Math.random() * 359));
 
-var theWheel = new Winwheel({
-    'rotationAngle': Math.floor(Math.random() * 359),
-    'numSegments'  : 8,     // Specify number of segments.
-    'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
-    'textFontSize' : 28,    // Set font size as desired.
-    'segments'     : segments,        // Define segments including colour and text.
-    'animation' :           // Specify the animation to use.
-        {
-            'stopAngle': currentAngle,
-            'type'     : 'spinToStop',
-            'duration' : 5,     // Duration in seconds.
-            'spins'    : 8,     // Number of complete spins.
-            'callbackFinished' : alertPrize,
-            'callbackSound': segmentChanged
-        }
-});
-
+function createWheel(oldAngle) {
+    currentAngle=Math.floor(Math.random() * 44) + 1;
+    return new Winwheel({
+        'rotationAngle': oldAngle,
+        'numSegments'  : 8,     // Specify number of segments.
+        'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
+        'textFontSize' : 28,    // Set font size as desired.
+        'segments'     : [
+            {'fillStyle' : '#ff834e', 'text' : '10.000 VND'},
+            {'fillStyle' : '#aaff3e', 'text' : '300.000 VND'},
+            {'fillStyle' : '#fcffb6', 'text' : '30.000 VND'},
+            {'fillStyle' : '#ff90a9', 'text' : '500.000 VND'},
+            {'fillStyle' : '#97a5ff', 'text' : '100.000 VND'},
+            {'fillStyle' : '#53fff6', 'text' : '50.000 VND'},
+            {'fillStyle' : '#b559ff', 'text' : '20.000 VND'},
+            {'fillStyle' : '#b1ff11', 'text' : '200.000 VND'}
+        ],        // Define segments including colour and text.
+        'animation' :           // Specify the animation to use.
+            {
+                'stopAngle': currentAngle,
+                'type'     : 'spinToStop',
+                'duration' : 5,     // Duration in seconds.
+                'spins'    : 8,     // Number of complete spins.
+                'callbackFinished' : alertPrize,
+                'callbackSound': segmentChanged
+            }
+    });
+}
 
 function segmentChanged() {
     $('#result-gift').text("Giải thưởng của bạn: "+segments[theWheel.getIndicatedSegmentNumber()-1].text);
@@ -86,24 +86,8 @@ var wheelSpinning = false;
 
 function alertPrize(indicatedSegment) {
     wheelSpinning=false;
-
-    var oldAngle=-currentAngle;
-    currentAngle=Math.floor(Math.random() * 44) + 1;
-    theWheel = new Winwheel({
-        'rotationAngle': oldAngle,
-        'numSegments'  : 8,     // Specify number of segments.
-        'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
-        'textFontSize' : 28,    // Set font size as desired.
-        'segments'     : segments,       // Define segments including colour and text.,
-        'animation' :           // Specify the animation to use.
-            {
-                'stopAngle': currentAngle,
-                'type'     : 'spinToStop',
-                'duration' : 5,     // Duration in seconds.
-                'spins'    : 8,     // Number of complete spins.
-                'callbackFinished' : alertPrize
-            }
-    });
+    $('#cancel-wheel').css('display',"block");
+    theWheel=createWheel(-currentAngle);
 }
 
 function startSpin() {
@@ -111,6 +95,7 @@ function startSpin() {
     {
         $('#random-wheel').css('display',"none");
         $('#result-gift').css('display',"block");
+        $('#cancel-wheel').css('display',"none");
         theWheel.animation.spins = 3;
         theWheel.startAnimation();
         wheelSpinning = true;
@@ -250,7 +235,6 @@ app.controller('giftController', function($scope,$http) {
 });
 
 function closeGift() {
-    console.log('here');
     handleScroll(true);
     $("#wheel-content").css('display','none');
 }
