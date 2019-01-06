@@ -88,7 +88,7 @@ var wheelSpinning = false;
 
 function alertPrize(indicatedSegment) {
     wheelSpinning=false;
-    $('#cancel-wheel').css('display',"block");
+    $('#cancel-wheel').css('visibility',"visible");
     theWheel=createWheel(-currentAngle);
 }
 
@@ -97,7 +97,7 @@ function startSpin() {
     {
         $('#random-wheel').css('display',"none");
         $('#result-gift').css('display',"block");
-        $('#cancel-wheel').css('display',"none");
+        $('#cancel-wheel').css('visibility',"hidden");
         theWheel.animation.spins = 3;
         theWheel.startAnimation();
         wheelSpinning = true;
