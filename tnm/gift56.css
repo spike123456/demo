@@ -535,7 +535,6 @@ canvas {
 
 .card-result-label {
     position: absolute;
-    top: 34px;
     left: 0;
     transform: rotate(-45deg);
     width: 100%;
@@ -543,4 +542,6 @@ canvas {
     line-height: 94px;
     font-size: 34px;
     font-weight: 800;
+    margin-top: 34px;
+    cursor: default;
 }
