@@ -47,6 +47,17 @@ AccountKit_OnInteractive = function(){
     );
 };
 
+var segments=[
+    {'fillStyle' : '#ff834e', 'text' : '10.000 VND'},
+    {'fillStyle' : '#aaff3e', 'text' : '300.000 VND'},
+    {'fillStyle' : '#fcffb6', 'text' : '30.000 VND'},
+    {'fillStyle' : '#ff90a9', 'text' : '500.000 VND'},
+    {'fillStyle' : '#97a5ff', 'text' : '100.000 VND'},
+    {'fillStyle' : '#53fff6', 'text' : '50.000 VND'},
+    {'fillStyle' : '#b559ff', 'text' : '20.000 VND'},
+    {'fillStyle' : '#b1ff11', 'text' : '200.000 VND'}
+];
+
 var theWheel = createWheel(Math.floor(Math.random() * 359));
 
 function createWheel(oldAngle) {
@@ -56,16 +67,7 @@ function createWheel(oldAngle) {
         'numSegments'  : 8,     // Specify number of segments.
         'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
         'textFontSize' : 28,    // Set font size as desired.
-        'segments'     : [
-            {'fillStyle' : '#ff834e', 'text' : '10.000 VND'},
-            {'fillStyle' : '#aaff3e', 'text' : '300.000 VND'},
-            {'fillStyle' : '#fcffb6', 'text' : '30.000 VND'},
-            {'fillStyle' : '#ff90a9', 'text' : '500.000 VND'},
-            {'fillStyle' : '#97a5ff', 'text' : '100.000 VND'},
-            {'fillStyle' : '#53fff6', 'text' : '50.000 VND'},
-            {'fillStyle' : '#b559ff', 'text' : '20.000 VND'},
-            {'fillStyle' : '#b1ff11', 'text' : '200.000 VND'}
-        ],        // Define segments including colour and text.
+        'segments'     : segments,        // Define segments including colour and text.
         'animation' :           // Specify the animation to use.
             {
                 'stopAngle': currentAngle,
