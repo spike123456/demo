@@ -94,7 +94,7 @@ function alertPrize(indicatedSegment) {
         'numSegments'  : 8,     // Specify number of segments.
         'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
         'textFontSize' : 28,    // Set font size as desired.
-        'segments'     : segments       // Define segments including colour and text.,
+        'segments'     : segments,       // Define segments including colour and text.,
         'animation' :           // Specify the animation to use.
             {
                 'stopAngle': currentAngle,
