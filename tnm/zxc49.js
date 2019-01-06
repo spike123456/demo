@@ -190,7 +190,7 @@ app.controller('giftController', function($scope,$http) {
             if (order.id===id) {
                 order.used=true;
                 $scope.orders=reorder(orders);
-                console.log($scope.orders);
+                $scope.$apply();
                 break;
             }
         }
