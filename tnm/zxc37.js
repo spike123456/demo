@@ -165,6 +165,11 @@ app.controller('giftController', function($scope,$http) {
             });
     };
 
+    $scope.openDetail = function(id,used) {
+        console.log(id);
+        console.log(used);
+    };
+
     $scope.verifyPhone = function() {
         var phone=$('#phone-input').val();
         if (phone) {
