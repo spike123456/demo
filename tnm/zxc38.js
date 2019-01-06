@@ -1,6 +1,43 @@
 var app = angular.module('SinglePage', []);
 var currentAngle=Math.floor(Math.random() * 44) + 1;
 
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+    e = e || window.event;
+    if (e.preventDefault)
+        e.preventDefault();
+    e.returnValue = false;
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+function handleScroll(enabled) {
+    if (enabled) {
+        if (window.removeEventListener)
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+        window.onmousewheel = document.onmousewheel = null;
+        window.onwheel = null;
+        window.ontouchmove = null;
+        document.onkeydown = null;
+        $('body').css('overflow','visible');
+    }
+    else {
+        if (window.addEventListener) // older FF
+            window.addEventListener('DOMMouseScroll', preventDefault, false);
+        window.onwheel = preventDefault; // modern standard
+        window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+        window.ontouchmove  = preventDefault; // mobile
+        document.onkeydown  = preventDefaultForScrollKeys;
+        $('body').css('overflow','hidden');
+    }
+}
+
 AccountKit_OnInteractive = function(){
     AccountKit.init(
         {
@@ -57,17 +94,7 @@ function alertPrize(indicatedSegment) {
         'numSegments'  : 8,     // Specify number of segments.
         'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
         'textFontSize' : 28,    // Set font size as desired.
-        'segments'     :        // Define segments including colour and text.
-            [
-                {'fillStyle' : '#ff834e', 'text' : '10.000 VND'},
-                {'fillStyle' : '#aaff3e', 'text' : '300.000 VND'},
-                {'fillStyle' : '#fcffb6', 'text' : '30.000 VND'},
-                {'fillStyle' : '#ff90a9', 'text' : '500.000 VND'},
-                {'fillStyle' : '#97a5ff', 'text' : '100.000 VND'},
-                {'fillStyle' : '#53fff6', 'text' : '50.000 VND'},
-                {'fillStyle' : '#b559ff', 'text' : '20.000 VND'},
-                {'fillStyle' : '#b1ff11', 'text' : '200.000 VND'}
-            ],
+        'segments'     : segments       // Define segments including colour and text.,
         'animation' :           // Specify the animation to use.
             {
                 'stopAngle': currentAngle,
@@ -166,8 +193,13 @@ app.controller('giftController', function($scope,$http) {
     };
 
     $scope.openDetail = function(id,used) {
-        console.log(id);
-        console.log(used);
+        if (!used) {
+            $("#wheel-content").css('display','block');
+            handleScroll(true);
+            $("#key-detail").text(id);
+            $("#random-wheel").css('display','block');
+            $("#result-gift").css('display','none');
+        }
     };
 
     $scope.verifyPhone = function() {
@@ -216,6 +248,11 @@ app.controller('giftController', function($scope,$http) {
 
     $scope.reload();
 });
+
+function close() {
+    handleScroll(false);
+    $("#wheel-content").css('display','none');
+}
 
 function eventGift(ev)
 {
