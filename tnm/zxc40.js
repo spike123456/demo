@@ -195,7 +195,7 @@ app.controller('giftController', function($scope,$http) {
     $scope.openDetail = function(id,used) {
         if (!used) {
             $("#wheel-content").css('display','block');
-            handleScroll(true);
+            handleScroll(false);
             $("#key-detail").text(id);
             $("#random-wheel").css('display','block');
             $("#result-gift").css('display','none');
@@ -250,7 +250,7 @@ app.controller('giftController', function($scope,$http) {
 });
 
 function close() {
-    handleScroll(false);
+    handleScroll(true);
     $("#wheel-content").css('display','none');
 }
 
