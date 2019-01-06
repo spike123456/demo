@@ -48,14 +48,14 @@ AccountKit_OnInteractive = function(){
 };
 
 var segments=[
-    {'fillStyle' : '#ff834e', 'text' : '10.000 VND'},
-    {'fillStyle' : '#aaff3e', 'text' : '300.000 VND'},
-    {'fillStyle' : '#fcffb6', 'text' : '30.000 VND'},
-    {'fillStyle' : '#ff90a9', 'text' : '500.000 VND'},
-    {'fillStyle' : '#97a5ff', 'text' : '100.000 VND'},
-    {'fillStyle' : '#53fff6', 'text' : '50.000 VND'},
-    {'fillStyle' : '#b559ff', 'text' : '20.000 VND'},
-    {'fillStyle' : '#b1ff11', 'text' : '200.000 VND'}
+    {'fillStyle' : '#ff834e', 'text' : '10.000 VNĐ'},
+    {'fillStyle' : '#aaff3e', 'text' : '300.000 VNĐ'},
+    {'fillStyle' : '#fcffb6', 'text' : '30.000 VNĐ'},
+    {'fillStyle' : '#ff90a9', 'text' : '500.000 VNĐ'},
+    {'fillStyle' : '#97a5ff', 'text' : '100.000 VNĐ'},
+    {'fillStyle' : '#53fff6', 'text' : '50.000 VNĐ'},
+    {'fillStyle' : '#b559ff', 'text' : '20.000 VNĐ'},
+    {'fillStyle' : '#b1ff11', 'text' : '200.000 VNĐ'}
 ];
 
 var theWheel = createWheel(Math.floor(Math.random() * 359));
@@ -101,6 +101,8 @@ function startSpin() {
         theWheel.animation.spins = 3;
         theWheel.startAnimation();
         wheelSpinning = true;
+        var scope = angular.element(document.getElementById('gift-content-controller')).scope();
+        scope.random();
     }
 }
 
@@ -162,20 +164,51 @@ app.controller('giftController', function($scope,$http) {
     };
 
     $scope.logout = function() {
-        var token=localStorage.giftToken;
         updateGiftList(null);
         $http({
             method: 'POST',
             url: "https://api.doraeshop.vn/v1/use-other-phone",
             headers: {
                 'Content-Type': 'application/json; charset=utf-8',
-                'Authorization': token
+                'Authorization': localStorage.giftToken
             }
         })
             .then(function (response) {
 
             }, function (err) {
 
+            });
+    };
+
+    $scope.random = function() {
+        var id=$("#key-detail").text();
+        $http({
+            method: 'POST',
+            url: "https://api.doraeshop.vn/v1/use-gift/"+id,
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Authorization': localStorage.giftToken
+            }
+        })
+            .then(function (response) {
+                if (response.data.code==200) {
+                    var orders=$scope.orders;
+                    for (i=0;i<orders.length;i++) {
+                        var order=orders[i];
+                        if (order.id===id) {
+                            order.used=true;
+                            $scope.orders=reorder(orders);
+                            break;
+                        }
+                    }
+                }
+                else {
+                    closeGift();
+                    showToast("error","Lỗi","Lỗi chưa xác định");
+                }
+            }, function (err) {
+                closeGift();
+                showToast("error","Lỗi","Xác thực thất bại");
             });
     };
 
