@@ -210,6 +210,7 @@ app.controller('giftController', function($scope,$http) {
                 }
             }, function (err) {
                 closeGift();
+                updateGiftList(null);
                 showToast("error","Lỗi","Xác thực thất bại");
             });
     };
