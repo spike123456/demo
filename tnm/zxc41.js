@@ -249,7 +249,8 @@ app.controller('giftController', function($scope,$http) {
     $scope.reload();
 });
 
-function close() {
+function closeGift() {
+    console.log('here');
     handleScroll(true);
     $("#wheel-content").css('display','none');
 }
