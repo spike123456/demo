@@ -90,6 +90,8 @@ function alertPrize(indicatedSegment) {
     wheelSpinning=false;
     $('#cancel-wheel').css('visibility',"visible");
     theWheel=createWheel(-currentAngle);
+    var scope = angular.element(document.getElementById('gift-content-controller')).scope();
+    scope.notifyRandomDone();
 }
 
 function startSpin() {
@@ -180,29 +182,29 @@ app.controller('giftController', function($scope,$http) {
             });
     };
 
+    $scope.notifyRandomDone = function() {
+        var orders=$scope.orders;
+        for (i=0;i<orders.length;i++) {
+            var order=orders[i];
+            if (order.id===id) {
+                order.used=true;
+                $scope.orders=reorder(orders);
+                break;
+            }
+        }
+    };
+
     $scope.random = function() {
-        var id=$("#key-detail").text();
         $http({
             method: 'POST',
-            url: "https://api.doraeshop.vn/v1/use-gift/"+id,
+            url: "https://api.doraeshop.vn/v1/use-gift/"+$("#key-detail").text(),
             headers: {
                 'Content-Type': 'application/json; charset=utf-8',
                 'Authorization': localStorage.giftToken
             }
         })
             .then(function (response) {
-                if (response.data.code==200) {
-                    var orders=$scope.orders;
-                    for (i=0;i<orders.length;i++) {
-                        var order=orders[i];
-                        if (order.id===id) {
-                            order.used=true;
-                            $scope.orders=reorder(orders);
-                            break;
-                        }
-                    }
-                }
-                else {
+                if (response.data.code!==200) {
                     closeGift();
                     showToast("error","Lỗi","Lỗi chưa xác định");
                 }
