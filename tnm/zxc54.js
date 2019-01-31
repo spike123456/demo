@@ -150,11 +150,7 @@ app.controller('historyController', function($scope,$http) {
         }
     };
 
-    $scope.historyList=[{
-        "phone": "035xxx7288",
-        "value": 50,
-        "provider": "viettel"
-    }];
+    $scope.historyList=[];
     $http({
         method: 'GET',
         url: "https://api.doraeshop.vn/v1/get-history-gift",
