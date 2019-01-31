@@ -162,6 +162,7 @@ app.controller('historyController', function($scope,$http) {
             $('#history-gift').css('display','none');
             $('#history-content').css('display','block');
             $scope.historyList=response.data.data;
+            $scope.$apply();
         });
 });
 
