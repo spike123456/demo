@@ -161,8 +161,8 @@ app.controller('historyController', function($scope,$http) {
         .then(function (response) {
             $('#history-gift').css('display','none');
             $('#history-content').css('display','block');
+            console.log(response.data.data.length);
             $scope.historyList=response.data.data;
-            $scope.$apply();
         });
 });
 
