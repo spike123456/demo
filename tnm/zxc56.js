@@ -36,16 +36,16 @@ function handleScroll(enabled) {
     }
 }
 
-AccountKit_OnInteractive = function(){
-    AccountKit.init(
-        {
-            appId:"1999638293635187",
-            version:"v1.0",
-            state:"gwegw222",
-            fbAppEventsEnabled:true
-        }
-    );
-};
+// AccountKit_OnInteractive = function(){
+//     AccountKit.init(
+//         {
+//             appId:"1999638293635187",
+//             version:"v1.0",
+//             state:"gwegw222",
+//             fbAppEventsEnabled:true
+//         }
+//     );
+// };
 
 var segments=[
     {'fillStyle' : '#ff834e', 'text' : '10.000 VNĐ'},
@@ -267,6 +267,15 @@ app.controller('giftController', function($scope,$http) {
     };
 
     $scope.verifyPhone = function() {
+        AccountKit.init(
+            {
+                appId:"1999638293635187",
+                version:"v1.0",
+                state:"gwegw222",
+                fbAppEventsEnabled:true
+            }
+        );
+
         var phone=$('#phone-input').val();
         if (phone) {
             if (AccountKit) {
