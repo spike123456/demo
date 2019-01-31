@@ -150,6 +150,14 @@ app.controller('historyController', function($scope,$http) {
         }
     };
 
+    $scope.notifyRandomDone = function(phone,provider) {
+        $scope.historyList.unshift({
+            "phone": phone,
+            "value": 10,
+            "provider": provider
+        });
+    };
+
     $scope.historyList=[];
     $http({
         method: 'GET',
@@ -235,6 +243,11 @@ app.controller('giftController', function($scope,$http) {
                 if (response.data.code!==200) {
                     closeGift();
                     showToast("error","Lỗi","Lỗi chưa xác định");
+                }
+                else {
+                    var data=response.data.data;
+                    var scope = angular.element(document.getElementById('right-content')).scope();
+                    scope.notifyRandomDone(data.phone,data.provider);
                 }
             }, function (err) {
                 closeGift();
