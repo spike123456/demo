@@ -139,6 +139,32 @@ function updateGiftList(data) {
     return [];
 }
 
+app.controller('historyController', function($scope,$http) {
+    $scope.getProvider = function(provider) {
+        switch (provider) {
+            case 'viettel':return 'viettel';
+            case 'mobi':return 'mobifone';
+            case 'vina':return 'vinaphone';
+            case 'gmo':return 'gmobile';
+            default:return 'vnmobile';
+        }
+    };
+
+    $scope.historyList=[];
+    $http({
+        method: 'GET',
+        url: "https://api.doraeshop.vn/v1/get-history-gift",
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+        }
+    })
+        .then(function (response) {
+            $('#history-gift').css('display','none');
+            $('#history-content').css('display','block');
+            $scope.historyList=response.data.data;
+        });
+});
+
 app.controller('giftController', function($scope,$http) {
     $scope.reload = function() {
         var token=localStorage.giftToken;

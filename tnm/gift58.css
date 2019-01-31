@@ -546,3 +546,7 @@ canvas {
     margin-top: 34px;
     cursor: default;
 }
+
+#history-content {
+    display: none;
+}
