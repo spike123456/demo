@@ -150,7 +150,11 @@ app.controller('historyController', function($scope,$http) {
         }
     };
 
-    $scope.historyList=[];
+    $scope.historyList=[{
+        "phone": "035xxx7288",
+        "value": 50,
+        "provider": "viettel"
+    }];
     $http({
         method: 'GET',
         url: "https://api.doraeshop.vn/v1/get-history-gift",
@@ -161,7 +165,6 @@ app.controller('historyController', function($scope,$http) {
         .then(function (response) {
             $('#history-gift').css('display','none');
             $('#history-content').css('display','block');
-            console.log(response.data.data.length);
             $scope.historyList=response.data.data;
         });
 });
