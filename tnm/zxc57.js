@@ -267,14 +267,19 @@ app.controller('giftController', function($scope,$http) {
     };
 
     $scope.verifyPhone = function() {
-        AccountKit.init(
-            {
-                appId:"1999638293635187",
-                version:"v1.0",
-                state:"gwegw222",
-                fbAppEventsEnabled:true
-            }
-        );
+        try {
+            AccountKit.init(
+                {
+                    appId:"1999638293635187",
+                    version:"v1.0",
+                    state:"gwegw222",
+                    fbAppEventsEnabled:true
+                }
+            );
+        }
+        catch(err) {
+
+        }
 
         var phone=$('#phone-input').val();
         if (phone) {
