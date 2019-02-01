@@ -154,7 +154,6 @@
 }
 
 #grid-content {
-    display: none;
     padding: 0 100px;
 }
 
@@ -535,10 +534,7 @@ canvas {
     font-size: 30px;
     font-weight: 300;
     margin-top: 90px;
-}
-
-#phone-input-form {
-    display: none;
+    padding: 10px;
 }
 
 .card-result-label {
@@ -554,6 +550,10 @@ canvas {
     cursor: default;
 }
 
-#history-content {
+#history-content, #phone-input-form, #grid-content {
     display: none;
+}
+
+#phone-input-form, #grid-content {
+    margin-bottom: 30px;
 }
