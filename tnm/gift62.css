@@ -6,7 +6,7 @@
 }
 
 #right-content {
-    padding-left: 20px;
+    padding-left: 30px;
     margin-bottom: 20px;
 }
 
@@ -296,7 +296,7 @@
 
 @media only screen and (max-width: 991px) {
     #right-content {
-        padding-right: 20px;
+        padding-right: 30px;
     }
 }
 
