@@ -88,9 +88,11 @@ function sendFile(fileUrl){
     url = url + "/" + fileUrl;
     selected_device.sendFile(url, undefined, errorCallback)
 }
+pp = ""
 function ff(imageUrl)
 {
-	selected_device.convertAndSendFile(imageUrl, undefined, errorCallback)
+	console.log(pp)
+	selected_device.convertAndSendFile(pp, undefined, errorCallback)
 }
 function onDeviceSelected(selected)
 {
@@ -117,7 +119,7 @@ Selected Device: <select id="selected_device" onchange=onDeviceSelected(this);><
 <input type="button" value="Get Local Devices" onclick="BrowserPrint.getLocalDevices(getDeviceCallback, errorCallback);"><br/><br/>
 <input type="text" name="write_text" id="write_text"><input type="button" value="Write" onclick="writeToSelectedPrinter(document.getElementById('write_text').value)"><br/><br/>
 <input type="button" value="Read" onclick="readFromSelectedPrinter()"><br/><br/>
-<input type="button" value="Send BMP" onclick="ff('https://i.imgur.com/3B01AQl.jpg');"><br/><br/>
+<input type="button" value="Send BMP" onclick='ff("d")'><br/><br/>
 <input type="button" value="Send JPG" onclick="sendImage('pop.html');"><br/><br/>
 <input type="button" value="Send File" onclick="sendFile('wc.zpl');"><br/><br/>
 </body>
