@@ -16,8 +16,7 @@ if (ls) {
     console.log("user_info was not existed!")
 }
 var token = tempLs.access_token;
-if (window.isSetupAlready === undefined) {
-    console.log(token);
+console.log(token);
     window.isSetupAlready = true;
     var H5P = window.H5P = window.H5P || {};
     H5P.jQuery.ajaxSetup({
@@ -25,9 +24,7 @@ if (window.isSetupAlready === undefined) {
     });
 
     const originalFetch = window.fetch;
-    console.log(originalFetch.isSetupAlready);
     window.fetch = function () {
-        originalFetch.isSetupAlready = true;
         arguments[1].headers = { 'Authorization': `Bearer ${token}` };
         return originalFetch.apply(this, arguments)
     };
@@ -35,7 +32,7 @@ if (window.isSetupAlready === undefined) {
     const open = XMLHttpRequest.prototype.open;
     XMLHttpRequest.prototype.open = function (method, url, ...rest) {
         var recall = open.call(this, method, url, ...rest);
+        console.log(this);
         this.setRequestHeader('Authorization', `Bearer ${token}`);
         return recall;
     };
-}
