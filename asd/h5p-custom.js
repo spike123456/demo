@@ -16,8 +16,9 @@ if (ls) {
     console.log("user_info was not existed!")
 }
 var token = tempLs.access_token;
-console.log(token);
+var isSetupAlready
 if (isSetupAlready === undefined) {
+    console.log(token);
     isSetupAlready = true;
     var H5P = window.H5P = window.H5P || {};
     H5P.jQuery.ajaxSetup({
