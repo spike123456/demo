@@ -18,10 +18,10 @@ if (ls) {
 var token = tempLs.access_token;
 console.log(token);
     window.isSetupAlready = true;
-    var H5P = window.H5P = window.H5P || {};
-    H5P.jQuery.ajaxSetup({
-        headers: { 'Authorization': `Bearer ${token}` }
-    });
+    // var H5P = window.H5P = window.H5P || {};
+    // H5P.jQuery.ajaxSetup({
+    //     headers: { 'Authorization': `Bearer ${token}` }
+    // });
 
     const originalFetch = window.fetch;
     window.fetch = function () {
@@ -32,7 +32,8 @@ console.log(token);
     const open = XMLHttpRequest.prototype.open;
     XMLHttpRequest.prototype.open = function (method, url, ...rest) {
         var recall = open.call(this, method, url, ...rest);
-        console.log(this);
+        console.log(this.headers);
+        console.log(this.header);
         this.setRequestHeader('Authorization', `Bearer ${token}`);
         return recall;
     };
