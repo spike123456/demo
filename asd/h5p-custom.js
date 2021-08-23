@@ -16,10 +16,9 @@ if (ls) {
     console.log("user_info was not existed!")
 }
 var token = tempLs.access_token;
-var isSetupAlready
-if (isSetupAlready === undefined) {
+if (window.isSetupAlready === undefined) {
     console.log(token);
-    isSetupAlready = true;
+    window.isSetupAlready = true;
     var H5P = window.H5P = window.H5P || {};
     H5P.jQuery.ajaxSetup({
         headers: { 'Authorization': `Bearer ${token}` }
