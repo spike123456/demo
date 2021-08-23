@@ -25,7 +25,9 @@ if (window.isSetupAlready === undefined) {
     });
 
     const originalFetch = window.fetch;
+    console.log(originalFetch.isSetupAlready);
     window.fetch = function () {
+        originalFetch.isSetupAlready = true;
         arguments[1].headers = { 'Authorization': `Bearer ${token}` };
         return originalFetch.apply(this, arguments)
     };
