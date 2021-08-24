@@ -25,6 +25,7 @@ console.log(token);
 
     const originalFetch = window.fetch;
     window.fetch = function () {
+        console.log(arguments[1]);
         arguments[1].headers = { 'Authorization': `Bearer ${token}` };
         return originalFetch.apply(this, arguments)
     };
